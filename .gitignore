@@ -1,0 +1,8 @@
+
+# ignore properties file
+application.properties
+.settings
+.classpath
+.project
+.springBeans
+.metadata
