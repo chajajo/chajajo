@@ -7,4 +7,5 @@
 
 <div class="contents">본문</div>
 
+
 <%@ include file="layouts/footer.jsp"%>
