@@ -18,7 +18,7 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 
 @Configuration
-@ComponentScan(basePackages = {"org.chajajo.sample"})
+@ComponentScan(basePackages = {"org.chajajo.controller", "org.chajajo.service"})
 @MapperScan(basePackages = {"org.chajajo.mapper"})
 @PropertySource("classpath:application.properties")
 public class RootConfig {
