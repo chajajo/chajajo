@@ -27,7 +27,7 @@
 <!-- Latest compiled JavaScript -->
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-<link href="resources/css/main.css" rel="stylesheet" />
+<link href="/resources/css/main.css" rel="stylesheet" />
 <body>
 	<div class="container">
 		<header class="jumbotron mb-0 rounded-0">

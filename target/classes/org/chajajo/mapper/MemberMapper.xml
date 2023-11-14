@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="org.chajajo.mapper.MemberMapper">
+
+ 
+	<insert id="signUp">
+		insert into user_info(USER_ID, PASSWORD, EMAIL, PHONE)
+		values(#{userId}, #{password}, #{email}, #{phone})
+	</insert>
+	
+	<!-- 아이디 중복검사 -->
+  	<select id="idCheck" resultType="int">
+  	
+  		select count(*) from user_info where USER_ID = #{userId}
+  	
+  	</select>
+  	
+  	<!-- 로그인 -->
+      <select id="memberLogin" resultType="org.chajajo.domain.MemberVO">
+      
+         select USER_ID, EMAIL, PHONE from user_info where USER_ID = #{userId} and PASSWORD = #{password}
+      
+      </select>
+
+</mapper>
+
+
+  

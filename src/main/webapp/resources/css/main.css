@@ -121,6 +121,33 @@
 	padding: 8px 0px 8px 24px;
 }
 
+/* 로그인 성공 영역 */
+.login_success_area{
+    height: 62%;
+    width: 80%;
+    border:none;
+    margin: 5% auto;
+    padding-top: 5%;
+}
+.login_success_area>span{
+    display : block;
+    text-align: left;
+    margin-left: 10%;
+}
+
+/* 로그아웃버튼 */
+.login_success_area>a{
+    font-size: 15px;
+    font-weight: 900;
+    display: inline-block;
+    margin-top: 5px;
+    background: #e1e5e8;
+    width: 82px;
+    height: 22px;
+    color: #606267;    
+}
+
+
 .signup {
 	background-color: #46AAEB;
 	color: white;
