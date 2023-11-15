@@ -4,3 +4,5 @@ application.properties
 .classpath
 .project
 .springBeans
+.idea
+/.metadata/
