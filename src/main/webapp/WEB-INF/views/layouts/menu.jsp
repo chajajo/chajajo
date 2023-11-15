@@ -18,7 +18,7 @@
 					href="...">서비스별 </a></li>
 			</ul>
 
-			<form class="search d-flex" action="service/list" method="get">
+			<form class="search d-flex" action="/service/list" method="get">
 				<input class="search-bar form-control" type="search" name="keyword" value="${cri.keyword}"
 					placeholder="Search" aria-label="Search">
 				<button class="btn search-btn" type="submit">

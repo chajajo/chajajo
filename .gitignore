@@ -7,3 +7,5 @@ application.properties
 .idea
 /.metadata/
 target
+bin
+.log

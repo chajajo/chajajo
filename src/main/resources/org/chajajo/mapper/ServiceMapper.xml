@@ -5,13 +5,6 @@
 
 <mapper namespace="org.chajajo.mapper.ServiceMapper">
 
-    <select id="getList" resultType="ServiceVO">
-        select service_name, service_summary, apply_date from service_list
-        <if test="keyword != null">
-            where service_name like concat('%', #{keyword}, '%') or service_summary like concat('%', #{keyword}, '%')
-        </if>
-    </select>
-
 	<select id="read" resultType="ServiceVO">
 		select service_name from
 		service_list
@@ -22,6 +15,9 @@
 	<select id="getListWithPaging" resultType="ServiceVO">
 		select service_name,
 		service_summary, apply_date from service_list
+		<if test="keyword != null">
+			where service_name like concat('%', #{keyword}, '%') or service_summary like concat('%', #{keyword}, '%')
+		</if>
 		limit #{offset},
 		#{amount}
 	</select>
