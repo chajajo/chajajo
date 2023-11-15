@@ -12,4 +12,6 @@ public interface ServiceMapper {
 	public List<ServiceVO> getList();
 	public List<ServiceVO> getListWithPaging(Criteria cri);
 	public int getTotalCount(Criteria cri);
+    public List<ServiceVO> getList(Criteria cri);
+
 }

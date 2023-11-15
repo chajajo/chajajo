@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class Criteria {
+    private String keyword;
 	private int pageNum;
 	private int amount;
 

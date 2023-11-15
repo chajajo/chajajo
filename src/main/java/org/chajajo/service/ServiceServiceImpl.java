@@ -1,7 +1,6 @@
 package org.chajajo.service;
 
 import lombok.extern.log4j.Log4j;
-
 import org.chajajo.domain.Criteria;
 import org.chajajo.domain.ServiceVO;
 import org.chajajo.mapper.ServiceMapper;
