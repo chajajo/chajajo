@@ -6,3 +6,4 @@ application.properties
 .springBeans
 .idea
 /.metadata/
+target

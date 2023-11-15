@@ -11,22 +11,26 @@ import java.util.List;
 
 @Log4j
 @Service
-public class ServiceServiceImpl implements ServiceService{
+public class ServiceServiceImpl implements ServiceService {
 
-    @Autowired
-    private ServiceMapper mapper;
+	@Autowired
+	private ServiceMapper mapper;
 
-    @Override
-    public List<ServiceVO> getList(Criteria cri) {
-        List<ServiceVO> list = mapper.getList(cri);
+	@Override
+	public List<ServiceVO> getList(Criteria cri) {
 
-        return list;
-    }
+		return mapper.getListWithPaging(cri);
+	}
 
-    @Override
-    public ServiceVO get(Long no) {
-        ServiceVO service = mapper.read(no);
+	@Override
+	public ServiceVO get(Long no) {
+		ServiceVO service = mapper.read(no);
 
-        return service;
-    }
+		return service;
+	}
+
+	@Override
+	public int getTotal(Criteria cri) {
+		return mapper.getTotalCount(cri);
+	}
 }
