@@ -1,5 +1,6 @@
 package org.chajajo.domain;
 
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -23,6 +24,9 @@ public class MemberVO {
 	private String email;
 
 	private String phone;
+	
+	private String birth;
+	
+	private String gender;
 
-		
 }

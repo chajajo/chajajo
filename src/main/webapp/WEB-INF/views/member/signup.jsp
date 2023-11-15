@@ -11,7 +11,7 @@
 	crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="/resources/css/member/signup.css?v3">
+<link rel="stylesheet" href="/resources/css/member/signup.css?v6">
 		<form id="join_form" method="post">
 			<div class="wrap">
 				<h1 class="my-1"><i class="fa-solid fa-user-plus"></i> 회원 가입</h1>
@@ -45,6 +45,21 @@
 						class="pwck_input_re_1">비밀번호가 일치합니다.</span> <span
 						class="pwck_input_re_2">비밀번호가 일치하지 않습니다.</span>
 				</div>
+				
+				<div class="gender_wrap">
+					<div class="gender_name"><i class="fa-solid fa-venus-mars"></i> 성별</div>
+					<div class="gender_input_box">
+						<input type="radio" id="select" name="gender" value="M"/><label for="select">남</label>
+						<input type="radio" id="select2" name="gender" value="F"/><label for="select2">여</label>
+					</div>
+				</div>
+			
+				<div class="birth_wrap">
+					<div class="birth_name"><i class="fa-solid fa-cake-candles"></i> 생년월일</div>
+					<div class="birth_input_box">
+						<input class="birth_input" type="date" pattern="yyyy.MM.dd" name="birth">
+					</div>
+				</div>
 
 				<div class="mail_wrap">
 					<div class="mail_name"><i class="fa-solid fa-envelope"></i> 이메일</div>
@@ -61,6 +76,8 @@
 					</div>
 					<span class="final_phone_ck">전화번호를 입력해주세요.</span>
 				</div>
+				
+
 
 				<div class="join_button_wrap">
 					<input type="button" class="join_button" value="가입하기">

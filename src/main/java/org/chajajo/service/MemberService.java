@@ -3,6 +3,8 @@ package org.chajajo.service;
 import java.io.IOException;
 
 import org.chajajo.domain.MemberVO;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+
 
 public interface MemberService {
 

@@ -10,6 +10,7 @@ import org.chajajo.service.MemberService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,7 +26,10 @@ public class MemberController {
 	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 
 	@Autowired
-	MemberService memberservice;
+	 MemberService memberservice;
+	
+
+	
 
 	// 회원가입 페이지 이동
 	@RequestMapping(value = "signup", method = RequestMethod.GET)

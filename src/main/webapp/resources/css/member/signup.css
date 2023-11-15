@@ -101,6 +101,90 @@
 	background-color: #e7e7e7;
 }
 
+/* 성별 영역 */
+.gender_wrap{
+	width: 100%;
+    margin-top: 20px;
+}
+.gender_name{
+	font-size: 25px;
+    font-weight: bold;
+}
+/* .gender_input_box{
+	border: 1px solid black;
+	height:51px;
+	padding: 10px 14px;	
+	border-radius: 20px;
+	border : none;
+	background-color: #e7e7e7;
+	
+}
+.gender_input{
+	width:100%;
+	height:100%;
+	border:none;
+	font-size:28px;
+	background-color: #e7e7e7;
+} */
+
+.gender_input_box {
+    padding: 15px 10px;
+}
+.gender_input_box input[type=radio]{
+    display: none;
+}
+.gender_input_box input[type=radio]+label{
+    display: inline-block;
+    cursor: pointer;
+    width: 90px;
+    border: 1px solid #333;
+    line-height: 24px;
+    text-align: center;
+    font-weight:bold;
+    font-size:22px;   
+	height:51px;
+	padding: 10px 14px;	
+	border-radius: 20px;
+
+
+}
+.gender_input_box input[type=radio]+label{
+    background-color: #fff;
+    color: #333;
+}
+.gender_input_box input[type=radio]:checked+label{
+    background-color: #333;
+    color: #fff;
+}
+
+
+
+/* 생년월일 영역 */
+ .birth_wrap{
+	width: 100%;
+    margin-top: 20px;
+}
+.birth_name{
+	font-size: 25px;
+    font-weight: bold;
+}
+.birth_input_box{
+	border: 1px solid black;
+	height:51px;
+	padding: 10px 14px;	
+	border-radius: 20px;
+	border : none;
+	background-color: #e7e7e7;
+	
+}
+.birth_input{
+	width:100%;
+	height:100%;
+	border:none;
+	font-size:28px;
+	background-color: #e7e7e7;
+} 
+
 /* 메일 영역 */
 .mail_wrap{
 	width: 100%;

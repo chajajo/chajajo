@@ -7,8 +7,8 @@
 
  
 	<insert id="signUp">
-		insert into user_info(USER_ID, PASSWORD, EMAIL, PHONE)
-		values(#{userId}, #{password}, #{email}, #{phone})
+		insert into user_info(USER_ID, PASSWORD, EMAIL, PHONE, BIRTH, GENDER)
+		values(#{userId}, #{password}, #{email}, #{phone}, #{birth},#{gender} )
 	</insert>
 	
 	<!-- 아이디 중복검사 -->
@@ -21,7 +21,7 @@
   	<!-- 로그인 -->
       <select id="memberLogin" resultType="org.chajajo.domain.MemberVO">
       
-         select USER_ID, EMAIL, PHONE from user_info where USER_ID = #{userId} and PASSWORD = #{password}
+         select USER_ID, EMAIL, BIRTH from user_info where USER_ID = #{userId} and PASSWORD = #{password}
       
       </select>
 
