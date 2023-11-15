@@ -7,7 +7,9 @@
 
     <select id="getList" resultType="ServiceVO">
         select service_name, service_summary, apply_date from service_list
-
+        <if test="keyword != null">
+            where service_name like concat('%', #{keyword}, '%') or service_summary like concat('%', #{keyword}, '%')
+        </if>
     </select>
 
     <select id="read" resultType="ServiceVO">

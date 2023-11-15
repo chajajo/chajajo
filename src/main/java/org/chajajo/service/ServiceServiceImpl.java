@@ -1,6 +1,7 @@
 package org.chajajo.service;
 
 import lombok.extern.log4j.Log4j;
+import org.chajajo.domain.Criteria;
 import org.chajajo.domain.ServiceVO;
 import org.chajajo.mapper.ServiceMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,8 @@ public class ServiceServiceImpl implements ServiceService{
     private ServiceMapper mapper;
 
     @Override
-    public List<ServiceVO> getList() {
-        List<ServiceVO> list = mapper.getList();
+    public List<ServiceVO> getList(Criteria cri) {
+        List<ServiceVO> list = mapper.getList(cri);
 
         return list;
     }
