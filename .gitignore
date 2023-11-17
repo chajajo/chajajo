@@ -6,6 +6,6 @@ application.properties
 .springBeans
 .idea
 /.metadata/
-target
+/target/
 bin
 .log
