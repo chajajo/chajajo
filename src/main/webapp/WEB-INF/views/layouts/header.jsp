@@ -28,14 +28,15 @@
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <link href="/resources/css/main.css" rel="stylesheet" />
+<link href="/resources/css/member/mypage.css" rel="stylesheet" />
 <link href="/resources/css/pagination.css" rel="stylesheet" />
 <body>
-	<div class="container">
-		<header class="jumbotron mb-0 rounded-0">
-			<div>
-				<h3>chajajo</h3>
-				<p>search my subsidy</p>
-				<%@ include file="menu.jsp"%>
-			</div>
 
-		</header>
+	<header class="jumbotron mb-0 rounded-0">
+		<div>
+			<%@ include file="menu.jsp"%>
+		</div>
+
+	</header>
+
+	<div class="container" role="main">
