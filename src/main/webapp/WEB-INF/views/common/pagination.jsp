@@ -3,6 +3,7 @@
 <form id="actionForm" action="/service/list" method="get">
 	<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}" />
 	<input type="hidden" name="amount" value="${pageMaker.cri.amount}" />
+	<input type="hidden" name="keyword" value="${pageMaker.cri.keyword}" />
 </form>
 
 <ul class="pagination justify-content-center">
