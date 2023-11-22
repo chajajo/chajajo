@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+a:link {
+	color: black;
+}
+
+a:visited {
+	color: black;
+}
+
+a:hover {
+	color: #0080ff;
+	text-decoration: none;
+}
+
+.mypage-container {
+	width:1200px;
+}
+
+.mypage-menu {
+	background-color: #E7E7E7;
+	border-radius: 50px;
+	width: 200px;
+	float: left;
+	padding: 30px;
+	font-weight: bold;
+	margin-right: 30px;
+	margin-top: 30px;
+}
+
+.mypage-menu ul li {
+	list-style: none;
+	font-size: 20px;
+	line-height: 2;
+}
+
+.mypage-menu ol li {
+	list-style: none;
+	font-size: 15px;
+}
+
+.mypage-box {
+	background-color: #E7E7E7;
+	border-radius: 50px;
+	width: 800px;
+	float: left;
+	padding: 30px;
+	font-weight: bold;
+	margin-right: 30px;
+	margin-top: 30px;
+}
+
+.mypage-box li {
+	list-style-type: none;
+	font-size: 20px;
+	line-height: 4;
+}

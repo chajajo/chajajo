@@ -8,10 +8,14 @@ import java.util.List;
 
 public interface ServiceService {
 
-    public List<ServiceVO> getList(Criteria cri);
-
-	public ServiceDetailVO get(Long no);
+  public ServiceDetailVO get(Long no);
+  
+	/* 게시판 목록 */
+	public List<ServiceVO> getList(Criteria cri);
 	
-	// pagination
+	/* 게시판 목록 (페이징 적용) */
+	public List<ServiceVO> getListWithPaging(Criteria cri);
+
+	/* 게시판 총 갯수 */
 	public int getTotal(Criteria cri);
 }

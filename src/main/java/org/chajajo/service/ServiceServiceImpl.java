@@ -18,20 +18,29 @@ public class ServiceServiceImpl implements ServiceService {
 	private ServiceMapper mapper;
 
 	@Override
-	public List<ServiceVO> getList(Criteria cri) {
-
-		return mapper.getListWithPaging(cri);
-	}
-
-	@Override
 	public ServiceDetailVO get(Long no) {
 		ServiceDetailVO service = mapper.read(no);
 
 		return service;
 	}
 
+	/* 게시판 목록 */
+	@Override
+	public List<ServiceVO> getList(Criteria cri) {
+
+		return mapper.getList(cri);
+	}
+
+	/* 게시판 목록 (페이징 적용) */
+	@Override
+	public List<ServiceVO> getListWithPaging(Criteria cri) {
+
+		return mapper.getListWithPaging(cri);
+	}
+
+	/* 게시판 총 갯수 */
 	@Override
 	public int getTotal(Criteria cri) {
-		return mapper.getTotalCount(cri);
+		return mapper.getTotal(cri);
 	}
 }

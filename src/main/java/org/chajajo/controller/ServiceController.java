@@ -24,10 +24,13 @@ public class ServiceController {
 	private ServiceService service;
 
 	@GetMapping("/list")
-    public void list(@ModelAttribute("cri") Criteria cri, Model model) {
+	public void list(Model model, Criteria cri) {
+
+		model.addAttribute("list", service.getListWithPaging(cri));
 		int total = service.getTotal(cri);
-		model.addAttribute("list", service.getList(cri));
-		model.addAttribute("pageMaker", new PageDTO(cri, total));
+
+		PageDTO pageMaker = new PageDTO(cri, total);
+		model.addAttribute("pageMaker", pageMaker);
 	}
 
 	@GetMapping("/get")

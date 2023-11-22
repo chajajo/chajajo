@@ -11,19 +11,24 @@
 		where service_id = #{no}
 	</select>
 
-	<!--  pagination -->
+	<!-- 게시물 목록 (페이징) -->
 	<select id="getListWithPaging" resultType="ServiceVO">
 		select service_id, service_name,
 		service_summary, apply_date from service_list
 		<if test="keyword != null">
-			where service_name like concat('%', #{keyword}, '%') or service_summary like concat('%', #{keyword}, '%')
+			where service_name like concat('%', #{keyword}, '%') or
+			service_summary like concat('%', #{keyword}, '%')
 		</if>
 		limit #{offset},
 		#{amount}
 	</select>
 
-	<select id="getTotalCount" resultType="int">
-		select count(*) from
-		service_list;
+
+	<select id="getTotal" resultType="int">
+		select count(*) from service_list
+		<if test="keyword != null">
+			where service_name like concat('%', #{keyword}, '%') or
+			service_summary like concat('%', #{keyword}, '%')
+		</if>
 	</select>
 </mapper>

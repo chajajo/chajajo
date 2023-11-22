@@ -7,12 +7,14 @@
 <script>
 	$(document).ready(function() {
 		let actionForm = $('#actionForm');
+
 		$('a.page-link').on('click', function(e) {
 			e.preventDefault();
 			console.log('click');
 			actionForm.find('input[name="pageNum"]').val($(this).attr('href'));
 			actionForm.submit();
 		});
+
 	});
 </script>
 
