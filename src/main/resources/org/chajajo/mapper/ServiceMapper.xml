@@ -5,15 +5,15 @@
 
 <mapper namespace="org.chajajo.mapper.ServiceMapper">
 
-	<select id="read" resultType="ServiceVO">
-		select service_name from
-		service_list
+	<select id="read" resultType="ServiceDetailVO">
+		select * from
+		service_detail
 		where service_id = #{no}
 	</select>
 
 	<!--  pagination -->
 	<select id="getListWithPaging" resultType="ServiceVO">
-		select service_name,
+		select service_id, service_name,
 		service_summary, apply_date from service_list
 		<if test="keyword != null">
 			where service_name like concat('%', #{keyword}, '%') or service_summary like concat('%', #{keyword}, '%')
