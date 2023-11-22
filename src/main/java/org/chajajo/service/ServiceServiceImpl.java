@@ -2,6 +2,7 @@ package org.chajajo.service;
 
 import lombok.extern.log4j.Log4j;
 import org.chajajo.domain.Criteria;
+import org.chajajo.domain.ServiceDetailVO;
 import org.chajajo.domain.ServiceVO;
 import org.chajajo.mapper.ServiceMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +18,8 @@ public class ServiceServiceImpl implements ServiceService {
 	private ServiceMapper mapper;
 
 	@Override
-	public ServiceVO get(Long no) {
-		ServiceVO service = mapper.read(no);
+	public ServiceDetailVO get(Long no) {
+		ServiceDetailVO service = mapper.read(no);
 
 		return service;
 	}

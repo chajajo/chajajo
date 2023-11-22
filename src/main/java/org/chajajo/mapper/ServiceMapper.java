@@ -1,12 +1,15 @@
 package org.chajajo.mapper;
 
 import org.chajajo.domain.Criteria;
+import org.chajajo.domain.ServiceDetailVO;
 import org.chajajo.domain.ServiceVO;
 
 import java.util.List;
 
 public interface ServiceMapper {
-	public ServiceVO read(Long no);
+  
+  /* 상세보기 페이지 */
+	public ServiceDetailVO read(Long no);
 
 	/* 게시판 목록 */
 	public List<ServiceVO> getList(Criteria cri);

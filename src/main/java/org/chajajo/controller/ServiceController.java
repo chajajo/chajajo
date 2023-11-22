@@ -34,10 +34,9 @@ public class ServiceController {
 	}
 
 	@GetMapping("/get")
-	public ServiceVO get(@RequestParam("no") Long no, Model model) {
+	public void get(@RequestParam("no") Long no, Model model) {
 
-//        model.addAttribute("service", service.get(no));
+        model.addAttribute("service", service.get(no));
 
-		return service.get(no);
 	}
 }

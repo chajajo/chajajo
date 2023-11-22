@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: jinyoung
-  Date: 2023-11-11
-  Time: 1:09 p.m.
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -40,7 +33,7 @@
 	<tbody>
 		<c:forEach var="service" items="${list}">
 			<tr>
-				<td>${service.serviceName}</td>
+				<td><a href="get/?no=${service.serviceId}">${service.serviceName}</a></td>
 				<td>${service.serviceSummary}</td>
 				<td>${service.applyDate}</td>
 			</tr>
