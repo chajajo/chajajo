@@ -16,13 +16,13 @@ public interface MemberService {
 	public MemberVO memberLogin(MemberVO member) throws Exception;
 
 	// 회원정보 보기
-	public MemberVO readMember(String userId);
+	public MemberVO userinfo(String userId);
 
 	// 회원정보 변경
-	public void updateMember(MemberVO member);
+	public void infomodify(MemberVO member);
 
 	// 회원정보 삭제
-	public void deleteMember(MemberVO member);
-
-
+	public void userout(MemberVO member);
+	
+	
 }

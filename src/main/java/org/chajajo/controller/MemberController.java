@@ -4,10 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.chajajo.domain.MemberVO;
 import org.chajajo.service.MemberService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -119,64 +116,6 @@ public class MemberController {
 		}
 
 	} // memberIdChkPOST() 종료
-	
 
-	/* 회원정보보기 */
-	@RequestMapping(value = "/info", method = RequestMethod.GET)
-	public void infoGET(HttpSession session, Model model) throws Exception {
-
-		String id = (String) session.getAttribute("id");
-		log.info("C: 회원정보보기 GET의 아이디 " + id);
-
-		MemberVO member = memberservice.readMember(id);
-
-		model.addAttribute("member", member);
-		log.info("C: 회원정보보기 GET의 VO " + member);
-	}
-
-	/* 회원정보 수정 */
-	@RequestMapping(value = "/update", method = RequestMethod.GET)
-	public String updateGET(HttpSession session, Model model) throws Exception {
-	
-		model.addAttribute("member", memberservice.readMember((String) session.getAttribute("id")));
-
-		return "/member/updateForm";
-	}
-
-	@RequestMapping(value = "/update", method = RequestMethod.POST)
-	public String updatePOST(MemberVO member) throws Exception {
-		log.info("회원정보수정 입력페이지 POST");
-
-		memberservice.updateMember(member);
-		return "redirect:/member/info";
-	}
-
-	/* 회원정보삭제 */
-	@RequestMapping(value = "/delete", method = RequestMethod.GET)
-	public String deleteGET(HttpSession session) throws Exception {
-		log.info("C: 회원정보 삭제 GET");
-		System.out.println(session);
-
-		String id = (String)session.getAttribute("id");
-		
-		if (id == null) {
-			return "redirect:/";
-		}
-		return "/member/deleteForm";
-	}
-
-	@RequestMapping(value = "/delete", method = RequestMethod.POST)
-	public String deletePOST(MemberVO member, HttpSession session) throws Exception {
-		log.info("회원정보 삭제 POST");
-
-		log.info("deleteForm전달정보 " + member);
-
-		memberservice.deleteMember(member);
-
-		session.invalidate();
-
-		return "redirect:/";
-	}
-	
 
 }

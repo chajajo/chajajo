@@ -39,12 +39,12 @@ public class MemberServiceImpl implements MemberService{
     
     //회원정보 보기
 	@Override
-	public MemberVO readMember(String userId) {
+	public MemberVO userinfo(String userId) {
 		System.out.println("readMember()실행");
 		MemberVO member = null;
 		
 		try {
-			member = membermapper.readMember(userId);
+			member = membermapper.userinfo(userId);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -54,9 +54,9 @@ public class MemberServiceImpl implements MemberService{
 	
 	//회원정보수정
 	@Override
-	public void updateMember(MemberVO member) {
+	public void infomodify(MemberVO member) {
 		try {
-			membermapper.updateMember(member);
+			membermapper.infomodify(member);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -64,13 +64,16 @@ public class MemberServiceImpl implements MemberService{
 
 	//회원정보삭제
 	@Override
-	public void deleteMember(MemberVO member) {
+	public void userout(MemberVO member) {
 		try {
-			membermapper.deleteMember(member);
+			membermapper.userout(member);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+	
+	
+
 	
 
 }
