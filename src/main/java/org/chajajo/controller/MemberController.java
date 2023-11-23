@@ -74,6 +74,7 @@ public class MemberController {
 		if (returnVO != null) {
 
 			session.setAttribute("member", returnVO);
+			session.setAttribute("id", returnVO.getUserId());
 
 			rttr.addFlashAttribute("member", returnVO);
 
