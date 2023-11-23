@@ -3,16 +3,28 @@ package org.chajajo.mapper;
 import org.chajajo.domain.MemberVO;
 
 public interface MemberMapper {
-	
-	//회원가입
+
+	// 회원가입
 	public void signUp(MemberVO member);
 
-	public MemberVO read(String userId);
-	
 	// 아이디 중복 검사
 	public int idCheck(String userId);
 
-	   /* 로그인 */
+	// 로그인
 	public MemberVO memberLogin(MemberVO member);
+
+	//회원 정보 조회 - 사용자 ID 해당하는 정보 가져오기
+	public MemberVO readMember(String userId) throws Exception;
+
+	//회원 정보 조회 - ID,PW정보에 해당하는 사용자 정보
+	public MemberVO readMemberWithIDPW(String userId, String password) throws Exception;
+
+	//회원정보수정
+	public void updateMember(MemberVO member) throws Exception;
+
+	//회원탈퇴
+	public void deleteMember(MemberVO member) throws Exception;
+	
+	
 
 }

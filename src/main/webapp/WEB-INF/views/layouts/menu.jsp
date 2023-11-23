@@ -33,8 +33,8 @@
 				<div class="login_success_area">
 					<span>회원 : ${member.userId}</span> 
 					<a href="/member/logout.do"><i class="fa-solid fa-right-from-bracket"></i>로그아웃</a>
+					<a href="/member/info"><i class="fa-solid fa-right-from-bracket"></i>내정보</a>
 				</div>
-
 			</c:if>
 
 
