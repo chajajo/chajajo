@@ -49,9 +49,10 @@
 				<div class="gender_wrap">
 					<div class="gender_name"><i class="fa-solid fa-venus-mars"></i> 성별</div>
 					<div class="gender_input_box">
-						<input type="radio" id="select" name="gender" value="M"/><label for="select">남</label>
-						<input type="radio" id="select2" name="gender" value="F"/><label for="select2">여</label>
+						<input class="gender_input" type="radio" id="select" name="gender" value="M"/><label for="select">남</label>
+						<input class="gender_input" type="radio" id="select2" name="gender" value="F"/><label for="select2">여</label>
 					</div>
+					<span class="final_gebder_ck">성별을 선택해주세요.</span>
 				</div>
 			
 				<div class="birth_wrap">
@@ -59,6 +60,7 @@
 					<div class="birth_input_box">
 						<input class="birth_input" type="date" pattern="yyyy.MM.dd" name="birth">
 					</div>
+					<span class="final_birth_ck">생년월일을 입력해주세요.</span>
 				</div>
 
 				<div class="mail_wrap">
@@ -95,6 +97,8 @@
 		var pwckcorCheck = false; // 비번 확인 일치 확인
 		var mailCheck = false; // 이메일
 		var phoneCheck = false; // 전화번호
+		var genderCheck = false; //성별
+		var birthCheck = false; //생일
 
 		$(document).ready(
 				function() {
@@ -109,6 +113,8 @@
 										var pwck = $('.pwck_input').val(); // 비밀번호 확인 입력란
 										var mail = $('.mail_input').val(); // 이메일 입력란
 										var phone = $('.phone_input').val(); // 전화번호 입력란
+										var genderCheck = $('.gender_input').val(); //성별
+										var birthCheck = $('.birth_input').val(); //생일
 
 										/* 아이디 유효성검사 */
 										if (id == "") {
@@ -165,10 +171,33 @@
 											phoneCheck = true;
 										}
 
+										/* gender 유효성 검사 */
+										if (gender == "") {
+											$('.final_gender_ck').css('display',
+													'block');
+											genderCheck = false;
+										} else {
+											$('.final_gender_ck').css('display',
+													'none');
+											genderCheck = true;
+										}
+										
+										/* birth 유효성 검사 */
+										if (birth == "") {
+											$('.final_birth_ck').css('display',
+													'block');
+											birthCheck = false;
+										} else {
+											$('.final_birth_ck').css('display',
+													'none');
+											birthCheck = true;
+										}
+										
 										/* 최종 유효성 검사 */
 										if (idCheck && idckCheck && pwCheck
 												&& pwckCheck && mailCheck
-												&& phoneCheck) {
+												&& phoneCheck && genderCheck
+												&& birthCheck) {
 
 											$("#join_form").attr("action",
 													"/member/signup");
