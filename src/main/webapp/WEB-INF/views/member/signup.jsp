@@ -168,7 +168,7 @@
 													'none');
 											phoneCheck = true;
 										}
-									
+
 										/* 최종 유효성 검사 */
 										if (idCheck && idckCheck && pwCheck
 												&& pwckCheck && mailCheck

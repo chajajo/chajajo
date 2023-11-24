@@ -14,6 +14,22 @@
 	padding: 20px;
 }
 
+.logout-icon {
+	float: right;
+	padding-left: 5px;
+}
+
+.user-name {
+	font-size: 20px;
+	font-weight: bold;
+	float: right;
+}
+
+.login-icon {
+	padding-right: 10px;
+	float: right;
+}
+
 .menu {
 	border-bottom: 1px solid #c1d8ea;
 	padding-bottom: 10px;
@@ -75,12 +91,12 @@
 	color: #000 !important;
 	font-size: 16px;
 	font-family: 'Source Sans Pro Topnav', sans-serif;
-	position: relative;
-	display: inline;
 	height: 100%;
 	padding-right: 5px;
 	right: 0;
+	width: 350px;
 	overflow: hidden;
+	display: inline-block;
 }
 
 .user-anonymous {
@@ -117,13 +133,7 @@
 	width: 80%;
 	border: none;
 	margin: 5% auto;
-	padding-top: 5%;
-}
-
-.login_success_area>span {
-	display: block;
-	text-align: left;
-	margin-left: 10%;
+	float: right;
 }
 
 /* 로그아웃버튼 */
@@ -132,9 +142,6 @@
 	font-weight: 900;
 	display: inline-block;
 	margin-top: 5px;
-	background: #e1e5e8;
-	width: 82px;
-	height: 22px;
 	color: #606267;
 }
 
