@@ -98,6 +98,7 @@
 		var mailCheck = false; // 이메일
 		var phoneCheck = false; // 전화번호
 
+
 		$(document).ready(
 				function() {
 					//회원가입 버튼(회원가입 기능 작동)
@@ -167,7 +168,7 @@
 													'none');
 											phoneCheck = true;
 										}
-										
+
 										/* 최종 유효성 검사 */
 										if (idCheck && idckCheck && pwCheck
 												&& pwckCheck && mailCheck
