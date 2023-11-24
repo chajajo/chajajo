@@ -97,8 +97,6 @@
 		var pwckcorCheck = false; // 비번 확인 일치 확인
 		var mailCheck = false; // 이메일
 		var phoneCheck = false; // 전화번호
-		var genderCheck = false; //성별
-		var birthCheck = false; //생일
 
 		$(document).ready(
 				function() {
@@ -113,8 +111,7 @@
 										var pwck = $('.pwck_input').val(); // 비밀번호 확인 입력란
 										var mail = $('.mail_input').val(); // 이메일 입력란
 										var phone = $('.phone_input').val(); // 전화번호 입력란
-										var genderCheck = $('.gender_input').val(); //성별
-										var birthCheck = $('.birth_input').val(); //생일
+
 
 										/* 아이디 유효성검사 */
 										if (id == "") {
@@ -170,34 +167,11 @@
 													'none');
 											phoneCheck = true;
 										}
-
-										/* gender 유효성 검사 */
-										if (gender == "") {
-											$('.final_gender_ck').css('display',
-													'block');
-											genderCheck = false;
-										} else {
-											$('.final_gender_ck').css('display',
-													'none');
-											genderCheck = true;
-										}
-										
-										/* birth 유효성 검사 */
-										if (birth == "") {
-											$('.final_birth_ck').css('display',
-													'block');
-											birthCheck = false;
-										} else {
-											$('.final_birth_ck').css('display',
-													'none');
-											birthCheck = true;
-										}
 										
 										/* 최종 유효성 검사 */
 										if (idCheck && idckCheck && pwCheck
 												&& pwckCheck && mailCheck
-												&& phoneCheck && genderCheck
-												&& birthCheck) {
+												&& phoneCheck) {
 
 											$("#join_form").attr("action",
 													"/member/signup");

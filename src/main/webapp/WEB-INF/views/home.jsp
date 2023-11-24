@@ -6,6 +6,5 @@
 <%@ include file="layouts/header.jsp"%>
 
 	<%@ include file="layouts/carousel.jsp"%>
-	
-	<h1><a href="../mypage/userinfo">마이페이지</a></h1>
+
 	<%@ include file="layouts/footer.jsp"%>
