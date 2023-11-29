@@ -15,7 +15,7 @@ public interface RecommendationService {
 	public List<String> getServiceIdToUserCondtions(UserConditionsVO userConditionsVO);
 	
 	//추천 목록 가져오기
-	public List<ServiceVO> getRecommendedList(List<String> serviceIds);
+	public List<ServiceVO> getRecommendedList(List<String> serviceIds, Criteria cri);
 	
 	//추천 목록 개수
 	public int countRecommendedList(List<String> serviceIds);

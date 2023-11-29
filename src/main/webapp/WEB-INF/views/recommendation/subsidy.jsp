@@ -19,6 +19,8 @@
 	});
 </script>
  
+ <%@ include file="./conditionsForm.jsp"%>
+ 
 <div class="container">
     <div class="row">
         <c:forEach var="service" items="${list}">
@@ -29,7 +31,7 @@
                             <h4 class="card-meta mb-2">${service.serviceName}</h4>
                             <br/>
                             <h5 class="card-title mt-0 ">
-                                <a class="text-dark" href="get/?no=${service.serviceId}">${service.serviceSummary}</a>
+                                <a class="text-dark" href="../service/get/?no=${service.serviceId}">${service.serviceSummary}</a>
                             </h5>
                             <p>지원 기간:<br/>${service.applyDate}</p>
                         </div>

@@ -40,10 +40,11 @@ public class RecommendationServiceImpl implements RecommendationService {
 
 	//추천 목록 가져오기
 	@Override
-	public List<ServiceVO> getRecommendedList(List<String> serviceIds) {
+	public List<ServiceVO> getRecommendedList(List<String> serviceIds, Criteria cri) {
 		List<ServiceVO> serviceVoList = new ArrayList<ServiceVO>() ;
 		
-		for (String serivceId : serviceIds) {
+		for(int i = cri.getOffset(); i< cri.getOffset()+cri.getAmount(); i++ ) {
+			String serivceId = serviceIds.get(i);
 			ServiceVO serviceVo;
 			serviceVo = mapper.getServiceVOToServiceId(serivceId);
 			serviceVoList.add(serviceVo);
