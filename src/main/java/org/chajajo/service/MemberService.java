@@ -5,24 +5,25 @@ import java.io.IOException;
 import org.chajajo.domain.MemberVO;
 
 public interface MemberService {
+	// 로그인
+	public MemberVO get(String userId);
 
-	// 회원가입
-	public void signUp(MemberVO member) throws IOException;
+	public void register(MemberVO member) throws IOException;
 
 	// 아이디 중복 검사
-	public int idCheck(String userId) throws Exception;
-
-	// 로그인 기능
-	public MemberVO memberLogin(MemberVO member) throws Exception;
+	public int userIdChk(String userId) throws Exception;
 
 	// 회원정보 보기
 	public MemberVO userinfo(String userId);
 
-	// 회원정보 변경
-	public void infomodify(MemberVO member);
+	public String searchById(String userId) throws Exception;
 
-	// 회원정보 삭제
+	// 회원정보 변경
+	public void infomodify(MemberVO member, String pwInDb) throws Exception;
+
+	public MemberVO login(MemberVO member);
+
+	// 회원 탈퇴
 	public void userout(MemberVO member);
-	
-	
+
 }

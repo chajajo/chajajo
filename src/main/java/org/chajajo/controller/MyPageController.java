@@ -1,15 +1,19 @@
 package org.chajajo.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.chajajo.domain.MemberVO;
 import org.chajajo.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 
 import lombok.extern.log4j.Log4j;
 
@@ -22,63 +26,55 @@ public class MyPageController {
 
 	// 회원 정보 페이지 이동
 	@RequestMapping(value = "userinfo", method = RequestMethod.GET)
-	public void userinfoGET(HttpSession session, Model model) throws Exception {
+	public void userinfoGET(HttpServletRequest request, HttpSession session, Model model) throws Exception {
+		session = request.getSession();
+		
+		String id = (String) session.getAttribute("member.userId");
+		log.info("C: 회원정보보기 GET의 아이디 " + id);
 
-			String id = (String) session.getAttribute("id");
-			log.info("C: 회원정보보기 GET의 아이디 " + id);
+		MemberVO member = memberservice.userinfo(id);
 
-			MemberVO member = memberservice.userinfo(id);
-
-			model.addAttribute("member", member);
-			log.info("C: 회원정보보기 GET의 VO " + member);
-		}
+		model.addAttribute("member", member);
+		log.info("C: 회원정보보기 GET의 VO " + member);
+	}
 
 	// 정보 수정 페이지 이동
 	@RequestMapping(value = "infomodify", method = RequestMethod.GET)
 	public String infomodifyGET(HttpSession session, Model model) throws Exception {
-			
-			model.addAttribute("member", memberservice.userinfo((String) session.getAttribute("id")));
+		model.addAttribute("member", memberservice.userinfo((String) session.getAttribute("id")));
+		return "/mypage/infomodify";
+	}
 
-			return "/mypage/infomodify";
-		}
-	
 	@RequestMapping(value = "/infomodify", method = RequestMethod.POST)
-	public String infomodifyPOST(MemberVO member) throws Exception {
+	public String infomodifyPOST(HttpSession session, HttpServletRequest request, MemberVO member, RedirectAttributes rttr) throws Exception {
 		log.info("회원정보수정 입력페이지 POST");
+		String pwInDb = memberservice.searchById(member.getUserId());
 		
-
-		memberservice.infomodify(member);
-		return "redirect:/mypage/userinfo";
-	}
-
-
-	// 회원 탈퇴 페이지 이동
-	@RequestMapping(value = "userout", method = RequestMethod.GET)
-	public String useroutGET(HttpSession session) throws Exception {
-			log.info("C: 회원정보 삭제 GET");
-			System.out.println(session);
-
-			String id = (String)session.getAttribute("id");
-			
-			if (id == null) {
-				return "redirect:/";
+		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		Boolean isMatches = passwordEncoder.matches(member.getPassword(), pwInDb);
+		System.out.println(isMatches);
+		
+		session = request.getSession();
+		if (isMatches == true) {
+			try {
+				memberservice.infomodify(member, pwInDb);
+				
+				session.setAttribute("phone", member.getPhone());
+				session.setAttribute("email", member.getEmail());
+				
+				rttr.addFlashAttribute("updatedPhone", memberservice.userinfo(member.getEmail()));
+				rttr.addFlashAttribute("updateEmail", memberservice.userinfo(member.getPhone()));
+				
+				return "redirect:/mypage/userinfo"; // 수정 성공 시 리다이렉트할 경로
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
-			return "/mypage/userout";
 		}
 
-	@RequestMapping(value = "/userout", method = RequestMethod.POST)
-	public String useroutPOST(MemberVO member, HttpSession session) throws Exception {
-		log.info("회원정보 삭제 POST");
+		return "redirect:/mypage/infomodify";
 
-		log.info("deleteForm전달정보 " + member);
-
-		memberservice.userout(member);
-
-		session.invalidate();
-
-		return "redirect:/";
 	}
-	
+
 	// 나만의 보조금 페이지 이동
 	@RequestMapping(value = "mysubsidy", method = RequestMethod.GET)
 	public void mysubsidyGET() {
@@ -108,4 +104,32 @@ public class MyPageController {
 	public void mycontactGET() {
 		log.info(" 나의 문의 페이지 진입 성공");
 	}
+
+	// 회원 탈퇴 페이지 이동
+	@RequestMapping(value = "userout", method = RequestMethod.GET)
+	public String useroutGET(HttpSession session) throws Exception {
+		log.info("C: 회원정보 삭제 GET");
+		System.out.println(session);
+
+		String id = (String) session.getAttribute("id");
+
+		if (id == null) {
+			return "redirect:/";
+		}
+		return "/mypage/userout";
+	}
+
+	@RequestMapping(value = "/userout", method = RequestMethod.POST)
+	public String useroutPOST(MemberVO member, HttpSession session) throws Exception {
+		log.info("회원정보 삭제 POST");
+
+		log.info("deleteForm전달정보 " + member);
+
+		memberservice.userout(member);
+
+		session.invalidate();
+
+		return "redirect:/";
+	}
+
 }

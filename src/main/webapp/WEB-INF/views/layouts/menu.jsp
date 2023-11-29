@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/security/tags"
+	prefix="sec"%>
 
 <div class="menu">
 	<nav class="navbar navbar-expand-lg navbar-light">
@@ -22,13 +24,40 @@
 
 			<div class="tnb-right-section">
 				<!-- user-anonymous -->
-				<c:if test="${member == null }">
+				<sec:authorize access="isAnonymous()">
+					<a href="/member/login" class="user-anonymous login"> Log in </a>
+					<a href="/member/signup" class="user-anonymous signup"> Sign Up
+					</a>
+				</sec:authorize>
+				<!-- 로그인한 상태 -->
+				<sec:authorize access="isAuthenticated()">
+					<sec:authentication property="principal.member" var="member" />
+					<sec:authentication property="principal.member.userId" var="userId" />
+					<div class="login_success_area">
+						<a href="/member/logout.do" class="logout-icon"> <i
+							class="fa-solid fa-right-from-bracket fa-lg"></i></a> <span
+							class="user-name"> ${member.userId}</span> <a href="../mypage/userinfo"
+							class="login-icon"> <i class="fa-solid fa-user fa-2xl"></i></a>
+
+					</div>
+				</sec:authorize>
+			</div>
+
+			<%-- 			<form id="logoutForm" action="/member/logout" method="post">
+				<input type="hidden" name="${_csrf.parameterName}"
+					value="${_csrf.token}" />
+			</form> --%>
+		</div>
+
+		<%-- 			<div class="tnb-right-section">
+				<!-- user-anonymous -->
+				<c:if test="${member == null}">
 					<a href="/member/login" class="user-anonymous login"> Log in </a>
 					<a href="/member/signup" class="user-anonymous signup"> Sign Up
 					</a>
 				</c:if>
 				<!-- 로그인한 상태 -->
-				<c:if test="${ member != null }">
+				<c:if test="${member != null}">
 					<div class="login_success_area">
 						<a href="/member/logout.do" class="logout-icon"><i
 							class="fa-solid fa-right-from-bracket fa-lg"></i></a> <span
@@ -38,11 +67,7 @@
 
 					</div>
 				</c:if>
-
-
-
-
-			</div>
+			</div> --%>
 	</nav>
 
 </div>

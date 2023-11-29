@@ -1,79 +1,94 @@
 package org.chajajo.service;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.io.IOException;
 
-import javax.inject.Inject;
-
-import org.apache.commons.io.IOExceptionWithCause;
-import org.apache.ibatis.session.SqlSession;
 import org.chajajo.domain.MemberVO;
+import org.chajajo.domain.AuthVO;
 import org.chajajo.mapper.MemberMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MemberServiceImpl implements MemberService{
+public class MemberServiceImpl implements MemberService {
 
 	@Autowired
-	MemberMapper membermapper;
-	
-	//회원가입
+	MemberMapper mapper;
+
+	@Autowired
+	private PasswordEncoder pwEncoder;
+
 	@Override
-	public void signUp(MemberVO member) throws IOExceptionWithCause {		
-		membermapper.signUp(member);		
+	public MemberVO get(String userId) {
+		return mapper.read(userId);
 	}
-	
-	//아이디 중복 검사
+
 	@Override
-	public int idCheck(String userId) throws Exception {		
-		return membermapper.idCheck(userId);
+	public MemberVO login(MemberVO member) {
+		return mapper.memberLogin(member);
 	}
-	
-	//로그인
-    @Override
-    public MemberVO memberLogin(MemberVO member) throws Exception {       
-        return membermapper.memberLogin(member);
-    }
-    
-    //회원정보 보기
+
+	// 아이디 중복 검사
+	@Override
+	public int userIdChk(String userId) throws Exception {
+		return mapper.userIdChk(userId);
+	}
+
+	@Override
+	public void register(MemberVO member) throws IOException {
+
+		// 1. 비밀번호 암호화
+		String encPassword = pwEncoder.encode(member.getPassword());
+		member.setPassword(encPassword);
+
+		// 2. user_info에 저장
+		mapper.insert(member);
+
+		AuthVO auth = new AuthVO(member.getUserId(), "ROLE_USER");
+		mapper.insertAuth(auth);
+	}
+
+	// 회원정보 보기
 	@Override
 	public MemberVO userinfo(String userId) {
 		System.out.println("readMember()실행");
 		MemberVO member = null;
-		
+
 		try {
-			member = membermapper.userinfo(userId);
+			member = mapper.userinfo(userId);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return member;
 	}
-	
-	//회원정보수정
+
 	@Override
-	public void infomodify(MemberVO member) {
+	public String searchById(String userId) throws Exception {
+		System.out.println("searchById() 실행");
+		MemberVO member = mapper.searchById(userId);
+		return member.getPassword();
+	}
+
+	// 회원정보수정
+	@Override
+	public void infomodify(MemberVO member, String pwInDb) {
 		try {
-			membermapper.infomodify(member);
+			mapper.infomodify(member);
 		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
-	//회원정보삭제
-	@Override
+	// 회원정보탈퇴
 	public void userout(MemberVO member) {
 		try {
-			membermapper.userout(member);
+			mapper.userout(member);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
-	
-
-	
 
 }

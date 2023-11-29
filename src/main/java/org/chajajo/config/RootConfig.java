@@ -17,35 +17,35 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 
 @Configuration
-@ComponentScan(basePackages = {"org.chajajo.service", "org.chajajo.controller", "org.chajajo.config"})
+@ComponentScan(basePackages = { "org.chajajo.service", "org.chajajo.controller", "org.chajajo.config" })
 
-@MapperScan(basePackages = {"org.chajajo.mapper"})
+@MapperScan(basePackages = { "org.chajajo.mapper" })
 @PropertySource("classpath:application.properties")
 public class RootConfig {
 	@Autowired
 	ApplicationContext applicationContext;
-	
+
 	@Value("${spring.datasource.driver-class-name}")
 	private String driverClassName;
-	
+
 	@Value("${spring.datasource.url}")
 	private String url;
-	
+
 	@Value("${spring.datasource.password}")
 	private String password;
-	
+
 	@Value("${spring.datasource.username}")
-	private String username;
-	
+	private String userId;
+
 	@Bean
 	public DataSource dataSource() {
 		HikariConfig config = new HikariConfig();
-	
+
 		config.setDriverClassName(driverClassName);
 		config.setJdbcUrl(url);
-		config.setUsername(username);
+		config.setUsername(userId);
 		config.setPassword(password);
-		
+
 		HikariDataSource dataSource = new HikariDataSource(config);
 		return dataSource;
 	}
@@ -53,11 +53,9 @@ public class RootConfig {
 	@Bean
 	public SqlSessionFactory sqlSessionFactory() throws Exception {
 		SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
-		
-		sqlSessionFactory.setConfigLocation(
-		        applicationContext.getResource(
-		             "classpath:/mybatis-config.xml"));
-		
+
+		sqlSessionFactory.setConfigLocation(applicationContext.getResource("classpath:/mybatis-config.xml"));
+
 		sqlSessionFactory.setDataSource(dataSource());
 		return (SqlSessionFactory) sqlSessionFactory.getObject();
 	}

@@ -11,9 +11,10 @@
 <fieldset>
 <legend>회원정보수정</legend>
 	<form action="/mypage/infomodify" method="post" name="fr">
+		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 		<div class="form-group has-geedback">
 			<label class="control-label" for="userId">아이디</label>
-			 <input class="form-control" type="text" name="userId" value="${member.userId }" readonly>
+			 <input class="form-control" type="text" name="userId" value="${member.userId}" readonly>
 		</div>
 		<div class="form-group has-geedback">
 			<label class="control-label" for="password">비밀번호</label>
@@ -36,16 +37,5 @@
 	</form>
 </fieldset>
 </div>
-
-<script type="text/javascript">
-		$(document).ready(function(){		
-			$("#submit").on("click", function(){
-				if($("#password").val()==""){
-					alert("비밀번호를 입력해주세요.");
-					$("#password").focus();
-					return false;				
-				}})
-			});
-</script>
 
 <%@ include file="../layouts/footer.jsp"%>
