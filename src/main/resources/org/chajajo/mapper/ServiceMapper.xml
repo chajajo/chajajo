@@ -33,4 +33,10 @@
 			service_field like concat('%', #{keyword}, '%')
 		</if>
 	</select>
+
+	<select id="getMostViewed" resultType="ServiceVO">
+		select service_id, service_name, service_summary from service_list
+		order by views desc
+		limit #{count}
+	</select>
 </mapper>
