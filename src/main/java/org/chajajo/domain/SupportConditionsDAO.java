@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class SupportConditionsDTO {
+public class SupportConditionsDAO {
 
 	private String serviceId;
 	private String male;

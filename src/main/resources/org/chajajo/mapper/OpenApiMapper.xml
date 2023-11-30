@@ -7,57 +7,57 @@
 
 	<insert id="insertList" parameterType="ServiceListDTO">
 		INSERT service_list (SERVICE_ID, SERVICE_NAME, SERVICE_SUMMARY, APPLY_METHOD, APPLY_DATE, AGENCY_CODE, DEPT_NAME, VIEWS, AGENCY_TYPE, USER_CRITERA, SERVICE_FIELD, PHONE) 
-		VALUES (#{SERVICE_ID}, #{SERVICE_NAME}, #{SERVICE_SUMMARY}, #{APPLY_METHOD}, #{APPLY_DATE}, #{AGENCY_CODE}, #{DEPT_NAME}, #{VIEWS}, #{AGENCY_TYPE}, #{USER_CRITERA}, #{SERVICE_FIELD}, #{PHONE})	
+		VALUES (#{serviceId}, #{serviceName}, #{serviceSummary}, #{applyMethod}, #{applyDate}, #{agencyCode}, #{deptName}, #{views}, #{agencyType}, #{userCriteria}, #{serviceField}, #{phone})	
 	</insert>
 	
 	
 	<insert id="insertDetail" parameterType="ServiceDetailDTO">
 		INSERT service_detail (SERVICE_ID, SUPPORT_TYPE, SERVICE_NAME, SERVICE_PURPOSE, APPLY_DATE, SUPPORT_TARGET, SELECTION_CRITERIA, APP_CONTENTS, APPLY_METHOD, DOCUMENT, RECEPTION, CONTACT, APP_URL, MODIFY_DATE, AGENCY_NAME, STATUTE) 
-		VALUES (#{SERVICE_ID}, #{SUPPORT_TYPE}, #{SERVICE_NAME}, #{SERVICE_PURPOSE}, #{APPLY_DATE}, #{SUPPORT_TARGET}, #{SELECTION_CRITERIA}, #{APP_CONTENTS}, #{APPLY_METHOD}, #{DOCUMENT}, #{RECEPTION}, #{CONTACT}, #{APP_URL}, #{MODIFY_DATE}, #{AGENCY_NAME}, #{STATUTE})	
+		VALUES (#{serviceId}, #{supportType}, #{serviceName}, #{servicePurpose}, #{applyDate}, #{supportTarget}, #{selectionCriteria}, #{appContents}, #{applyMethod}, #{document}, #{reception}, #{contact}, #{appUrl}, #{modifyDate}, #{agencyName}, #{statute})	
 	</insert>
 	
 	
 	
 	<insert id="insertConditions" parameterType="SupportConditionsDTO">
 		INSERT support_conditions (SERVICE_ID, MALE, FEMALE, AGE_START, AGE_END, INCOME_0_50, INCOME_51_75, INCOME_76_100, INCOME_101_200, INCOME_OVER_200, NO_BABY, PREGNANT, BIRTH_ADOPT, FARM_WORKER, FISH_WORKER, LIVESTOCK_WORKER, FOREST_WORKER, ELEMENTARY, MI_STDNT, HI_STDNT, GR_STDNT, NOT_APLCB, WORKER, NON_WORKER, MLTCL_FMLY, NORTH_DFT, SP_GC_FMLY, SNG_FMLY, NONE_APPLY, MLT_CHLD, HOMELESS, NEW_TRNSF, EX_FMLY, SOON_BSNS, IN_BSNS, NON_BSNS, FOOD_BSNS, MNF_BSNS, ETC_BSNS, SMALL_COP, SOCIAL_COP, FACILITY, MNF_COP, FFF_COP, ICT_COP, ETC_COP, DISABLED_PERSON, NATIONAL_VETERANS, SICK_PERSON, SERVICE_NAME) 
-		VALUES (#{SERVICE_ID}, #{MALE}, #{FEMALE}, #{AGE_START}, #{AGE_END}, #{INCOME_0_50}, #{INCOME_51_75}, #{INCOME_76_100}, #{INCOME_101_200}, #{INCOME_OVER_200}, #{NO_BABY}, #{PREGNANT}, #{BIRTH_ADOPT}, #{FARM_WORKER}, #{FISH_WORKER}, #{LIVESTOCK_WORKER}, #{FOREST_WORKER}, #{ELEMENTARY}, #{MI_STDNT}, #{HI_STDNT}, #{GR_STDNT}, #{NOT_APLCB}, #{WORKER}, #{NON_WORKER}, #{MLTCL_FMLY}, #{NORTH_DFT}, #{SP_GC_FMLY}, #{SNG_FMLY}, #{NONE_APPLY}, #{MLT_CHLD}, #{HOMELESS}, #{NEW_TRNSF}, #{EX_FMLY}, #{SOON_BSNS}, #{IN_BSNS}, #{NON_BSNS}, #{FOOD_BSNS}, #{MNF_BSNS}, #{ETC_BSNS}, #{SMALL_COP}, #{SOCIAL_COP}, #{FACILITY}, #{MNF_COP}, #{FFF_COP}, #{ICT_COP}, #{ETC_COP}, #{DISABLED_PERSON}, #{NATIONAL_VETERANS}, #{SICK_PERSON}, #{SERVICE_NAME})	
+		VALUES (#{serviceId}, #{male}, #{female}, #{ageStart}, #{ageEnd}, #{income_0_50}, #{income_51_75}, #{income_76_100}, #{income_101_200}, #{incomeOver_200}, #{noBaby}, #{pregnant}, #{birthAdopt}, #{farmWorker}, #{fishWorker}, #{livestockWorker}, #{forestWorker}, #{elementary}, #{miStdnt}, #{hiStdnt}, #{grStdnt}, #{notAplcb}, #{worker}, #{nonWorker}, #{mltclFmly}, #{northDft}, #{spGcFmly}, #{sngFmly}, #{noneApply}, #{mltChld}, #{homeless}, #{newTrnsf}, #{exFmly}, #{soonBsns}, #{inBsns}, #{nonBsns}, #{foodBsns}, #{mnfBsns}, #{etcBsns}, #{smallCop}, #{socialCop}, #{facility}, #{mnfCop}, #{fffCop}, #{ictCop}, #{etcCop}, #{disabledPerson}, #{nationslVeterans}, #{sickPerson}, #{serviceName})	
 	</insert>
 
 
 	<update id="updateList" parameterType="ServiceListDTO">
 		UPDATE service_list 
-		SET SERVICE_SUMMARY=#{SERVICE_SUMMARY}, APPLY_METHOD=#{APPLY_METHOD}, 
-			APPLY_DATE=#{APPLY_DATE}, AGENCY_CODE=#{AGENCY_CODE}, DEPT_NAME=#{DEPT_NAME}, 
-			VIEWS=#{VIEWS}, AGENCY_TYPE=#{AGENCY_TYPE}, USER_CRITERA=#{USER_CRITERA}, 
-			SERVICE_FIELD=#{SERVICE_FIELD}, PHONE=#{PHONE}
-		WHERE SERVICE_NAME = #{SERVICE_ID}
+		SET SERVICE_NAME=#{serviceName}, SERVICE_SUMMARY=#{serviceSummary}, APPLY_METHOD=#{applyMethod}, 
+			APPLY_DATE=#{applyDate}, AGENCY_CODE=#{agencyCode}, DEPT_NAME=#{deptName}, 
+			VIEWS=#{views}, AGENCY_TYPE=#{agencyType}, USER_CRITERA=#{userCriteria}, 
+			SERVICE_FIELD=#{serviceField}, PHONE=#{phone}
+		WHERE SERVICE_NAME = #{serviceId}
 	</update>
 	
 	<update id="updateDetail" parameterType="ServiceDetailDTO">
 		UPDATE service_detail 
-		SET SUPPORT_TYPE=#{SUPPORT_TYPE}, SERVICE_NAME=#{SERVICE_NAME}, SERVICE_PURPOSE=#{SERVICE_PURPOSE},
-			APPLY_DATE=#{APPLY_DATE}, SUPPORT_TARGET=#{SUPPORT_TARGET}, SELECTION_CRITERIA=#{SELECTION_CRITERIA},
-			APP_CONTENTS=#{APP_CONTENTS}, APPLY_METHOD=#{APPLY_METHOD}, DOCUMENT=#{DOCUMENT},
-			RECEPTION=#{RECEPTION}, CONTACT=#{CONTACT}, APP_URL=#{APP_URL},
-			MODIFY_DATE=#{MODIFY_DATE}, AGENCY_NAME=#{AGENCY_NAME}, STATUTE=#{STATUTE}
-		WHERE SERVICE_NAME = #{SERVICE_ID}
+		SET SUPPORT_TYPE=#{supportType}, SERVICE_NAME=#{serviceName}, SERVICE_PURPOSE=#{servicePurpose},
+			APPLY_DATE=#{applyDate}, SUPPORT_TARGET=#{supportTarget}, SELECTION_CRITERIA=#{selectionCriteria},
+			APP_CONTENTS=#{appContents}, APPLY_METHOD=#{applyMethod}, DOCUMENT=#{document},
+			RECEPTION=#{reception}, CONTACT=#{contact}, APP_URL=#{appUrl},
+			MODIFY_DATE=#{modifyDate}, AGENCY_NAME=#{agencyName}, STATUTE=#{statute}
+		WHERE SERVICE_NAME = #{serviceId}
 	</update>
 	
 	<update id="updateConditions" parameterType="SupportConditionsDTO">
 		UPDATE support_conditions 
-		SET MALE=#{MALE}, FEMALE=#{FEMALE}, AGE_START=#{AGE_START}, AGE_END=#{AGE_END}, 
-			INCOME_0_50=#{INCOME_0_50}, INCOME_51_75=#{INCOME_51_75}, INCOME_76_100=#{INCOME_76_100}, 
-			INCOME_101_200=#{INCOME_101_200}, INCOME_OVER_200=#{INCOME_OVER_200}, NO_BABY=#{NO_BABY}, 
-			PREGNANT=#{PREGNANT}, BIRTH_ADOPT=#{BIRTH_ADOPT}, FARM_WORKER=#{FARM_WORKER}, FISH_WORKER=#{FISH_WORKER}, 
-			LIVESTOCK_WORKER=#{LIVESTOCK_WORKER}, FOREST_WORKER=#{FOREST_WORKER}, ELEMENTARY=#{ELEMENTARY}, MI_STDNT=#{MI_STDNT},
-			HI_STDNT=#{HI_STDNT}, GR_STDNT=#{GR_STDNT}, NOT_APLCB=#{NOT_APLCB}, WORKER=#{WORKER}, NON_WORKER=#{NON_WORKER},
-			MLTCL_FMLY=#{MLTCL_FMLY}, NORTH_DFT=#{NORTH_DFT}, SP_GC_FMLY=#{SP_GC_FMLY}, SNG_FMLY=#{SNG_FMLY}, NONE_APPLY=#{NONE_APPLY},
-			MLT_CHLD=#{MLT_CHLD}, HOMELESS=#{HOMELESS}, NEW_TRNSF=#{NEW_TRNSF}, EX_FMLY=#{EX_FMLY}, SOON_BSNS=#{SOON_BSNS},
-			IN_BSNS=#{IN_BSNS}, NON_BSNS=#{NON_BSNS}, FOOD_BSNS=#{FOOD_BSNS}, MNF_BSNS=#{MNF_BSNS}, ETC_BSNS=#{ETC_BSNS},
-			SMALL_COP=#{SMALL_COP}, SOCIAL_COP=#{SOCIAL_COP}, FACILITY=#{FACILITY}, MNF_COP=#{MNF_COP}, FFF_COP=#{FFF_COP},
-			ICT_COP=#{ICT_COP}, ETC_COP=#{ETC_COP}, DISABLED_PERSON=#{DISABLED_PERSON}, NATIONAL_VETERANS=#{NATIONAL_VETERANS},
-			SICK_PERSON=#{SICK_PERSON}, SERVICE_NAME=#{SERVICE_NAME}
-		WHERE SERVICE_NAME = #{SERVICE_ID}
+		SET MALE=#{male}, FEMALE=#{female}, AGE_START=#{ageStart}, AGE_END=#{ageEnd}, 
+			INCOME_0_50=#{income_0_50}, INCOME_51_75=#{income_51_75}, INCOME_76_100=#{income_76_100}, 
+			INCOME_101_200=#{income_101_200}, INCOME_OVER_200=#{incomeOver_200}, NO_BABY=#{noBaby}, 
+			PREGNANT=#{pregnant}, BIRTH_ADOPT=#{birthAdopt}, FARM_WORKER=#{farmWorker}, FISH_WORKER=#{fishWorker}, 
+			LIVESTOCK_WORKER=#{livestockWorker}, FOREST_WORKER=#{forestWorker}, ELEMENTARY=#{elementary}, MI_STDNT=#{miStdnt},
+			HI_STDNT=#{hiStdnt}, GR_STDNT=#{grStdnt}, NOT_APLCB=#{notAplcb}, WORKER=#{worker}, NON_WORKER=#{nonWorker},
+			MLTCL_FMLY=#{mltclFmly}, NORTH_DFT=#{northDft}, SP_GC_FMLY=#{spGcFmly}, SNG_FMLY=#{sngFmly}, NONE_APPLY=#{noneApply},
+			MLT_CHLD=#{mltChld}, HOMELESS=#{homeless}, NEW_TRNSF=#{newTrnsf}, EX_FMLY=#{exFmly}, SOON_BSNS=#{soonBsns},
+			IN_BSNS=#{inBsns}, NON_BSNS=#{nonBsns}, FOOD_BSNS=#{foodBsns}, MNF_BSNS=#{mnfBsns}, ETC_BSNS=#{etcBsns},
+			SMALL_COP=#{smallCop}, SOCIAL_COP=#{socialCop}, FACILITY=#{facility}, MNF_COP=#{mnfCop}, FFF_COP=#{fffCop},
+			ICT_COP=#{ictCop}, ETC_COP=#{etcCop}, DISABLED_PERSON=#{disabledPerson}, NATIONAL_VETERANS=#{nationslVeterans},
+			SICK_PERSON=#{sickPerson}, SERVICE_NAME=#{serviceName}
+		WHERE SERVICE_NAME = #{serviceId}
 	</update>
 	
 	<delete id="truncateList">

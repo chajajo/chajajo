@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+label {
+  font-size: 15px;
+  line-height: 1rem;
+  padding: 0.2em 0.4em;
+}
+
+label:hover {
+  cursor: pointer;
+}
+
+[type="radio"],
+span {
+  vertical-align: middle;
+  appearance: none;
+  border: max(2px, 0.1em) solid gray;
+  border-radius: 50%;
+  width: 1.25em;
+  height: 1.25em;
+}
+
+[type="radio"]:checked {
+  border: 0.4em solid tomato;
+}
+
+[type="radio"]:hover {
+  box-shadow: 0 0 0 max(4px, 0.2em) tomato;
+  cursor: pointer;
+}
+
+[type="radio"]:hover + span {
+  cursor: pointer;
+}
+
+.conditions{
+	background-size: 120%;
+	background: #D5D5D5;
+	border: none;
+    border-radius: 20px;
+}

@@ -29,13 +29,12 @@ public interface MemberMapper {
 	// 회원정보수정
 	public void infomodify(MemberVO member) throws Exception;
 
-	// 비밀번호 체크
-	public String pwCheck(String userId) throws Exception;
+	//회원탈퇴
+	public void userout(MemberVO member) throws Exception;
 
-	public void pwUpdate(String userId, String hashedPw) throws Exception;
+	//이메일 중복 검사
+	public int emailCheck(String email);
 
-	// 회원 탈퇴
-	public void userout(MemberVO member);
 
 	public void deleteUserAuth(String userId);
 
