@@ -23,6 +23,116 @@
 				$("#female").prop("checked", true);
 			}
  			
+ 			if("${userConditions.income}"==="income_0_50") {
+				$("#income_0_50").prop("checked", true);
+			} else if ("${userConditions.income}"==="income_51_75") {
+				$("#income_51_75").prop("checked", true);
+			} else if ("${userConditions.income}"==="income_76_100") {
+				$("#income_76_100").prop("checked", true);
+			} else if ("${userConditions.income}"==="income_101_200") {
+				$("#income_101_200").prop("checked", true);
+			} else if ("${userConditions.income}"==="incomeOver_200") {
+				$("#incomeOver_200").prop("checked", true);
+			}
+ 			
+ 			if("${userConditions.child}"==="noBaby") {
+				$("#noBaby").prop("checked", true);
+			} else if ("${userConditions.child}"==="pregnant") {
+				$("#pregnant").prop("checked", true);
+			} else if ("${userConditions.child}"==="birthAdopt") {
+				$("#birthAdopt").prop("checked", true);
+			} else () {
+				$("#noapply").prop("checked", true);
+			}
+ 			
+ 			if("${userConditions.job}"==="farmWorker") {
+				$("#farmWorker").prop("checked", true);
+			} else if ("${userConditions.job}"==="fishWorker") {
+				$("#fishWorker").prop("checked", true);
+			} else if ("${userConditions.job}"==="livestockWorker") {
+				$("#livestockWorker").prop("checked", true);
+			} else if ("${userConditions.job}"==="forestWorker") {
+				$("#forestWorker").prop("checked", true);
+			} else if ("${userConditions.job}"==="elementary") {
+				$("#elementary").prop("checked", true);
+			} else if ("${userConditions.job}"==="miStdnt") {
+				$("#miStdnt").prop("checked", true);
+			} else if ("${userConditions.job}"==="hiStdnt") {
+				$("#hiStdnt").prop("checked", true);
+			} else if ("${userConditions.job}"==="grStdnt") {
+				$("#grStdnt").prop("checked", true);
+			} else if ("${userConditions.job}"==="worker") {
+				$("#worker").prop("checked", true);
+			} else if ("${userConditions.job}"==="nonWorker") {
+				$("#nonWorker").prop("checked", true);
+			} else if ("${userConditions.job}"==="notAplcb") {
+				$("#notAplcb").prop("checked", true);
+			}
+ 			
+ 			if("${userConditions.fmlyType}"==="mltclFmly") {
+				$("#mltclFmly").prop("checked", true);
+			} else if ("${userConditions.fmlyType}"==="northDft") {
+				$("#northDft").prop("checked", true);
+			} else if ("${userConditions.fmlyType}"==="spGcFmly") {
+				$("#spGcFmly").prop("checked", true);
+			} else if ("${userConditions.fmlyType}"==="sngFmly") {
+				$("#sngFmly").prop("checked", true);
+			} else if ("${userConditions.fmlyType}"==="mltChld") {
+				$("#mltChld").prop("checked", true);
+			} else if ("${userConditions.fmlyType}"==="homeless") {
+				$("#homeless").prop("checked", true);
+			} else if ("${userConditions.fmlyType}"==="newTrnsf") {
+				$("#newTrnsf").prop("checked", true);
+			} else if ("${userConditions.fmlyType}"==="exFmly") {
+				$("#exFmly").prop("checked", true);
+			} else if ("${userConditions.fmlyType}"==="noneApply") {
+				$("#noneApply").prop("checked", true);
+			}
+ 			
+ 			if("${userConditions.bsnsType}"==="soonBsns") {
+				$("#soonBsns").prop("checked", true);
+			} else if ("${userConditions.bsnsType}"==="inBsns") {
+				$("#inBsns").prop("checked", true);
+			} else if ("${userConditions.bsnsType}"==="nonBsns") {
+				$("#nonBsns").prop("checked", true);
+			}  else if ("${userConditions.bsnsType}"==="foodBsns") {
+				$("#foodBsns").prop("checked", true);
+			} else if ("${userConditions.bsnsType}"==="mnfBsns") {
+				$("#mnfBsns").prop("checked", true);
+			} else if ("${userConditions.bsnsType}"==="etcBsns") {
+				$("#etcBsns").prop("checked", true);
+			} else () {
+				$("#nobsns").prop("checked", true);
+			}
+ 			
+ 			if("${userConditions.copType}"==="smallCop") {
+				$("#smallCop").prop("checked", true);
+			} else if ("${userConditions.copType}"==="socialCop") {
+				$("#socialCop").prop("checked", true);
+			} else if ("${userConditions.copType}"==="facility") {
+				$("#facility").prop("checked", true);
+			}  else if ("${userConditions.copType}"==="mnfCop") {
+				$("#mnfCop").prop("checked", true);
+			} else if ("${userConditions.copType}"==="fffCop") {
+				$("#fffCop").prop("checked", true);
+			} else if ("${userConditions.copType}"==="ictCop") {
+				$("#ictCop").prop("checked", true);
+			} else if ("${userConditions.copType}"==="etcCop") {
+				$("#etcCop").prop("checked", true);
+			} else () {
+				$("#nocop").prop("checked", true);
+			}
+ 			
+ 			if("${userConditions.handicap}"==="disabledPerson") {
+				$("#disabledPerson").prop("checked", true);
+			} else if ("${userConditions.handicap}"==="nationslVeterans") {
+				$("#nationslVeterans").prop("checked", true);
+			} else if ("${userConditions.handicap}"==="sickPerson") {
+				$("#sickPerson").prop("checked", true);
+			} else () {
+				$("#nohandicap").prop("checked", true);
+			}
+ 			
 			$("#conditions_form").attr("method", "post");
 			
 		});
