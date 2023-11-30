@@ -309,3 +309,14 @@
 		display : none;
 	}
 	
+	/* 중복메일 존재하지 않는경우 */
+	.email_input_re_1{
+		color : green;
+		display : none;
+	}
+	/* 중복메일 존재하는 경우 */
+	.email_input_re_2{
+		color : red;
+		display : none;
+	}
+	

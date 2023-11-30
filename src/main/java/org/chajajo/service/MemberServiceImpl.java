@@ -29,6 +29,13 @@ public class MemberServiceImpl implements MemberService {
 		return mapper.memberLogin(member);
 	}
 
+	//메일 중복 검사
+	@Override
+	public int emailCheck(String userId) throws Exception {		
+		return membermapper.emailCheck(userId);
+	}
+
+
 	// 아이디 중복 검사
 	@Override
 	public int userIdChk(String userId) throws Exception {

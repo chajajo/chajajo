@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.chajajo.mapper.QnABoardMapper">
+
+	<select id="getList" resultType="org.chajajo.domain.QnABoardVO">
+		<![CDATA[
+		select * from qna_board
+		]]>
+	</select>
+
+	<insert id="insert">
+		insert into qna_board (title, content, writer)
+		values
+		(#{title}, #{content}, #{writer})
+	</insert>
+
+	<insert id="insertSelectKey">
+		insert into qna_board(title, content, writer)
+		values (#{title},
+		#{content}, #{writer})
+
+		<selectKey resultType="Long" keyProperty="bno"
+			keyColumn="bno" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+
+	<select id="read" resultType="org.chajajo.domain.QnABoardVO">
+		select * from qna_board where bno =
+		#{bno}
+	</select>
+
+	<delete id="delete">
+		delete from qna_board where bno = #{bno}
+	</delete>
+
+	<update id="update">
+		update qna_board set
+		title = #{title},
+		content = #{content},
+		writer = #{writer},
+		update_date = now()
+		where bno = #{bno}
+	</update>
+
+
+	<select id="getListWithPaging" resultType="org.chajajo.domain.QnABoardVO">
+		<![CDATA[
+			select bno, title, content, writer, reg_date, update_date
+			from qna_board
+			limit #{offset} , #{amount}
+		]]>
+	</select>
+
+
+</mapper>

@@ -12,52 +12,6 @@ if (id == null) {
 }
 %>
 
-<script type="text/javascript">
-		$(document).ready(function(){
-		
-			$("#delete").on("click", function(){
-				
-				if($("#password").val()==""){
-					alert("비밀번호를 입력해주세요");
-					$("#password").focus();
-					return false
-				}
-				
-				if($("#password2").val()==""){
-					alert("비밀번호 확인을 입력해주세요");
-					$("#password2").focus();
-					return false
-				}
-				
-				if ($("password").val() != $("#password2").val()) {
-					alert("비밀번호가 일치하지 않습니다.");
-					$("#password").focus();
-					 
-					return false;
-					}
-				
-				$.ajax({
-					url : "/member/pwCheck",
-					type : "POST",
-					dataType : "json",
-					data : $("#deleteForm").serializeArray(),
-					success: function(data){
-						
-						if(data==0){
-							alert("비밀번호를 확인해주세요.");
-							return;
-						}else{
-							if(confirm("탈퇴하시겠습니까?")){
-								$("#deleteForm").submit();
-							}
-							
-						}
-					}
-				})
-			});
-		})
-	</script>
-	
 <div class="mypage-box">
 <fieldset>
 	<legend>회원탈퇴</legend>
@@ -71,7 +25,7 @@ if (id == null) {
 			<label class="control-label" for="password">비밀번호</label>
 			<input class="form-control" type="password" name="password"><br> 
 		</div>
-				<div class="form-group has-geedback">
+			<div class="form-group has-geedback">
 			<label class="control-label" for="password2">비밀번호</label>
 			<input class="form-control" type="password" name="password2"><br> 
 		</div>
