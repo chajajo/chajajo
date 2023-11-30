@@ -3,7 +3,6 @@ package org.chajajo.config;
 import javax.servlet.Filter;
 import javax.servlet.ServletRegistration.Dynamic;
 
-
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -12,12 +11,12 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
 		// TODO Auto-generated method stub
-		return new Class[] { RootConfig.class };
+		return new Class[] { RootConfig.class, SecurityConfig.class };
 	}
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		
+
 		return new Class[] { ServletConfig.class };
 
 	}
@@ -33,13 +32,13 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
 		CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
 		characterEncodingFilter.setEncoding("UTF-8");
 		characterEncodingFilter.setForceEncoding(true);
-		return new Filter[] {characterEncodingFilter};
+		return new Filter[] { characterEncodingFilter };
 	}
-	
+
 	@Override
 	protected void customizeRegistration(Dynamic registration) {
 		registration.setInitParameter("throwExceptionIfNoHandlerFound", "true");
-		
+
 	}
 
 }

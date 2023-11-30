@@ -17,7 +17,8 @@
 		service_summary, apply_date from service_list
 		<if test="keyword != null">
 			where service_name like concat('%', #{keyword}, '%') or
-			service_summary like concat('%', #{keyword}, '%')
+			service_summary like concat('%', #{keyword}, '%') or
+			service_field like concat('%', #{keyword}, '%')
 		</if>
 		limit #{offset},
 		#{amount}
@@ -28,7 +29,8 @@
 		select count(*) from service_list
 		<if test="keyword != null">
 			where service_name like concat('%', #{keyword}, '%') or
-			service_summary like concat('%', #{keyword}, '%')
+			service_summary like concat('%', #{keyword}, '%') or
+			service_field like concat('%', #{keyword}, '%')
 		</if>
 	</select>
 </mapper>

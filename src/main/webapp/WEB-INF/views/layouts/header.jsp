@@ -30,8 +30,9 @@
 <link href="/resources/css/main.css" rel="stylesheet" />
 <link href="/resources/css/member/mypage.css" rel="stylesheet" />
 <link href="/resources/css/pagination.css" rel="stylesheet" />
+<link rel="stylesheet" href="/resources/css/member/signup.css?v6" />
+<link rel="stylesheet" href="/resources/css/member/login.css?ver=7" />
 <body>
-
 	<header class="jumbotron mb-0 rounded-0">
 		<div>
 			<%@ include file="menu.jsp"%>

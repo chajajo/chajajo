@@ -1,0 +1,56 @@
+
+.card {
+    border: none;
+    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+    overflow: hidden;
+    border-radius: 20px;
+    min-height: 410px;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 768px) {
+    .card {
+        min-height: 350px;
+    }
+}
+@media (max-width: 420px) {
+    .card {
+        min-height: 300px;
+    }
+}
+.card.card-has-bg {
+    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+    background-size: 120%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.card.card-has-bg:hover .card-img-overlay {
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+    background: #ffba21;
+    background: linear-gradient(0deg, rgba(255, 186, 33, 0.5) 0%, #ffba21 100%);
+}
+
+.card .card-title {
+    font-weight: 800;
+}
+.card .card-meta {
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.card .card-body {
+    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+.card:hover {
+    cursor: pointer;
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+.card:hover .card-body {
+    margin-top: 30px;
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+.card .card-img-overlay {
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+    background: #ffba21;
+    background: linear-gradient(0deg, rgba(255, 186, 33, 0.3785889356) 0%, #ffba21 100%);
+}
