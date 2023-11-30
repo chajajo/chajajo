@@ -37,4 +37,8 @@ public interface MemberMapper {
 	// 회원 탈퇴
 	public void userout(MemberVO member);
 
+	public void deleteUserAuth(String userId);
+
+	public void deleteUserInfo(String userId);
+
 }

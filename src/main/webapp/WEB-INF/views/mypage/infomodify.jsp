@@ -38,4 +38,20 @@
 </fieldset>
 </div>
 
+<script>
+	function showAlert(message) {
+		alert(message);
+	}
+
+	// 비밀번호 일치 여부에 따른 alert 창 띄우기
+	<c:if test="${not empty error}">
+	showAlert("${error}");
+	</c:if>
+
+	// 탈퇴 성공 메시지에 따른 alert 창 띄우기
+	<c:if test="${not empty success}">
+	showAlert("${success}");
+	</c:if>
+</script>
+
 <%@ include file="../layouts/footer.jsp"%>

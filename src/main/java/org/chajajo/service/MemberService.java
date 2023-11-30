@@ -24,6 +24,5 @@ public interface MemberService {
 	public MemberVO login(MemberVO member);
 
 	// 회원 탈퇴
-	public void userout(MemberVO member);
-
+	public void userout(MemberVO member, String pwInDb);
 }

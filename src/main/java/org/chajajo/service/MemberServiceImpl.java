@@ -83,9 +83,10 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	// 회원정보탈퇴
-	public void userout(MemberVO member) {
+	public void userout(MemberVO member, String pwInDb) {
 		try {
-			mapper.userout(member);
+			mapper.deleteUserAuth(member.getUserId());
+			mapper.deleteUserInfo(member.getUserId());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
