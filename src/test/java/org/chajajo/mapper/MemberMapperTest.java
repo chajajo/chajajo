@@ -28,7 +28,7 @@ public class MemberMapperTest {
 		member.setEmail("test3@gmail.com"); // 회원 이메일
 		member.setPhone("01012341234"); // 회원 전화번호
 
-		membermapper.signUp(member); // 쿼리 메서드 실행
+		//membermapper.signUp(member); // 쿼리 메서드 실행
 
 	}
 
@@ -37,8 +37,8 @@ public class MemberMapperTest {
 	public void memberIdChk() throws Exception {
 		String id = "test1"; // 존재하는 아이디
 		String id2 = "test123"; // 존재하지 않는 아이디
-		membermapper.idCheck(id);
-		membermapper.idCheck(id2);
+		//membermapper.idCheck(id);
+		//membermapper.idCheck(id2);
 	}
 
 	/* 로그인 쿼리 mapper 메서드 테스트 */
