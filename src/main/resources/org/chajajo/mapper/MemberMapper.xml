@@ -107,6 +107,16 @@
 		delete from user_info where USER_ID = #{userId}
 	</delete>
 
+	<select id="getUserConditions" resultType="UserConditionsVO">
+		select * from
+		user_condition
+		where USER_ID = #{userId}
+	</select>
+	
+	<insert id="insertUserConditions" parameterType="UserConditionsVO">
+		insert into user_condition (user_id, gender, age)
+		values (#{userId}, #{gender}, #{age})
+	</insert>
 </mapper>
 
 

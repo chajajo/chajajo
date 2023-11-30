@@ -16,6 +16,8 @@ public interface RecommendationMapper {
 	public List<String> getServiceIdToSupportConditions(UserConditionsVO userConditionsVO);
 	
 	//id를 통해 ServiceVO 가져오기
-	//public ServiceVO getServiceVOToServiceId(@Param("serviceId") String serviceId, @Param("cri") Criteria cri);
 	public ServiceVO getServiceVOToServiceId(String serviceId);
+	
+	//userCondition update
+	public void updateUserCondition(UserConditionsVO userConditionsVO);
 }

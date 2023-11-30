@@ -63,4 +63,11 @@ public class RecommendationServiceImpl implements RecommendationService {
 		return total;
 	}
 
+	@Override
+	public void setUserConditions(UserConditionsVO userConditionsVO) {
+		mapper.updateUserCondition(userConditionsVO);
+	}
+	
+	
+
 }

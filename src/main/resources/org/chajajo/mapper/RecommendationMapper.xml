@@ -206,5 +206,12 @@
 		where service_id = #{serviceId}
 	</select>
 	
+	<update id="updateUserCondition" parameterType="UserConditionsVO">
+		update user_condition 
+		set gender = #{gender}, age = #{age}, income = #{income}, child = #{child}, 
+			job = #{job}, fmly_type = #{fmlyType}, bsns_type = #{bsnsType}, cop_type = #{copType}, handicap = #{handicap}
+		where user_id = #{userId}
+	</update>
+	
 
 </mapper>

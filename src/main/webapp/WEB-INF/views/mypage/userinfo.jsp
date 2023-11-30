@@ -11,15 +11,15 @@
 		<div class="form-group">
 			<label for="userId">* ID  </label>
 			<input type="text" class="form-control" id="userId" 
-				value="${member.userId}" name="userId" readonly> <br>
+				value="${member.userId}" name="userId" disabled > <br>
 	
 			<label for="email"> &nbsp; Email  </label>
 			<input type="text" class="form-control" id="email" 
-				value="${member.email}" name="email" readonly> <br>
+				value="${member.email}" name="email" disabled > <br>
 	
 			<label for="birth"> &nbsp; Birth  </label>
 			<input type="text" class="form-control" id="birth" 
-				value="${member.birth}" name="age" readonly> <br>
+				value="${member.birth}" name="age" disabled > <br>
 	
 			<label for="phone"> &nbsp; Phone  </label>
 			<input type="tel" class="form-control" id="phone" 

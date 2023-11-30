@@ -20,4 +20,7 @@ public interface RecommendationService {
 	//추천 목록 개수
 	public int countRecommendedList(List<String> serviceIds);
 	
+	//userCondition update
+	public void setUserConditions(UserConditionsVO userConditionsVO);
+	
 }

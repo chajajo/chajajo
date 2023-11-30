@@ -3,6 +3,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="../layouts/header.jsp"%>
 
+
+
 <%@ include file="./conditionsForm.jsp"%>
 
 

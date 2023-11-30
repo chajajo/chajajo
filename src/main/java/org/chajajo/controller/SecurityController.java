@@ -41,6 +41,7 @@ public class SecurityController {
 
 		// DB 저장
 		service.register(member);
+		service.setUserConditions(member);
 
 		return "redirect:/";
 	}

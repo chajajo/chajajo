@@ -3,6 +3,7 @@ package org.chajajo.service;
 import java.io.IOException;
 
 import org.chajajo.domain.MemberVO;
+import org.chajajo.domain.UserConditionsVO;
 
 public interface MemberService {
 	// 로그인
@@ -28,6 +29,12 @@ public interface MemberService {
 
 	// 이메일 중복 검사
 	public int emailCheck(String email) throws Exception;
+	
+	//userConditions 가져오기
+	public UserConditionsVO getUserCondtions(String userId);
+	
+	//userConditions 만들기
+	public void setUserConditions(MemberVO member);
 	
 
 }
