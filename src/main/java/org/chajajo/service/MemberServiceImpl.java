@@ -31,6 +31,12 @@ public class MemberServiceImpl implements MemberService{
 		return membermapper.idCheck(userId);
 	}
 	
+	//메일 중복 검사
+	@Override
+	public int emailCheck(String userId) throws Exception {		
+		return membermapper.emailCheck(userId);
+	}
+	
 	//로그인
     @Override
     public MemberVO memberLogin(MemberVO member) throws Exception {       
@@ -71,9 +77,5 @@ public class MemberServiceImpl implements MemberService{
 			e.printStackTrace();
 		}
 	}
-	
-	
-
-	
 
 }

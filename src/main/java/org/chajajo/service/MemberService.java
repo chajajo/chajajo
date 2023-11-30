@@ -23,6 +23,11 @@ public interface MemberService {
 
 	// 회원정보 삭제
 	public void userout(MemberVO member);
+
+	// 이메일 중복 검사
+	public int emailCheck(String email) throws Exception;
+	
+
 	
 	
 }

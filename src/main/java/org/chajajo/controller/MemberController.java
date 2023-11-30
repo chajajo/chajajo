@@ -116,6 +116,24 @@ public class MemberController {
 		}
 
 	} // memberIdChkPOST() 종료
+	
+	/* 메일 중복 검사 */
+	@RequestMapping(value = "/emailChk", method = RequestMethod.POST)
+	@ResponseBody
+	public String EmailChkPOST(String email) throws Exception {
 
+		log.info("emailChk() 진입");
 
+		int result = memberservice.emailCheck(email);
+
+		log.info("결과값 = " + result);
+
+		if (result != 0) {
+			return "fail"; // 중복 아이디가 존재
+		} else {
+			return "success"; // 중복 아이디 x
+		}
+
+	} // emailChkPOST() 종료
+	
 }

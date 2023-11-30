@@ -24,10 +24,8 @@ public interface MemberMapper {
 
 	//회원탈퇴
 	public void userout(MemberVO member) throws Exception;
-	
-	//비밀번호 체크
-	public String pwCheck(String memberId)throws Exception;
-	
-	public void pwUpdate(String memberId, String hashedPw)throws Exception;
+
+	//이메일 중복 검사
+	public int emailCheck(String email);
 
 }
