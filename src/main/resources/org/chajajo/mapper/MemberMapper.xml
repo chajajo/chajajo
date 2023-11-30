@@ -85,7 +85,8 @@
 	</select>
 
 	<select id="searchById" resultType="org.chajajo.domain.MemberVO">
-		select password from user_info
+		select password from
+		user_info
 		where USER_ID =
 		#{userId}
 	</select>
@@ -98,6 +99,13 @@
 		USER_ID=#{userId}
 	</update>
 
+	<!-- 회원 탈퇴 -->
+	<delete id="deleteUserAuth">
+		delete from user_auth where USER_ID = #{userId}
+	</delete>
+	<delete id="deleteUserInfo">
+		delete from user_info where USER_ID = #{userId}
+	</delete>
 
 </mapper>
 
