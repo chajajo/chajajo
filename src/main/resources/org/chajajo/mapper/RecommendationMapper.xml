@@ -35,7 +35,7 @@
 			<if test='income == "income_0_50"'>
 				and (INCOME_0_50='y'
 			</if>
-			<if test='income == "incomeE_51_75"'>
+			<if test='income == "income_51_75"'>
 				and (INCOME_51_75='y'
 			</if>
 			<if test='income == "income_76_100"'>
