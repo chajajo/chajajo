@@ -1,5 +1,7 @@
 package org.chajajo.controller;
 
+import java.security.Principal;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -180,10 +182,22 @@ public class MyPageController {
 	
 	
 	// 나의문의 페이지 이동
-	@RequestMapping(value = "mycontact", method = RequestMethod.GET)
-	public void mycontactGET() {
-		log.info(" 나의 문의 페이지 진입 성공");
+	@GetMapping("/mycontact")
+	public void mycontactGET(Principal principal, @ModelAttribute("cri") QnACriteria cri, Model model) {
+		log.info("list" + cri);
+			String userId = principal.getName();
+			cri.setUserId(userId);
+			model.addAttribute("list", qnaservice.getListMy(cri));
+			
+			int total = qnaservice.getTotalMy(cri);
+			log.info("total: " + total);
+			
+			model.addAttribute("pageMaker", new QnAPageDTO(cri, total));//
 	}
+	
+	
+	
+	
 
 	// 회원 탈퇴 페이지 이동
 	@RequestMapping(value = "/userout", method = RequestMethod.GET)

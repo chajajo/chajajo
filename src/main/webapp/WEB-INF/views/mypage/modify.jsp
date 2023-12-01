@@ -23,7 +23,7 @@ $(document).ready(function() {
 <div class="mypage-box">
 
 <h1 class="page-header">
-	<i class="far fa-edit"></i> 문의글 수정
+	<i class="far fa-edit"></i>문의글 수정
 </h1>
 <div class="panel panel-default">
 	<div class="panel-heading">문의글 수정</div>
@@ -40,7 +40,7 @@ $(document).ready(function() {
 			</div>
 			<div class="form-group">
 				<label>내용</label>
-				<textarea id="content" class="form-control" name="content" rows="10">${qna.content}</textarea>
+				<textarea id="content" class="form-control" rows="10">${qna.content}</textarea>
 			</div>
 			
 			<button type="submit" class="btn btn-primary">

@@ -47,10 +47,22 @@ public class QnABoardServiceImpl implements QnABoardService {
 		log.info("get List with criteria: " + cri);
 		return mapper.getListWithPaging(cri);
 	}
+	
+	@Override
+	public List<QnABoardVO> getListMy(QnACriteria cri) {
+		log.info("get List with criteria: " + cri);
+		return mapper.getListWithPagingMy(cri);
+	}
 
 	@Override
 	public int getTotal(QnACriteria cri) {
 		log.info("get total count");
 		return mapper.getTotalCount(cri);
+	}
+	
+	@Override
+	public int getTotalMy(QnACriteria cri) {
+		log.info("get total count");
+		return mapper.getTotalCountMy(cri);
 	}
 }

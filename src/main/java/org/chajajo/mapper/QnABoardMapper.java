@@ -11,6 +11,8 @@ public interface QnABoardMapper {
 	
 	public List<QnABoardVO> getListWithPaging(QnACriteria cri);
 	
+	public List<QnABoardVO> getListWithPagingMy(QnACriteria cri);
+	
 	public void insert(QnABoardVO qna);
 	
 	public void insertSelectKey(QnABoardVO qna);
@@ -22,5 +24,7 @@ public interface QnABoardMapper {
 	public int update(QnABoardVO qna);
 	
 	public int getTotalCount(QnACriteria cri);
+	
+	public int getTotalCountMy(QnACriteria cri);
 
 }

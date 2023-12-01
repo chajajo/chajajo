@@ -19,6 +19,14 @@ public interface QnABoardService {
 	
 	public List<QnABoardVO> getList(QnACriteria cri);
 	
+	public List<QnABoardVO> getListMy(QnACriteria cri);
+	
 	public int getTotal(QnACriteria cri);
+	
+	public int getTotalMy(QnACriteria cri);
+
+
+
+
 
 }

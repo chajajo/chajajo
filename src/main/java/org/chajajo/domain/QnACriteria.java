@@ -11,6 +11,7 @@ public class QnACriteria {
 	private int amount;
 	private String type;
 	private String keyword;
+	private String userId;
 
 	public QnACriteria() {
 		this(1, 10);

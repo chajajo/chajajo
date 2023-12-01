@@ -31,7 +31,7 @@
 </script> -->
 
 <h1 class="page-header">
-	<i class="fas fa-list"> </i> 문의하기
+	<i class="fa-solid fa-circle-question"></i> 문의하기
 </h1>
 <table class="table table-striped table-hover">
 	<thead>
