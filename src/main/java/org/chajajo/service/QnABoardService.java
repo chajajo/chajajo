@@ -2,8 +2,8 @@ package org.chajajo.service;
 
 import java.util.List;
 
-import org.chajajo.domain.Criteria;
 import org.chajajo.domain.QnABoardVO;
+import org.chajajo.domain.QnACriteria;
 
 public interface QnABoardService {
 	
@@ -17,6 +17,8 @@ public interface QnABoardService {
 
 	//public List<QnABoardVO> getList();
 	
-	public List<QnABoardVO> getList(Criteria cri);
+	public List<QnABoardVO> getList(QnACriteria cri);
+	
+	public int getTotal(QnACriteria cri);
 
 }

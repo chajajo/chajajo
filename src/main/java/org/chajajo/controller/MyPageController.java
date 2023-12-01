@@ -2,20 +2,29 @@ package org.chajajo.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.chajajo.domain.MemberVO;
-import org.chajajo.security.domain.CustomUser;
+
+import org.chajajo.domain.QnABoardVO;
+import org.chajajo.domain.QnACriteria;
+import org.chajajo.domain.QnAPageDTO;
+
 import org.chajajo.service.MemberService;
+import org.chajajo.service.QnABoardService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import lombok.extern.log4j.Log4j;
@@ -26,6 +35,9 @@ import lombok.extern.log4j.Log4j;
 public class MyPageController {
 	@Autowired
 	MemberService memberservice;
+	
+	@Autowired
+	private QnABoardService qnaservice;
 
 	// 회원 정보 페이지 이동
 	@RequestMapping(value = "userinfo", method = RequestMethod.GET)
@@ -98,12 +110,75 @@ public class MyPageController {
 		log.info(" 알림 서비스 페이지 진입 성공");
 	}
 
+	
+	/* QnABoardController기능 추가 시작 */
 	// 문의하기 페이지 이동
-	@RequestMapping(value = "contact", method = RequestMethod.GET)
-	public void contactGET() {
-		log.info(" 문의하기 페이지 진입 성공");
+	@GetMapping("/list")
+	public void listGET(@ModelAttribute("cri") QnACriteria cri, Model model) {
+		log.info("list" + cri);
+
+		model.addAttribute("list", qnaservice.getList(cri));
+		
+		int total = qnaservice.getTotal(cri);
+		log.info("total: " + total);
+		
+		model.addAttribute("pageMaker", new QnAPageDTO(cri, total));//
+	}
+	
+	//문의글쓰기
+	@GetMapping("/register")
+	public void register() {
+		log.info("register");
 	}
 
+	@PostMapping("/register")
+	public String register(@Valid @ModelAttribute("board") QnABoardVO qna, 
+			Errors errors,
+			RedirectAttributes rttr) throws Exception {
+		
+		if (errors.hasErrors()) {
+			return "mypage/register";
+		}
+		
+		qnaservice.register(qna);		
+		rttr.addFlashAttribute("result", qna.getBno());
+		
+		return "redirect:/mypage/list";
+	}
+
+	//문의글 조회 수정
+	@GetMapping({ "/get", "/modify" })
+	public void get(@RequestParam("bno") Long bno, 
+			@ModelAttribute("cri") QnACriteria cri,
+			Model model) {
+		log.info("/get or modify");
+		model.addAttribute("qna", qnaservice.get(bno));
+	}
+
+	//문의글 수정
+	@PostMapping("/modify")
+	public String modify(QnABoardVO qna, RedirectAttributes rttr) {
+		log.info("modify:" + qna);
+		if (qnaservice.modify(qna)) {
+			rttr.addFlashAttribute("result", "success");
+		}
+		return "redirect:/mypage/list";
+	}
+	
+	//문의글 삭제
+	@GetMapping("/remove")
+	public String remove(@RequestParam("bno") Long bno, RedirectAttributes rttr)
+	{
+		log.info("remove..." + bno);
+		if (qnaservice.remove(bno)) {
+			rttr.addFlashAttribute("result", "success");
+		}
+		return "redirect:/mypage/list";
+	}
+	
+	/* QnABoardController기능 추가 끝 */
+	
+	
 	// 나의문의 페이지 이동
 	@RequestMapping(value = "mycontact", method = RequestMethod.GET)
 	public void mycontactGET() {

@@ -43,7 +43,6 @@ function createReplyTemplate(reply, writer) {
 		<div class="reply-title my-2 d-flex justify-content-between">
 				<div class="reply-head">
 				<strong class="reply-writer">
-				<img src="/security/avatar/sm/${reply.writer}" class="avatar-sm">
 					${reply.writer}
 				</strong>
 				<span class="text-muted ml-3 reply-date">

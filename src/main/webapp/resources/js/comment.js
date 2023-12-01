@@ -20,8 +20,6 @@ function createCommentTemplate(comment, writer) {
 		<div class="comment-title my-2 d-flex justify-content-between">
 			<div>
 				<strong class="writer"> 
-					<img src="/security/avatar/sm/${comment.writer}" 
-						class="avatar-sm">
 					${comment.writer}
 				</strong> 
 				<span class="text-muted ml-3 comment-date">
