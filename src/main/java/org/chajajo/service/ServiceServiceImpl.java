@@ -43,4 +43,9 @@ public class ServiceServiceImpl implements ServiceService {
 	public int getTotal(Criteria cri) {
 		return mapper.getTotal(cri);
 	}
+
+	@Override
+	public List<ServiceVO> getMostViewed(int count) {
+		return mapper.getMostViewed(count);
+	}
 }

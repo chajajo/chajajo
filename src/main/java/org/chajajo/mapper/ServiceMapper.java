@@ -20,4 +20,5 @@ public interface ServiceMapper {
 	/* 게시판 총 갯수 */
 	public int getTotal(Criteria cri);
 
+    public List<ServiceVO> getMostViewed(int count);
 }
