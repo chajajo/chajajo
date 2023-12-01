@@ -43,24 +43,6 @@ public class RecommendationController {
 	@Autowired
 	private RecommendationService service;
 	
-	@GetMapping("/conditions")
-	public void getConditions(UserConditionsVO userConditionsVO) {
-		
-	}
-	
-	@PostMapping("/conditions")
-	public void postConditions(HttpServletRequest request, MemberVO member, HttpSession session, Model model) {
-		
-		session = request.getSession();
-		String userId  = (String) session.getAttribute("member.userId");
-		
-		if (userId != null) {
-			
-			//UserConditionsVO
-			model.addAttribute("userConditions", service.getUserCondtions(userId));
-		}
-	}
-	
 	@PostMapping("/userConditions")
 	public String postUserConditions(UserConditionsVO userConditionsVO) {
 		
@@ -71,6 +53,7 @@ public class RecommendationController {
 	@GetMapping("/subsidy")
 	public void getRecommendation(UserConditionsVO userConditionsVO, Model model, Criteria cri, HttpServletRequest request, HttpSession session) throws Exception {
 		
+		//버튼 클릭 유지를 위한 attr
 		model.addAttribute("keyword", userConditionsVO);
 		
 		session = request.getSession();
@@ -114,27 +97,6 @@ public class RecommendationController {
 			log.info(""+ userId );
 		}
 	}
-	/*
-	@RequestMapping(value="/userConditions", method=RequestMethod.POST)
-	@ResponseBody
-	public String postUserConditions(Principal principal) {
-		String jsonUserConditions= "";
-		String userId = principal.getName();
-		UserConditionsVO userconditions = null;
-		if (userId != null) {
-			
-			
-			userconditions = service.getUserCondtions(userId);
-			log.info(""+userconditions);
-			ObjectMapper obm = new ObjectMapper();
-			try {
-				jsonUserConditions = obm.writeValueAsString(userconditions);
-			} catch (JsonProcessingException e) {
-				e.printStackTrace();
-			}
-			return jsonUserConditions;
-		}
-		return jsonUserConditions;
-	}*/
+
 	
 }
