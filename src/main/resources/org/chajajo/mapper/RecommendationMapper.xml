@@ -204,6 +204,9 @@
 	<select id="getServiceVOToServiceId" resultType="ServiceVO">
 		select * from service_list
 		where service_id = #{serviceId}
+		<if test='category != null'>
+				and DEPT_NAME = #{category}
+		</if>
 	</select>
 	
 	<update id="updateUserCondition" parameterType="UserConditionsVO">

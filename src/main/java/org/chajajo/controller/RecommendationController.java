@@ -51,7 +51,7 @@ public class RecommendationController {
 	}
 	
 	@GetMapping("/subsidy")
-	public void getRecommendation(UserConditionsVO userConditionsVO, Model model, Criteria cri, HttpServletRequest request, HttpSession session) throws Exception {
+	public void getRecommendation(UserConditionsVO userConditionsVO, String category, Model model, Criteria cri, HttpServletRequest request, HttpSession session) throws Exception {
 		
 		//버튼 클릭 유지를 위한 attr
 		model.addAttribute("keyword", userConditionsVO);
@@ -76,7 +76,7 @@ public class RecommendationController {
 		int total = service.countRecommendedList(serviceIds);
 		
 		//List<ServiceVO>
-		model.addAttribute("list", service.getRecommendedList(serviceIds, cri, total));
+		model.addAttribute("list", service.getRecommendedList(serviceIds, cri, total, category));
 		
 		
 		PageDTO pageMaker = new PageDTO(cri, total);
