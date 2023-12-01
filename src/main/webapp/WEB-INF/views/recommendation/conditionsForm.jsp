@@ -296,7 +296,7 @@
 		<label for="pregnant">임산부</label>
 		<input type="radio" id="birthAdopt" name="child" value="birthAdopt"> 
 		<label for="birthAdopt">출산/입양</label>
-		<input type="radio" id="noapply" name="child" value=null> 
+		<input type="radio" id="noapply" name="child" value=""> 
 		<label for="noapply">해당사항없음</label>
 	</div>
 	<div>
@@ -356,7 +356,7 @@
 		<label for="mnfBsns">제조업</label>
 		<input type="radio" id="etcBsns"  name="bsnsType" value="etcBsns">
 		<label for="etcBsns">기타업종</label>
-		<input type="radio" id="nobsns" name="bsnsType" value=null> 
+		<input type="radio" id="nobsns" name="bsnsType" value=""> 
 		<label for="nobsns">해당사항없음</label>
 	</div>
 	<div>
@@ -374,7 +374,7 @@
 		<label for="ictCop">정보통신업</label>
 		<input type="radio" id="etcCop"  name="copType" value="etcCop">
 		<label for="etcCop">기타업종</label>
-		<input type="radio" id="nocop" name="copType" value=null> 
+		<input type="radio" id="nocop" name="copType" value=""> 
 		<label for="nocop">해당사항없음</label>
 	</div>
 	<div>
@@ -384,7 +384,7 @@
 		<label for="nationslVeterans">국가보훈대상자</label>
 		<input type="radio" id="sickPerson" name="handicap" value="sickPerson">
 		<label for="sickPerson">질병/질환자</label>
-		<input type="radio" id="nohandicap" name="handicap" value=null>
+		<input type="radio" id="nohandicap" name="handicap" value="">
 		<label for="nohandicap">해당사항없음</label>
 	</div>
 	<sec:authorize access="isAuthenticated()">

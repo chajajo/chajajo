@@ -19,184 +19,215 @@
 			SERVICE_NAME is not null
 		<if test='age != -1'>
 			<![CDATA[
-			 and (AGE_START<=#{age} and AGE_END>=#{age}) or (AGE_START is NULL and AGE_END is NULL)
+			 and ((AGE_START<=#{age} and AGE_END>=#{age}) or (AGE_START is NULL and AGE_END is NULL))
 			]]>
 		</if>
-		<if test="gender != null">
-			<if test='gender == "MALE"'>
-				and MALE='y' 
+		<if test='gender != ""'>
+			<if test='gender == "male"'>
+				and (MALE='y' 
 			</if>
-			<if test='gender == "FEMALE"'>
-				and FEMALE='y'
+			<if test='gender == "female"'>
+				and (FEMALE='y'
 			</if>
-			or (MALE is NULL and FEMALE is NULL)
+			or (MALE is NULL and FEMALE is NULL))
 		</if>
-		<if test='income != null'>
-			<if test='income == "INCOME_0_50"'>
-				and INCOME_0_50='y'
+		<if test='income != ""'>
+			<if test='income == "income_0_50"'>
+				and (INCOME_0_50='y'
 			</if>
-			<if test='income == "INCOME_51_75"'>
-				and INCOME_51_75='y'
+			<if test='income == "income_51_75"'>
+				and (INCOME_51_75='y'
 			</if>
-			<if test='income == "INCOME_76_100"'>
-				and INCOME_76_100='y'
+			<if test='income == "income_76_100"'>
+				and (INCOME_76_100='y'
 			</if>
-			<if test='income == "INCOME_101_200"'>
-				and INCOME_101_200='y'
+			<if test='income == "income_101_200"'>
+				and (INCOME_101_200='y'
 			</if>
-			<if test='income == "INCOME_OVER_200"'>
-				and INCOME_OVER_200='y'
+			<if test='income == "incomeOver_200"'>
+				and (INCOME_OVER_200='y'
 			</if>
-		 	<!-- or (INCOME_0_50 is NULL and INCOME_51_75 is NULL
-			and INCOME_76_100 is NULL and INCOME_101_200 is NULL and INCOME_OVER_200 is NULL) -->
+		 	or (INCOME_0_50 is NULL and INCOME_51_75 is NULL and INCOME_76_100 is NULL and INCOME_101_200 is NULL and INCOME_OVER_200 is NULL))
 		</if>
-		<if test='child != null'>
-			<if test='child == "NO_BABY"'>
-				and NO_BABY='y'
-			</if>
-			<if test='child == "PREGNANT"'>
-				and PREGNANT='y'
-			</if>
-			<if test='child == "BIRTH_ADOPT"'>
-				and BIRTH_ADOPT='y'
-			</if>
-			<!-- or (NO_BABY is NULL and PREGNANT is NULL and BIRTH_ADOPT is NULL) -->
+		<if test='child == ""'>
+			and NO_BABY is NULL and PREGNANT is NULL and BIRTH_ADOPT is NULL
 		</if>
-		<if test='job != null'>
-			<if test='job == "FARM_WORKER"'>
-				and FARM_WORKER='y'
+		<if test='child != ""'>
+			<if test='child == "noBaby"'>
+				and (NO_BABY='y'
 			</if>
-			<if test='job == "FISH_WORKER"'>
-				and FISH_WORKER='y'
+			<if test='child == "pregnant"'>
+				and (PREGNANT='y'
 			</if>
-			<if test='job == "LIVESTOCK_WORKER"'>
-				and LIVESTOCK_WORKER='y'
+			<if test='child == "birthAdopt"'>
+				and (BIRTH_ADOPT='y'
 			</if>
-			<if test='job == "FOREST_WORKER"'>
-				and FOREST_WORKER='y'
+			or (NO_BABY is NULL and PREGNANT is NULL and BIRTH_ADOPT is NULL))
+		</if>
+		<if test='job == ""'>
+			and FARM_WORKER is NULL and FISH_WORKER is NULL 
+			and LIVESTOCK_WORKER is NULL and FOREST_WORKER is NULL 
+			and ELEMENTARY is NULL and MI_STDNT is NULL and HI_STDNT is NULL 
+			and GR_STDNT is NULL and NOT_APLCB is NULL and WORKER is NULL 
+			and NON_WORKER is NULL
+		</if>
+		<if test='job != ""'>
+			<if test='job == "farmWorker"'>
+				and (FARM_WORKER='y'
 			</if>
-			<if test='job == "ELEMENTARY"'>
-				and ELEMENTARY='y' 
+			<if test='job == "fishWorker"'>
+				and (FISH_WORKER='y'
 			</if>
-			<if test='job == "MI_STDNT"'>
-				and MI_STDNT='y' 
+			<if test='job == "livestockWorker"'>
+				and (LIVESTOCK_WORKER='y'
 			</if>
-			<if test='job == "HI_STDNT"'>
-				and HI_STDNT='y' 
+			<if test='job == "forestWorker"'>
+				and (FOREST_WORKER='y'
 			</if>
-			<if test='job == "GR_STDNT"'>
-				and GR_STDNT='y' 
+			<if test='job == "elementary"'>
+				and (ELEMENTARY='y'
 			</if>
-			<if test='job == "NOT_APLCB"'>
-				and NOT_APLCB='y' 
+			<if test='job == "miStdnt"'>
+				and (MI_STDNT='y'
 			</if>
-			<if test='job == "WORKER"'>
-				and WORKER='y' 
+			<if test='job == "hiStdnt"'>
+				and (HI_STDNT='y'
 			</if>
-			<if test='job == "NON_WORKER"'>
-				and NON_WORKER='y' 
+			<if test='job == "grStdnt"'>
+				and (GR_STDNT='y'
 			</if>
-			<!-- or (FARM_WORKER is NULL and FISH_WORKER is NULL 
+			<if test='job == "notAplcb"'>
+				and (NOT_APLCB='y'
+			</if>
+			<if test='job == "worker"'>
+				and (WORKER='y'
+			</if>
+			<if test='job == "nonWorker"'>
+				and (NON_WORKER='y'
+			</if>
+				or (FARM_WORKER is NULL and FISH_WORKER is NULL 
 				and LIVESTOCK_WORKER is NULL and FOREST_WORKER is NULL 
 				and ELEMENTARY is NULL and MI_STDNT is NULL and HI_STDNT is NULL 
 				and GR_STDNT is NULL and NOT_APLCB is NULL and WORKER is NULL 
-				and NON_WORKER is NULL) -->
+				and NON_WORKER is NULL))
 		</if>
-		<if test='fmlyType != null'>
-			<if test='fmlyType == "MLTCL_FMLY"'>
-				and MLTCL_FMLY='y' 
-			</if>
-			<if test='fmlyType == "NORTH_DFT"'>
-				and NORTH_DFT='y' 
-			</if>
-			<if test='fmlyType == "SP_GC_FMLY"'>
-				and SP_GC_FMLY='y' 
-			</if>
-			<if test='fmlyType == "SNG_FMLY"'>
-				and SNG_FMLY='y' 
-			</if>
-			<if test='fmlyType == "NONE_APPLY"'>
-				and NONE_APPLY='y' 
-			</if>
-			<if test='fmlyType == "MLT_CHLD"'>
-				and MLT_CHLD='y' 
-			</if>
-			<if test='fmlyType == "HOMELESS"'>
-				and HOMELESS='y' 
-			</if>
-			<if test='fmlyType == "NEW_TRNSF"'>
-				and NEW_TRNSF='y' 
-			</if>
-			<if test='fmlyType == "EX_FMLY"'>
-				and EX_FMLY='y' 
-			</if>
-			<!--or (MLTCL_FMLY is NULL and NORTH_DFT is NULL 
+		<if test='fmlyType == ""'>
+			and MLTCL_FMLY is NULL and NORTH_DFT is NULL 
 				and SP_GC_FMLY is NULL and SNG_FMLY is NULL 
 				and NONE_APPLY is NULL and MLT_CHLD is NULL and HOMELESS is NULL 
-				and NEW_TRNSF is NULL and EX_FMLY is NULL) -->
+				and NEW_TRNSF is NULL and EX_FMLY is NULL
 		</if>
-		<if test='bsnsType != null'>
-			<if test='bsnsType == "SOON_BSNS"'>
-				and SOON_BSNS='y' 
+		<if test='fmlyType != ""'>
+			<if test='fmlyType == "mltclFmly"'>
+				and (MLTCL_FMLY='y' 
 			</if>
-			<if test='bsnsType == "IN_BSNS"'>
-				and IN_BSNS='y' 
+			<if test='fmlyType == "northDft"'>
+				and (NORTH_DFT='y' 
 			</if>
-			<if test='bsnsType == "NON_BSNS"'>
-				and NON_BSNS='y' 
+			<if test='fmlyType == "spGcFmly"'>
+				and (SP_GC_FMLY='y' 
 			</if>
-			<if test='bsnsType == "FOOD_BSNS"'>
-				and FOOD_BSNS='y' 
+			<if test='fmlyType == "sngFmly"'>
+				and (SNG_FMLY='y' 
 			</if>
-			<if test='bsnsType == "MNF_BSNS"'>
-				and MNF_BSNS='y' 
+			<if test='fmlyType == "noneApply"'>
+				and (NONE_APPLY='y' 
 			</if>
-			<if test='bsnsType == "ETC_BSNS"'>
-				and ETC_BSNS='y' 
+			<if test='fmlyType == "mltChld"'>
+				and (MLT_CHLD='y' 
 			</if>
-			<!-- or (SOON_BSNS is NULL and IN_BSNS is NULL 
+			<if test='fmlyType == "homeless"'>
+				and (HOMELESS='y' 
+			</if>
+			<if test='fmlyType == "newTrnsf"'>
+				and (NEW_TRNSF='y' 
+			</if>
+			<if test='fmlyType == "exFmly"'>
+				and (EX_FMLY='y' 
+			</if>
+				or (MLTCL_FMLY is NULL and NORTH_DFT is NULL 
+				and SP_GC_FMLY is NULL and SNG_FMLY is NULL 
+				and NONE_APPLY is NULL and MLT_CHLD is NULL and HOMELESS is NULL 
+				and NEW_TRNSF is NULL and EX_FMLY is NULL))
+		</if>
+		<if test='bsnsType == ""'>
+			and MLTCL_FMLY is NULL and NORTH_DFT is NULL 
+			and SP_GC_FMLY is NULL and SNG_FMLY is NULL 
+			and NONE_APPLY is NULL and MLT_CHLD is NULL and HOMELESS is NULL 
+			and NEW_TRNSF is NULL and EX_FMLY is NULL
+		</if>
+		<if test='bsnsType != ""'>
+			<if test='bsnsType == "soonBsns"'>
+				and (SOON_BSNS='y' 
+			</if>
+			<if test='bsnsType == "inBsns"'>
+				and (IN_BSNS='y' 
+			</if>
+			<if test='bsnsType == "nonBsns"'>
+				and (NON_BSNS='y' 
+			</if>
+			<if test='bsnsType == "foodBsns"'>
+				and (FOOD_BSNS='y' 
+			</if>
+			<if test='bsnsType == "mnfBsns"'>
+				and (MNF_BSNS='y' 
+			</if>
+			<if test='bsnsType == "etcBsns"'>
+				and (ETC_BSNS='y' 
+			</if>
+				or (SOON_BSNS is NULL and IN_BSNS is NULL 
 				and NON_BSNS is NULL and FOOD_BSNS is NULL 
-				and MNF_BSNS is NULL and ETC_BSNS is NULL) -->
+				and MNF_BSNS is NULL and ETC_BSNS is NULL))
 		</if>
-		<if test='copType != null'>
-			<if test='copType == "SMALL_COP"'>
-				and SMALL_COP='y'
+		<if test='copType == ""'>
+			and SMALL_COP is NULL and SOCIAL_COP is NULL 
+			and FACILITY is NULL and MNF_COP is NULL 
+			and FFF_COP is NULL and ICT_COP is NULL
+			and ETC_COP is NULL
+		</if>
+		<if test='copType != ""'>
+			<if test='copType == "smallCop"'>
+				and (SMALL_COP='y'
 			</if>
-			<if test='copType == "SOCIAL_COP"'>
-				and SOCIAL_COP='y'
+			<if test='copType == "socialCop"'>
+				and (SOCIAL_COP='y'
 			</if>
-			<if test='copType == "FACILITY"'>
-				and FACILITY='y'
+			<if test='copType == "facility"'>
+				and (FACILITY='y'
 			</if>
-			<if test='copType == "MNF_COP"'>
-				and MNF_COP='y'
+			<if test='copType == "mnfCop"'>
+				and (MNF_COP='y'
 			</if>
-			<if test='copType == "FFF_COP"'>
-				and FFF_COP='y'
+			<if test='copType == "fffCop"'>
+				and (FFF_COP='y'
 			</if>
-			<if test='copType == "ICT_COP"'>
-				and ICT_COP='y'
+			<if test='copType == "ictCop"'>
+				and (ICT_COP='y'
 			</if>
-			<if test='copType == "ETC_COP"'>
-				and ETC_COP='y'
+			<if test='copType == "etcCop"'>
+				and (ETC_COP='y'
 			</if>
-			<!-- or (SMALL_COP is NULL and SOCIAL_COP is NULL 
+				or (SMALL_COP is NULL and SOCIAL_COP is NULL 
 				and FACILITY is NULL and MNF_COP is NULL 
 				and FFF_COP is NULL and ICT_COP is NULL
-				and ETC_COP is NULL) -->
+				and ETC_COP is NULL))
 		</if>
-		<if test='handicap != null'>
-			<if test='handicap == "DISABLED_PERSON"'>
-				and DISABLED_PERSON='y'
+		<if test='handicap == ""'>
+			and DISABLED_PERSON is NULL and NATIONAL_VETERANS is NULL 
+			and SICK_PERSON is NULL
+		</if>
+		<if test='handicap != ""'>
+			<if test='handicap == "disabledPerson"'>
+				and (DISABLED_PERSON='y'
 			</if>
-			<if test='handicap == "NATIONAL_VETERANS"'>
-				and NATIONAL_VETERANS='y'
+			<if test='handicap == "nationslVeterans"'>
+				and (NATIONAL_VETERANS='y'
 			</if>
-			<if test='handicap == "SICK_PERSON"'>
-				and SICK_PERSON='y'
+			<if test='handicap == "sickPerson"'>
+				and (SICK_PERSON='y'
 			</if>
-			<!-- or (DISABLED_PERSON is NULL and NATIONAL_VETERANS is NULL 
-				and SICK_PERSON is NULL) -->
+				or (DISABLED_PERSON is NULL and NATIONAL_VETERANS is NULL 
+				and SICK_PERSON is NULL))
 		</if>
 	</select>
 
@@ -204,6 +235,9 @@
 	<select id="getServiceVOToServiceId" resultType="ServiceVO">
 		select * from service_list
 		where service_id = #{serviceId}
+		<if test='category != null'>
+				and DEPT_NAME = #{category}
+		</if>
 	</select>
 	
 	<update id="updateUserCondition" parameterType="UserConditionsVO">
