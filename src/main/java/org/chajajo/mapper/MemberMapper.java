@@ -2,6 +2,7 @@ package org.chajajo.mapper;
 
 import org.chajajo.domain.AuthVO;
 import org.chajajo.domain.MemberVO;
+import org.chajajo.domain.UserConditionsVO;
 
 public interface MemberMapper {
 
@@ -39,5 +40,14 @@ public interface MemberMapper {
 	public void deleteUserAuth(String userId);
 
 	public void deleteUserInfo(String userId);
+	
+	public void delteUserCondition(String userId);
+	
+	public void deleteUserFavorite(String userId);
+	
+	public UserConditionsVO getUserConditions(String userId);
+	
+	public void insertUserConditions(UserConditionsVO userConditionsVO);
+	
 
 }

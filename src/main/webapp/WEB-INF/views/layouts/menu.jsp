@@ -17,7 +17,7 @@
 				<li class="tnb-nav-btn nav-item active"><a class="nav-link"
 					href="/service/list">전체보기 </a></li>
 				<li class="tnb-nav-btn nav-item active"><a class="nav-link"
-					href="/recommendation/conditions">나만의 보조금 찾기 </a></li>
+					href="/recommendation/subsidy">나만의 보조금 찾기 </a></li>
 			</ul>
 
 			<%@ include file="../common/searchbar.jsp"%>

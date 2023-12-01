@@ -1,8 +1,10 @@
 package org.chajajo.service;
 
 import java.io.IOException;
+import java.util.Calendar;
 
 import org.chajajo.domain.MemberVO;
+import org.chajajo.domain.UserConditionsVO;
 import org.chajajo.domain.AuthVO;
 import org.chajajo.mapper.MemberMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -89,14 +91,78 @@ public class MemberServiceImpl implements MemberService {
 		}
 	}
 
+	
+	//userCondition 가져오기
+	@Override
+	public UserConditionsVO getUserCondtions(String userId) {
+		UserConditionsVO userCondtions = null;
+		userCondtions = mapper.getUserConditions(userId);
+		return userCondtions;
+	}
+
 	// 회원정보탈퇴
 	public void userout(MemberVO member, String pwInDb) {
 		try {
+			mapper.deleteUserFavorite(member.getUserId());
+			mapper.delteUserCondition(member.getUserId());
 			mapper.deleteUserAuth(member.getUserId());
 			mapper.deleteUserInfo(member.getUserId());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+
+	//userCondition 제작
+	@Override
+	public void setUserConditions(MemberVO member) {
+		
+		UserConditionsVO userCondition = new UserConditionsVO();
+		
+		userCondition.setUserId(member.getUserId());
+		
+		String birth = member.getBirth();
+		
+		int birthYear = Integer.valueOf(birth.substring(0, 4));
+		int birthMonth = Integer.valueOf(birth.substring(5, 7));
+		int birthDay = Integer.valueOf(birth.substring(8));
+		
+		
+		userCondition.setAge(getAge(birthYear, birthMonth, birthDay));
+		
+		
+		String gender = member.getGender();
+		if (gender.equals("M")) {
+			gender = "male";
+		} else if (gender.equals("F")) {
+			gender = "female";
+		}
+		
+		userCondition.setGender(gender);
+		
+		mapper.insertUserConditions(userCondition);
+		
+	}
+	
+
+	private static int getAge(int birthYear, int birthMonth, int birthDay)
+	 {
+	         Calendar current = Calendar.getInstance();
+	        
+	         int currentYear  = current.get(Calendar.YEAR);
+	         int currentMonth = current.get(Calendar.MONTH) + 1;
+	         int currentDay   = current.get(Calendar.DAY_OF_MONTH);
+	         
+	         // 만 나이 구하기 2022-1995=27 (현재년-태어난년)
+	         int age = currentYear - birthYear;
+	         // 만약 생일이 지나지 않았으면 -1
+	         if (birthMonth * 100 + birthDay > currentMonth * 100 + currentDay) 
+	             age--;
+	         // 5월 26일 생은 526
+	         // 현재날짜 5월 25일은 525
+	         // 두 수를 비교 했을 때 생일이 더 클 경우 생일이 지나지 않은 것이다.
+	         return age;
+	 }
+	
+	
 
 }

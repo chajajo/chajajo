@@ -14,7 +14,7 @@
 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 		<div class="form-group has-geedback">
 			<label class="control-label" for="userId">아이디</label>
-			 <input class="form-control" type="text" name="userId" value="${member.userId}" readonly>
+			 <input class="form-control" type="text" name="userId" value="${memberInfo.userId}" readonly>
 		</div>
 		<div class="form-group has-geedback">
 			<label class="control-label" for="password">비밀번호</label>
@@ -22,11 +22,11 @@
 		</div>
 		<div class="form-group has-geedback">
 			<label class="control-label" for="email">이메일</label>
-			<input class="form-control" type="text" name="email" value="${member.email}">
+			<input class="form-control" type="text" name="email" value="${memberInfo.email}">
 		</div>
 		<div class="form-group has-geedback">
 			<label class="control-label" for="phone">전화번호</label>
-			<input class="form-control" type="text" name="phone" value="${member.phone}">
+			<input class="form-control" type="text" name="phone" value="${memberInfo.phone}">
 		</div>
 		<div class="form-group has-geedback">
 			<button class="btn btn-success" type="submit" id="submit">회원정보수정</button>

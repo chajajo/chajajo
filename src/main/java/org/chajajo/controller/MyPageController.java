@@ -1,5 +1,7 @@
 package org.chajajo.controller;
 
+import java.security.Principal;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -29,23 +31,22 @@ public class MyPageController {
 
 	// 회원 정보 페이지 이동
 	@RequestMapping(value = "userinfo", method = RequestMethod.GET)
-	public void userinfoGET(RedirectAttributes rttr, HttpServletRequest request, HttpSession session, Model model,
-			MemberVO member) throws Exception {
-		session = request.getSession();
+	public void userinfoGET(RedirectAttributes rttr, Principal principal, Model model, MemberVO member) throws Exception {
 
-		String id = (String) session.getAttribute("member.userId");
+		String id =  principal.getName();
 		log.info("C: 회원정보보기 GET의 아이디 " + id);
 
 		MemberVO member1 = memberservice.userinfo(id);
 
-		model.addAttribute("member", member1);
+		model.addAttribute("memberInfo", member1);
 		log.info("C: 회원정보보기 GET의 VO " + member1);
 	}
 
 	// 정보 수정 페이지 이동
 	@RequestMapping(value = "infomodify", method = RequestMethod.GET)
-	public String infomodifyGET(HttpSession session, Model model) throws Exception {
-		model.addAttribute("member", memberservice.userinfo((String) session.getAttribute("id")));
+	public String infomodifyGET(Principal principal, Model model) throws Exception {
+		String id =  principal.getName();
+		model.addAttribute("memberInfo", memberservice.userinfo(id));
 		return "/mypage/infomodify";
 	}
 
@@ -82,8 +83,15 @@ public class MyPageController {
 
 	// 나만의 보조금 페이지 이동
 	@RequestMapping(value = "mysubsidy", method = RequestMethod.GET)
-	public void mysubsidyGET() {
+	public void mysubsidyGET(Model model, Principal principal) {
 		log.info(" 나만의 보조금 페이지 진입 성공");
+		String userId = principal.getName();
+		
+		if (userId != null) {
+			
+			//UserConditionsVO
+			model.addAttribute("userConditions", memberservice.getUserCondtions(userId));
+		}
 	}
 
 	// 즐겨찾기 목록 페이지 이동
