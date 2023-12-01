@@ -41,6 +41,8 @@ public interface MemberMapper {
 
 	public void deleteUserInfo(String userId);
 	
+	public void delteUserCondition(String userId);
+	
 	public UserConditionsVO getUserConditions(String userId);
 	
 	public void insertUserConditions(UserConditionsVO userConditionsVO);

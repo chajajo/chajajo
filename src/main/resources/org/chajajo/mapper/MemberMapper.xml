@@ -106,6 +106,9 @@
 	<delete id="deleteUserInfo">
 		delete from user_info where USER_ID = #{userId}
 	</delete>
+	<delete id="delteUserCondition">
+		delete from user_condition where USER_ID = #{userId}
+	</delete>
 
 	<select id="getUserConditions" resultType="UserConditionsVO">
 		select * from

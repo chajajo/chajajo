@@ -5,6 +5,130 @@
 
 <script>
 	$(document).ready(function() {
+		
+		if ("${keyword.age}" === "-1") {
+			$('#age').val(0);
+		} else {
+			$('#age').val("${keyword.age}");
+		}
+
+		if ("${keyword.gender}" === "male") {
+			$("#male").prop("checked", true);
+		} else if ("${keyword.gender}" === "female") {
+			$("#female").prop("checked", true);
+		}
+
+		if ("${keyword.income}" === "income_0_50") {
+			$("#income_0_50").prop("checked", true);
+		} else if ("${keyword.income}" === "income_51_75") {
+			$("#income_51_75").prop("checked", true);
+		} else if ("${keyword.income}" === "income_76_100") {
+			$("#income_76_100").prop("checked", true);
+		} else if ("${keyword.income}" === "income_101_200") {
+			$("#income_101_200").prop("checked", true);
+		} else if ("${keyword.income}" === "incomeOver_200") {
+			$("#incomeOver_200").prop("checked", true);
+		}
+
+		if ("${keyword.child}" === "noBaby") {
+			$("#noBaby").prop("checked", true);
+		} else if ("${keyword.child}" === "pregnant") {
+			$("#pregnant").prop("checked", true);
+		} else if ("${keyword.child}" === "birthAdopt") {
+			$("#birthAdopt").prop("checked", true);
+		} else {
+			$("#noapply").prop("checked", true);
+		}
+
+		if ("${keyword.job}" === "farmWorker") {
+			$("#farmWorker").prop("checked", true);
+		} else if ("${keyword.job}" === "fishWorker") {
+			$("#fishWorker").prop("checked", true);
+		} else if ("${keyword.job}" === "livestockWorker") {
+			$("#livestockWorker").prop("checked", true);
+		} else if ("${keyword.job}" === "forestWorker") {
+			$("#forestWorker").prop("checked", true);
+		} else if ("${keyword.job}" === "elementary") {
+			$("#elementary").prop("checked", true);
+		} else if ("${keyword.job}" === "miStdnt") {
+			$("#miStdnt").prop("checked", true);
+		} else if ("${keyword.job}" === "hiStdnt") {
+			$("#hiStdnt").prop("checked", true);
+		} else if ("${keyword.job}" === "grStdnt") {
+			$("#grStdnt").prop("checked", true);
+		} else if ("${keyword.job}" === "worker") {
+			$("#worker").prop("checked", true);
+		} else if ("${keyword.job}" === "nonWorker") {
+			$("#nonWorker").prop("checked", true);
+		}  else {
+			$("#notAplcb").prop("checked", true);
+		}
+
+		if ("${keyword.fmlyType}" === "mltclFmly") {
+			$("#mltclFmly").prop("checked", true);
+		} else if ("${keyword.fmlyType}" === "northDft") {
+			$("#northDft").prop("checked", true);
+		} else if ("${keyword.fmlyType}" === "spGcFmly") {
+			$("#spGcFmly").prop("checked", true);
+		} else if ("${keyword.fmlyType}" === "sngFmly") {
+			$("#sngFmly").prop("checked", true);
+		} else if ("${keyword.fmlyType}" === "mltChld") {
+			$("#mltChld").prop("checked", true);
+		} else if ("${keyword.fmlyType}" === "homeless") {
+			$("#homeless").prop("checked", true);
+		} else if ("${keyword.fmlyType}" === "newTrnsf") {
+			$("#newTrnsf").prop("checked", true);
+		} else if ("${keyword.fmlyType}" === "exFmly") {
+			$("#exFmly").prop("checked", true);
+		}  else {
+			$("#noneApply").prop("checked", true);
+		}
+
+		if ("${keyword.bsnsType}" === "soonBsns") {
+			$("#soonBsns").prop("checked", true);
+		} else if ("${keyword.bsnsType}" === "inBsns") {
+			$("#inBsns").prop("checked", true);
+		} else if ("${keyword.bsnsType}" === "nonBsns") {
+			$("#nonBsns").prop("checked", true);
+		} else if ("${keyword.bsnsType}" === "foodBsns") {
+			$("#foodBsns").prop("checked", true);
+		} else if ("${keyword.bsnsType}" === "mnfBsns") {
+			$("#mnfBsns").prop("checked", true);
+		} else if ("${keyword.bsnsType}" === "etcBsns") {
+			$("#etcBsns").prop("checked", true);
+		} else {
+			$("#nobsns").prop("checked", true);
+		}
+
+		if ("${keyword.copType}" === "smallCop") {
+			$("#smallCop").prop("checked", true);
+		} else if ("${keyword.copType}" === "socialCop") {
+			$("#socialCop").prop("checked", true);
+		} else if ("${keyword.copType}" === "facility") {
+			$("#facility").prop("checked", true);
+		} else if ("${keyword.copType}" === "mnfCop") {
+			$("#mnfCop").prop("checked", true);
+		} else if ("${keyword.copType}" === "fffCop") {
+			$("#fffCop").prop("checked", true);
+		} else if ("${keyword.copType}" === "ictCop") {
+			$("#ictCop").prop("checked", true);
+		} else if ("${keyword.copType}" === "etcCop") {
+			$("#etcCop").prop("checked", true);
+		} else {
+			$("#nocop").prop("checked", true);
+		}
+
+		if ("${keyword.handicap}" === "disabledPerson") {
+			$("#disabledPerson").prop("checked", true);
+		} else if ("${keyword.handicap}" === "nationslVeterans") {
+			$("#nationslVeterans").prop("checked", true);
+		} else if ("${keyword.handicap}" === "sickPerson") {
+			$("#sickPerson").prop("checked", true);
+		} else {
+			$("#nohandicap").prop("checked", true);
+		}
+		
+		
 		$(".search_button").on('click', function(e) {
 			if (!$('#age').val()) {
 				$('#age').focus();

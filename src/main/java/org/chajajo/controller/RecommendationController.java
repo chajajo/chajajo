@@ -99,7 +99,6 @@ public class RecommendationController {
 		model.addAttribute("pageMaker", pageMaker);
 		log.info(""+ cri.getOffset() );
 		
-		request.getAttribute("javax.servlet.forward.request_uri");
 	}
 	
 	@PostMapping("/subsidy")
