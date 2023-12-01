@@ -90,11 +90,12 @@ public class RecommendationController {
 		}
 		
 		List<String> serviceIds = service.getServiceIdToUserCondtions(userConditionsVO);
+		int total = service.countRecommendedList(serviceIds);
 		
 		//List<ServiceVO>
-		model.addAttribute("list", service.getRecommendedList(serviceIds, cri));
+		model.addAttribute("list", service.getRecommendedList(serviceIds, cri, total));
 		
-		int total = service.countRecommendedList(serviceIds)+1;
+		
 		PageDTO pageMaker = new PageDTO(cri, total);
 		model.addAttribute("pageMaker", pageMaker);
 		log.info(""+ cri.getOffset() );
