@@ -60,6 +60,7 @@
  <%@ include file="./conditionsForm.jsp"%>
  
 <div class="container">
+<!--  
  <nav class="navbar navbar-expand-lg static-top" style="height: 50px; background-color: #cccccc">
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -100,7 +101,7 @@
             </ul>
         </div>
     </nav>
-    
+    -->
     <br/>
     <div class="row">
         <c:forEach var="service" items="${list}">
