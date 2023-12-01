@@ -38,7 +38,7 @@ public class MyPageController {
 
 		MemberVO member1 = memberservice.userinfo(id);
 
-		model.addAttribute("member", member1);
+		model.addAttribute("memberInfo", member1);
 		log.info("C: 회원정보보기 GET의 VO " + member1);
 	}
 
@@ -46,7 +46,7 @@ public class MyPageController {
 	@RequestMapping(value = "infomodify", method = RequestMethod.GET)
 	public String infomodifyGET(Principal principal, Model model) throws Exception {
 		String id =  principal.getName();
-		model.addAttribute("member", memberservice.userinfo(id));
+		model.addAttribute("memberInfo", memberservice.userinfo(id));
 		return "/mypage/infomodify";
 	}
 
