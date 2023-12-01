@@ -71,6 +71,8 @@ public class RecommendationController {
 	@GetMapping("/subsidy")
 	public void getRecommendation(UserConditionsVO userConditionsVO, Model model, Criteria cri, HttpServletRequest request, HttpSession session) throws Exception {
 		
+		model.addAttribute("keyword", userConditionsVO);
+		
 		session = request.getSession();
 		
 		
@@ -86,6 +88,7 @@ public class RecommendationController {
 		  //UserConditionsVO
 			model.addAttribute("userConditions", service.getUserCondtions(userId));
 		}
+		
 		List<String> serviceIds = service.getServiceIdToUserCondtions(userConditionsVO);
 		
 		//List<ServiceVO>
@@ -95,6 +98,8 @@ public class RecommendationController {
 		PageDTO pageMaker = new PageDTO(cri, total);
 		model.addAttribute("pageMaker", pageMaker);
 		log.info(""+ cri.getOffset() );
+		
+		request.getAttribute("javax.servlet.forward.request_uri");
 	}
 	
 	@PostMapping("/subsidy")
