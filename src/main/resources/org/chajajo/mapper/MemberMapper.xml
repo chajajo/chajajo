@@ -109,7 +109,10 @@
 	<delete id="delteUserCondition">
 		delete from user_condition where USER_ID = #{userId}
 	</delete>
-
+	<delete id="deleteUserFavorite">
+		delete from user_favorite where USER_ID = #{userId}
+	</delete>
+	
 	<select id="getUserConditions" resultType="UserConditionsVO">
 		select * from
 		user_condition

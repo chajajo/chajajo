@@ -43,8 +43,11 @@ public interface MemberMapper {
 	
 	public void delteUserCondition(String userId);
 	
+	public void deleteUserFavorite(String userId);
+	
 	public UserConditionsVO getUserConditions(String userId);
 	
 	public void insertUserConditions(UserConditionsVO userConditionsVO);
+	
 
 }

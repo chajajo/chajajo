@@ -103,6 +103,7 @@ public class MemberServiceImpl implements MemberService {
 	// 회원정보탈퇴
 	public void userout(MemberVO member, String pwInDb) {
 		try {
+			mapper.deleteUserFavorite(member.getUserId());
 			mapper.delteUserCondition(member.getUserId());
 			mapper.deleteUserAuth(member.getUserId());
 			mapper.deleteUserInfo(member.getUserId());
@@ -118,8 +119,6 @@ public class MemberServiceImpl implements MemberService {
 		UserConditionsVO userCondition = new UserConditionsVO();
 		
 		userCondition.setUserId(member.getUserId());
-		
-		int age = 0;
 		
 		String birth = member.getBirth();
 		
@@ -144,6 +143,7 @@ public class MemberServiceImpl implements MemberService {
 		
 	}
 	
+
 	private static int getAge(int birthYear, int birthMonth, int birthDay)
 	 {
 	         Calendar current = Calendar.getInstance();
