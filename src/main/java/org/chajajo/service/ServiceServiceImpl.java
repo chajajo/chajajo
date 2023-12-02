@@ -18,7 +18,7 @@ public class ServiceServiceImpl implements ServiceService {
 	private ServiceMapper mapper;
 
 	@Override
-	public ServiceDetailVO get(Long no) {
+	public ServiceDetailVO get(String no) {
 		ServiceDetailVO service = mapper.read(no);
 
 		return service;

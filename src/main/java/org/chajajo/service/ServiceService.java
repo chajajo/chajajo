@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface ServiceService {
 
-  public ServiceDetailVO get(Long no);
+  public ServiceDetailVO get(String no);
   
 	/* 게시판 목록 */
 	public List<ServiceVO> getList(Criteria cri);

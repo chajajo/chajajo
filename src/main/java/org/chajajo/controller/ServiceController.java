@@ -34,7 +34,7 @@ public class ServiceController {
 	}
 
 	@GetMapping("/get")
-	public void get(@RequestParam("no") Long no, Model model) {
+	public void get(@RequestParam("no") String no, Model model) {
 
         model.addAttribute("service", service.get(no));
 
