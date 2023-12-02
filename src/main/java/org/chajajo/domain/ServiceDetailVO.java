@@ -20,4 +20,6 @@ public class ServiceDetailVO {
     private String modifyDate;
     private String agencyName;
     private String statute;
+    private String stars;
+    private Boolean myStars;
 }

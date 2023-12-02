@@ -4,6 +4,7 @@ import lombok.extern.log4j.Log4j;
 
 import org.chajajo.domain.Criteria;
 import org.chajajo.domain.PageDTO;
+import org.chajajo.domain.ServiceDetailVO;
 import org.chajajo.domain.ServiceVO;
 import org.chajajo.service.ServiceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.security.Principal;
 import java.util.List;
 
 @Controller
@@ -34,9 +36,8 @@ public class ServiceController {
 	}
 
 	@GetMapping("/get")
-	public void get(@RequestParam("no") String no, Model model) {
-
-        model.addAttribute("service", service.get(no));
-
+	public void get(@RequestParam("no") String no, Model model, Principal principal) {
+        model.addAttribute("service", service.get(no, principal));
+        log.info("get Start" + no + "and" + principal);
 	}
 }

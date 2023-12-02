@@ -8,8 +8,10 @@
 <div class="container center">
     <div class="card" style="text-align: center; background-color: azure">
         <h4>${service.serviceName}</h4>
+         <%@ include file="../service/favorites.jsp"%>
     </div>
 </div>
+
 <br/>
 <details open>
     <summary>지원 대상</summary>
