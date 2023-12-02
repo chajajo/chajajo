@@ -43,4 +43,3 @@ async function rest_delete(url) {
     console.log(e);
   }
 }
-

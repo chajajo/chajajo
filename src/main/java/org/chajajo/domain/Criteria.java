@@ -1,5 +1,7 @@
 package org.chajajo.domain;
 
+import org.springframework.web.util.UriComponentsBuilder;
+
 import lombok.Data;
 
 @Data

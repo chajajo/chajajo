@@ -27,7 +27,7 @@
 				<li><a href="../mypage/alertservice">알림 서비스</a></li>
 			</ol>
 			<br>
-			<li><a href="../mypage/contact">문의하기</a></li>
+			<li><a href="../mypage/list">문의하기</a></li>
 			<ol>
 				<li><a href="../mypage/mycontact">나의문의</a></li>
 			</ol>
