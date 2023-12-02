@@ -3,7 +3,6 @@ package org.chajajo.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.chajajo.controller.QnABoardController;
 import org.chajajo.domain.Criteria;
 import org.chajajo.domain.ServiceVO;
 import org.chajajo.domain.UserConditionsVO;
