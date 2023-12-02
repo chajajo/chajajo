@@ -3,6 +3,7 @@ package org.chajajo.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.chajajo.controller.QnABoardController;
 import org.chajajo.domain.Criteria;
 import org.chajajo.domain.ServiceVO;
 import org.chajajo.domain.UserConditionsVO;
@@ -13,7 +14,9 @@ import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import lombok.extern.log4j.Log4j;
 
+@Log4j
 @AllArgsConstructor
 @NoArgsConstructor
 @Service
@@ -40,13 +43,14 @@ public class RecommendationServiceImpl implements RecommendationService {
 
 	//추천 목록 가져오기
 	@Override
-	public List<ServiceVO> getRecommendedList(List<String> serviceIds, Criteria cri) {
+	public List<ServiceVO> getRecommendedList(List<String> serviceIds, Criteria cri, int total, String category) {
 		List<ServiceVO> serviceVoList = new ArrayList<ServiceVO>() ;
 		
-		for(int i = cri.getOffset(); i< cri.getOffset()+cri.getAmount(); i++ ) {
+		for(int i = cri.getOffset(); i< cri.getOffset()+cri.getAmount() && i<total; i++ ) {
+			log.info(""+i);
 			String serivceId = serviceIds.get(i);
 			ServiceVO serviceVo;
-			serviceVo = mapper.getServiceVOToServiceId(serivceId);
+			serviceVo = mapper.getServiceVOToServiceId(serivceId, category);
 			serviceVoList.add(serviceVo);
 		}
 		
@@ -62,5 +66,12 @@ public class RecommendationServiceImpl implements RecommendationService {
 		}
 		return total;
 	}
+
+	@Override
+	public void setUserConditions(UserConditionsVO userConditionsVO) {
+		mapper.updateUserCondition(userConditionsVO);
+	}
+	
+	
 
 }

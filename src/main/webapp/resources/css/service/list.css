@@ -4,17 +4,17 @@
     transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
     overflow: hidden;
     border-radius: 20px;
-    min-height: 410px;
+    min-height: 255px;
     box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
 }
 @media (max-width: 768px) {
     .card {
-        min-height: 350px;
+        min-height: 210px;
     }
 }
 @media (max-width: 420px) {
     .card {
-        min-height: 300px;
+        min-height: 210px;
     }
 }
 .card.card-has-bg {
@@ -26,8 +26,8 @@
 
 .card.card-has-bg:hover .card-img-overlay {
     transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
-    background: #ffba21;
-    background: linear-gradient(0deg, rgba(255, 186, 33, 0.5) 0%, #ffba21 100%);
+    background: #F3EEEA;
+    background: linear-gradient(0deg, rgba(255, 186, 33, 0.5) 0%, #F3EEEA 100%);
 }
 
 .card .card-title {
@@ -51,6 +51,14 @@
 }
 .card .card-img-overlay {
     transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
-    background: #ffba21;
-    background: linear-gradient(0deg, rgba(255, 186, 33, 0.3785889356) 0%, #ffba21 100%);
+    background: #F3EEEA;
+    background: linear-gradient(0deg, rgba(255, 186, 33, 0.3785889356) 0%, #F3EEEA 100%);
+}
+
+.nav-item a.active {
+    font-weight: bold;
+}
+
+.nav-item a:hover {
+    color: grey;
 }

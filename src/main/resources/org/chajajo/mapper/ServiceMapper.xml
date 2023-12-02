@@ -33,7 +33,7 @@
 			service_field like concat('%', #{keyword}, '%')
 		</if>
 	</select>
-	
+
 	<select id="getStarsList" resultType="long">
 	select service_id from user_favorite
 	where user_id = #{userId}
@@ -48,5 +48,10 @@
 		delete from user_favorite
 		where service_id= #{serviceId} and user_id = #{userId}
 	</delete>
-	
+
+	<select id="getMostViewed" resultType="ServiceVO">
+		select service_id, service_name, service_summary from service_list
+		order by views desc
+		limit #{count}
+	</select>
 </mapper>

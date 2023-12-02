@@ -13,30 +13,24 @@
 			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
 			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 		</ol>
-		<div class="carousel-item active">
+		<div class="carousel-item active" onClick="location.href='/service/get/?no=${service[0].serviceId}'" style="cursor: pointer">
 			<div class="main-box" style="background-color: beige">
-				<em class="chip">인기 보조금</em> <br> <span class="main-box-title">다함께
-					돌봄</span>
-				<p class="main-box-desc">만 6~12세 아동에게 정기돌봄, 방과 후 프로그램 연계 등 맞춤혐
-					돌봄서비스 제공</p>
+				<em class="chip">인기 보조금</em> <br> <span class="main-box-title">${service[0].serviceName}</span>
+				<p class="main-box-desc">${service[0].serviceSummary}</p>
 				<img src="..." class="main-box-img d-block w-100" alt="error">
 			</div>
 		</div>
-		<div class="carousel-item">
+		<div class="carousel-item" onClick="location.href='/service/get/?no=${service[1].serviceId}'" style="cursor: pointer">
 			<div class="main-box" style="background-color: pink">
-				<em class="chip">인기 보조금</em> <br> <span class="main-box-title">다함께
-					돌봄</span>
-				<p class="main-box-desc">만 6~12세 아동에게 정기돌봄, 방과 후 프로그램 연계 등 맞춤혐
-					돌봄서비스 제공</p>
+				<em class="chip">인기 보조금</em> <br> <span class="main-box-title">${service[1].serviceName}</span>
+				<p class="main-box-desc">${service[1].serviceSummary}</p>
 				<img src="..." class="main-box-img d-block w-100" alt="error">
 			</div>
 		</div>
-		<div class="carousel-item">
+		<div class="carousel-item" onClick="location.href='/service/get/?no=${service[2].serviceId}'" style="cursor: pointer">
 			<div class="main-box" style="background-color: skyblue">
-				<em class="chip">인기 보조금</em> <br> <span class="main-box-title">다함께
-					돌봄</span>
-				<p class="main-box-desc">만 6~12세 아동에게 정기돌봄, 방과 후 프로그램 연계 등 맞춤혐
-					돌봄서비스 제공</p>
+				<em class="chip">인기 보조금</em> <br> <span class="main-box-title">${service[2].serviceName}</span>
+				<p class="main-box-desc">${service[2].serviceSummary}</p>
 				<img src="..." class="main-box-img d-block w-100" alt="error">
 			</div>
 		</div>

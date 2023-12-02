@@ -1,19 +1,15 @@
 package org.chajajo.domain;
 
 import java.util.Date;
-import java.util.List;
 
 import lombok.Data;
 
 @Data
-public class CommentVO {
+public class ReplyVO {
 	private Long no;
-	private Long bno;
-	
+	private Long cno;// Comment의no
 	private String writer;
 	private String content;
 	private Date regDate;
 	private Date updateDate;
-	
-	List<ReplyVO> replyList;
 }

@@ -9,8 +9,9 @@ import java.security.Principal;
 import java.util.List;
 
 public interface ServiceMapper {
-  
+
 	/* 상세보기 페이지 */
+
 	public ServiceDetailVO read(String no);
 
 	/* 게시판 목록 */
@@ -30,5 +31,7 @@ public interface ServiceMapper {
 	public int deleteStar(StarVO star);
 
 	public List<ServiceDetailVO> getDetailList(Criteria cri);
+
+  public List<ServiceVO> getMostViewed(int count);
 }
 

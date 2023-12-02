@@ -13,7 +13,7 @@
 </div>
 
 <br/>
-<details>
+<details open>
     <summary>지원 대상</summary>
     <h4>지원 대상</h4>
     <div>
@@ -26,7 +26,7 @@
     </div>
 </details>
 
-<details>
+<details open>
     <summary>지원 내용</summary>
     <h4>지원 내용</h4>
     <div>
@@ -34,7 +34,7 @@
     </div>
 </details>
 
-<details>
+<details open>
     <summary>신청 방법</summary>
     <h4>신청기한</h4>
     <div>
@@ -52,7 +52,7 @@
     </div>
 </details>
 
-<details>
+<details open>
     <summary>접수 문의</summary>
     <h4>접수기관명</h4>
     <div>

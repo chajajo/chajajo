@@ -5,9 +5,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="org.chajajo.mapper.QnABoardMapper">
 
 	<select id="getList" resultType="org.chajajo.domain.QnABoardVO">
-		<![CDATA[
 		select * from qna_board
-		]]>
+		order by
+		bno desc
 	</select>
 
 	<insert id="insert">
@@ -45,14 +45,29 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where bno = #{bno}
 	</update>
 
-
-	<select id="getListWithPaging" resultType="org.chajajo.domain.QnABoardVO">
-		<![CDATA[
-			select bno, title, content, writer, reg_date, update_date
-			from qna_board
-			limit #{offset} , #{amount}
-		]]>
+	<select id="getListWithPaging" resultType="org.chajajo.domain.QnABoardVO">	
+		select bno, title, content, writer, reg_date, update_date
+		from qna_board
+		order by bno desc
+		limit #{offset} , #{amount}
 	</select>
-
-
+	
+	<select id="getListWithPagingMy" resultType="org.chajajo.domain.QnABoardVO">	
+		select bno, title, content, writer, reg_date, update_date
+		from qna_board
+		where writer = #{userId}
+		order by bno desc
+		limit #{offset} , #{amount}
+	</select>
+	
+	<select id="getTotalCount" resultType="int">
+		select count(*) from qna_board;
+	</select>
+	
+	<select id="getTotalCountMy" resultType="int">
+		select count(*)
+		from qna_board
+		where writer = #{userId};
+	</select>
+	
 </mapper>

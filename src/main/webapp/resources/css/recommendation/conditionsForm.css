@@ -9,8 +9,8 @@ label {
 label:hover {
   cursor: pointer;
 }
-
-[type="radio"],
+/*
+ [type="radio"],
 span {
   vertical-align: middle;
   appearance: none;
@@ -18,7 +18,7 @@ span {
   border-radius: 50%;
   width: 1.25em;
   height: 1.25em;
-}
+} */
 
 [type="radio"]:checked {
   border: 0.4em solid tomato;

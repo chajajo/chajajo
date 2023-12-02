@@ -2,8 +2,8 @@ package org.chajajo.service;
 
 import java.util.List;
 
-import org.chajajo.domain.Criteria;
 import org.chajajo.domain.QnABoardVO;
+import org.chajajo.domain.QnACriteria;
 import org.chajajo.mapper.QnABoardMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,10 +43,26 @@ public class QnABoardServiceImpl implements QnABoardService {
 	}
 
 	@Override
-	public List<QnABoardVO> getList(Criteria cri) {
-	log.info("get List with criteria: " + cri);
-	return mapper.getListWithPaging(cri);
+	public List<QnABoardVO> getList(QnACriteria cri) {
+		log.info("get List with criteria: " + cri);
+		return mapper.getListWithPaging(cri);
 	}
 	
+	@Override
+	public List<QnABoardVO> getListMy(QnACriteria cri) {
+		log.info("get List with criteria: " + cri);
+		return mapper.getListWithPagingMy(cri);
+	}
 
+	@Override
+	public int getTotal(QnACriteria cri) {
+		log.info("get total count");
+		return mapper.getTotalCount(cri);
+	}
+	
+	@Override
+	public int getTotalMy(QnACriteria cri) {
+		log.info("get total count");
+		return mapper.getTotalCountMy(cri);
+	}
 }

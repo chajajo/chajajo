@@ -1,9 +1,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<form id="actionForm" action="/recommendation/subsidy" method="get">
+<form id="actionForm" action="" method="get">
 	<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}" />
 	<input type="hidden" name="amount" value="${pageMaker.cri.amount}" />
-	<input type="hidden" name="keyword" value="${pageMaker.cri.keyword}" />
+	<input type="hidden" name="age" value="${keyword.age}" />
+	<input type="hidden" name="gender" value="${keyword.gender}" />
+	<input type="hidden" name="income" value="${keyword.income}" />
+	<input type="hidden" name="child" value="${keyword.child}" />
+	<input type="hidden" name="job" value="${keyword.job}" />
+	<input type="hidden" name="fmlyType" value="${keyword.fmlyType}" />
+	<input type="hidden" name="bsnsType" value="${keyword.bsnsType}" />
+	<input type="hidden" name="copType" value="${keyword.copType}" />
+	<input type="hidden" name="handicap" value="${keyword.handicap}" />
 </form>
 
 <ul class="pagination justify-content-center">

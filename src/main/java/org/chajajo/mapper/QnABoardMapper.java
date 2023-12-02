@@ -2,15 +2,16 @@ package org.chajajo.mapper;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Select;
-import org.chajajo.domain.Criteria;
 import org.chajajo.domain.QnABoardVO;
+import org.chajajo.domain.QnACriteria;
 
 public interface QnABoardMapper {
 
 	public List<QnABoardVO> getList();
 	
-	public List<QnABoardVO> getListWithPaging(Criteria cri);
+	public List<QnABoardVO> getListWithPaging(QnACriteria cri);
+	
+	public List<QnABoardVO> getListWithPagingMy(QnACriteria cri);
 	
 	public void insert(QnABoardVO qna);
 	
@@ -21,5 +22,9 @@ public interface QnABoardMapper {
 	public int delete(Long bno);
 	
 	public int update(QnABoardVO qna);
+	
+	public int getTotalCount(QnACriteria cri);
+	
+	public int getTotalCountMy(QnACriteria cri);
 
 }

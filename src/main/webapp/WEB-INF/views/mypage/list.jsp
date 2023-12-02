@@ -7,8 +7,31 @@
 
 <div class="mypage-box">
 
+<!-- pagination script code -->
+<!-- <script>
+	$(document).ready(function() {
+		let actionForm = $('#actionForm');
+		$('a.page-link').on('click', function(e) {
+			e.preventDefault();
+			console.log('click');
+			actionForm.find('input[name="pageNum"]')
+				.val($(this).attr('href'));
+			actionForm.submit();
+		});
+		
+		$('.move').on('click', function(e) {
+			e.preventDefault();
+			actionForm.append('<input type="hidden" name="bno"/>');
+			actionForm.find('input[name="bno"]')
+			.val($(this).attr('href'));
+			actionForm.attr('action', '/mypage/get');
+			actionForm.submit();
+			});
+	});
+</script> -->
+
 <h1 class="page-header">
-	<i class="fa-solid fa-circle-question"></i> 나의 문의
+	<i class="fa-solid fa-circle-question"></i> 문의하기
 </h1>
 <table class="table table-striped table-hover">
 	<thead>
@@ -46,6 +69,12 @@
 	</a>
 </div>
 
+
+<%-- <form id="actionForm" action="/mypage/contact" method="get">
+	<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}" />
+	<input type="hidden" name="amount" value="${pageMaker.cri.amount}" />
+	<input type="hidden" name="keyword" value="${pageMaker.cri.keyword}" />
+</form> --%>
 
 <%@include file="../common/paginationForQnA.jsp"%>
 

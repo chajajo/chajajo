@@ -1,5 +1,7 @@
 package org.chajajo.domain;
 
+import org.springframework.web.util.UriComponentsBuilder;
+
 import lombok.Data;
 
 @Data
@@ -9,7 +11,7 @@ public class Criteria {
 	private int amount;
 
 	public Criteria() {
-		this(1, 12);
+		this(1, 20);
 	}
 
 	public Criteria(int pageNum, int amount) {

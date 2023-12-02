@@ -39,6 +39,5 @@ public class ServiceController {
 	public void get(@RequestParam("no") String no, Model model, Principal principal) {
         model.addAttribute("service", service.get(no, principal));
         log.info("get Start" + no + "and" + principal);
-
 	}
 }
