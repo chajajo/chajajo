@@ -7,7 +7,7 @@
 
 	<select id="read" resultType="ServiceDetailVO">
 		select * from
-		service_detail
+		view_service_detail
 		where service_id = #{no}
 	</select>
 
@@ -33,4 +33,20 @@
 			service_field like concat('%', #{keyword}, '%')
 		</if>
 	</select>
+	
+	<select id="getStarsList" resultType="long">
+	select service_id from user_favorite
+	where user_id = #{userId}
+	</select>
+
+	<insert id="addStar">
+		insert into user_favorite(service_id, user_id)
+		values (#{serviceId}, #{userId})
+	</insert>
+	
+	<delete id="deleteStar">
+		delete from user_favorite
+		where service_id= #{serviceId} and user_id = #{userId}
+	</delete>
+	
 </mapper>
