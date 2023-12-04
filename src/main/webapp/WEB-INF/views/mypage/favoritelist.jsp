@@ -2,10 +2,15 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
+
+
+<%@ include file="../mypage/mypage.jsp"%>
+
+
 <link href="/resources/css/service/list.css" rel="stylesheet">
 <link href="/resources/css/member/favorite.css" rel="stylesheet">
 
-<%@ include file="../mypage/mypage.jsp"%>
 
 <div class= "mypage-favorite">
  <div class="row">
