@@ -6,6 +6,7 @@ import org.chajajo.domain.Criteria;
 import org.chajajo.domain.PageDTO;
 import org.chajajo.domain.ServiceDetailVO;
 import org.chajajo.domain.ServiceVO;
+import org.chajajo.domain.StarVO;
 import org.chajajo.service.ServiceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -37,7 +38,6 @@ public class ServiceController {
 
 	@GetMapping("/get")
 	public void get(@RequestParam("no") String no, Model model, Principal principal) {
-        model.addAttribute("service", service.get(no, principal));
-        log.info("get Start" + no + "and" + principal);
+		model.addAttribute("service", service.get(no, principal));
 	}
 }

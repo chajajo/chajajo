@@ -20,6 +20,7 @@ a:hover {
 
 .mypage-container {
 	width:1200px;
+	margin-top:30px;
 }
 
 .mypage-menu {
@@ -30,7 +31,6 @@ a:hover {
 	padding: 30px;
 	font-weight: bold;
 	margin-right: 30px;
-	margin-top: 30px;
 }
 
 .mypage-menu ul li {
@@ -52,7 +52,6 @@ a:hover {
 	padding: 30px;
 	font-weight: bold;
 	margin-right: 30px;
-	margin-top: 30px;
 }
 
 .mypage-box li {

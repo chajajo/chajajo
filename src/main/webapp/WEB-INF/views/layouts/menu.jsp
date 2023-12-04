@@ -36,38 +36,14 @@
 					<div class="login_success_area">
 						<a href="/member/logout.do" class="logout-icon"> <i
 							class="fa-solid fa-right-from-bracket fa-lg"></i></a> <span
-							class="user-name"> ${member.userId}</span> <a href="../mypage/userinfo"
-							class="login-icon"> <i class="fa-solid fa-user fa-2xl"></i></a>
+							class="user-name"> ${member.userId}</span> <a
+							href="../mypage/userinfo" class="login-icon"> <i
+							class="fa-solid fa-user fa-2xl"></i></a>
 
 					</div>
 				</sec:authorize>
 			</div>
-
-			<%-- 			<form id="logoutForm" action="/member/logout" method="post">
-				<input type="hidden" name="${_csrf.parameterName}"
-					value="${_csrf.token}" />
-			</form> --%>
 		</div>
-
-		<%-- 			<div class="tnb-right-section">
-				<!-- user-anonymous -->
-				<c:if test="${member == null}">
-					<a href="/member/login" class="user-anonymous login"> Log in </a>
-					<a href="/member/signup" class="user-anonymous signup"> Sign Up
-					</a>
-				</c:if>
-				<!-- 로그인한 상태 -->
-				<c:if test="${member != null}">
-					<div class="login_success_area">
-						<a href="/member/logout.do" class="logout-icon"><i
-							class="fa-solid fa-right-from-bracket fa-lg"></i></a> <span
-							class="user-name"> ${member.userId}</span> <a
-							href="../mypage/userinfo" class="login-icon"><i
-							class="fa-solid fa-user fa-2xl"></i></a>
-
-					</div>
-				</c:if>
-			</div> --%>
 	</nav>
 
 </div>

@@ -30,8 +30,8 @@ public interface ServiceMapper {
 
 	public int deleteStar(StarVO star);
 
-	public List<ServiceDetailVO> getDetailList(Criteria cri);
+	public List<ServiceVO> getMostViewed(int count);
 
-  public List<ServiceVO> getMostViewed(int count);
+	public List<ServiceVO> getFavoritelist(String userId);
 }
 

@@ -14,17 +14,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UserStarController {
 	@Autowired
 	ServiceMapper mapper;
-	
+
 	@PostMapping("/add")
 	public StarVO addStar(@RequestBody StarVO star) {
 		mapper.addStar(star);
 		return star;
 	}
-	
+
 	@DeleteMapping("/delete")
 	public String deleteStar(StarVO star) {
 		mapper.deleteStar(star);
 		return "OK";
 	}
-
 }
