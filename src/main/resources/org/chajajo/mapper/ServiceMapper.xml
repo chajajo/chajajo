@@ -34,11 +34,12 @@
 		</if>
 	</select>
 
-	<select id="getStarsList" resultType="long">
-	select service_id from user_favorite
-	where user_id = #{userId}
+	<!-- 즐겨찾기 구현 -->
+	<select id="getStarsList" resultType="String">
+		select service_id from user_favorite
+		where user_id = #{userId}
 	</select>
-
+	
 	<insert id="addStar">
 		insert into user_favorite(service_id, user_id)
 		values (#{serviceId}, #{userId})
@@ -48,6 +49,16 @@
 		delete from user_favorite
 		where service_id= #{serviceId} and user_id = #{userId}
 	</delete>
+	
+	<select id="getFavoritelist" resultType="ServiceVO">
+    SELECT service_id, service_name, service_summary, apply_date
+    FROM service_list
+    WHERE service_id IN (
+        SELECT service_id
+        FROM user_favorite
+        WHERE user_id = #{userId}
+    )
+</select>
 
 	<select id="getMostViewed" resultType="ServiceVO">
 		select service_id, service_name, service_summary from service_list

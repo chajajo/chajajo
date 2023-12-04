@@ -1,6 +1,7 @@
 package org.chajajo.controller;
 
 import java.security.Principal;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -11,9 +12,10 @@ import org.chajajo.domain.MemberVO;
 import org.chajajo.domain.QnABoardVO;
 import org.chajajo.domain.QnACriteria;
 import org.chajajo.domain.QnAPageDTO;
-
+import org.chajajo.domain.ServiceVO;
 import org.chajajo.service.MemberService;
 import org.chajajo.service.QnABoardService;
+import org.chajajo.service.ServiceService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -40,6 +42,9 @@ public class MyPageController {
 	
 	@Autowired
 	private QnABoardService qnaservice;
+	
+	@Autowired
+	private ServiceService serviceservice;
 
 	// 회원 정보 페이지 이동
 	@RequestMapping(value = "userinfo", method = RequestMethod.GET)
@@ -108,9 +113,11 @@ public class MyPageController {
 
 	// 즐겨찾기 목록 페이지 이동
 	@RequestMapping(value = "favoritelist", method = RequestMethod.GET)
-	public void favoritelistGET() {
-		log.info(" 즐겨찾기 목록 페이지 진입 성공");
-	}
+	public void favoritelistGET(Model model, Principal principal) {
+		 String userId = principal.getName();
+		    List<ServiceVO> favoriteServices = serviceservice.getFavoritelist(userId);
+		    model.addAttribute("stars", favoriteServices);
+		}
 
 	// 알림 서비스 페이지 이동
 	@RequestMapping(value = "alertservice", method = RequestMethod.GET)

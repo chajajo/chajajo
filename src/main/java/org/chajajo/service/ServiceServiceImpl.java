@@ -4,6 +4,7 @@ import lombok.extern.log4j.Log4j;
 import org.chajajo.domain.Criteria;
 import org.chajajo.domain.ServiceDetailVO;
 import org.chajajo.domain.ServiceVO;
+import org.chajajo.domain.StarVO;
 import org.chajajo.mapper.ServiceMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,28 +19,22 @@ public class ServiceServiceImpl implements ServiceService {
 	@Autowired
 	private ServiceMapper mapper;
 
+	/* 즐겨찾기 목록 */
 	@Override
 	public ServiceDetailVO get(String no, Principal principal) {
-		ServiceDetailVO serviceDetail = mapper.read(no);
-		if (principal != null) {
+		ServiceDetailVO service = mapper.read(no);
+		if(principal != null) {
 			List<String> stars = mapper.getStarsList(principal.getName());
-			serviceDetail.setMyStars(stars.contains(serviceDetail.getServiceId()));
-			log.info("get" + stars);
+			service.setMyStars(stars.contains(service.getServiceId()));
 		}
-		return serviceDetail;
+		return service;
 	}
-
-//	@Override
-//	public List<ServiceDetailVO> getList(Criteria cri, Principal principal) {
-//		List<ServiceDetailVO> list = mapper.getDetailList(cri);
-//		if (principal != null) {
-//			List<String> stars = mapper.getStarsList(principal.getName());
-//			for (ServiceDetailVO serviceDetail : list) {
-//				serviceDetail.setMyStars(stars.contains(serviceDetail.getServiceId()));
-//			}log.info("getList" + stars);
-//		}
-//		return list;
-//	}
+	
+	@Override
+	public List<ServiceVO> getFavoritelist(String userId){
+		return mapper.getFavoritelist(userId);
+	}
+	
 
 	/* 게시판 목록 */
 	@Override
