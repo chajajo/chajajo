@@ -11,223 +11,228 @@
 		where user_id = #{userId}
 	</select>
 
+	<select id="getServiceIdToSupportConditions" resultType="RecommendedServiceDTO">
 
-	<select id="getServiceIdToSupportConditions" resultType="String">
-
-		select service_id from support_conditions
+		select sl.SERVICE_ID, sl.SERVICE_FIELD from support_conditions as sc
+		join service_list as sl on sc.SERVICE_ID = sl.SERVICE_ID  
 		where
-			SERVICE_NAME is not null
+			sc.SERVICE_NAME is not null
 		<if test='age != -1'>
 			<![CDATA[
-			 and ((AGE_START<=#{age} and AGE_END>=#{age}) or (AGE_START is NULL and AGE_END is NULL))
+			 and ((sc.AGE_START<=#{age} and sc.AGE_END>=#{age}) or (sc.AGE_START is NULL and sc.AGE_END is NULL))
 			]]>
 		</if>
 		<if test='gender != ""'>
 			<if test='gender == "male"'>
-				and (MALE='y' 
+				and (sc.MALE='y' 
 			</if>
 			<if test='gender == "female"'>
-				and (FEMALE='y'
+				and (sc.FEMALE='y'
 			</if>
-			or (MALE is NULL and FEMALE is NULL))
+			or (sc.MALE is NULL and sc.FEMALE is NULL))
 		</if>
 		<if test='income != ""'>
 			<if test='income == "income_0_50"'>
-				and (INCOME_0_50='y'
+				and (sc.INCOME_0_50='y'
 			</if>
 			<if test='income == "income_51_75"'>
-				and (INCOME_51_75='y'
+				and (sc.INCOME_51_75='y'
 			</if>
 			<if test='income == "income_76_100"'>
-				and (INCOME_76_100='y'
+				and (sc.INCOME_76_100='y'
 			</if>
 			<if test='income == "income_101_200"'>
-				and (INCOME_101_200='y'
+				and (sc.INCOME_101_200='y'
 			</if>
 			<if test='income == "incomeOver_200"'>
-				and (INCOME_OVER_200='y'
+				and (sc.INCOME_OVER_200='y'
 			</if>
-		 	or (INCOME_0_50 is NULL and INCOME_51_75 is NULL and INCOME_76_100 is NULL and INCOME_101_200 is NULL and INCOME_OVER_200 is NULL))
+		 	or (sc.INCOME_0_50 is NULL and sc.INCOME_51_75 is NULL and sc.INCOME_76_100 is NULL and sc.INCOME_101_200 is NULL and sc.INCOME_OVER_200 is NULL))
 		</if>
 		<if test='child == ""'>
-			and NO_BABY is NULL and PREGNANT is NULL and BIRTH_ADOPT is NULL
+			and ((sc.NO_BABY is NULL and sc.PREGNANT is NULL and sc.BIRTH_ADOPT is NULL) or (sc.NO_BABY='y' and sc.PREGNANT='y' and sc.BIRTH_ADOPT='y'))
 		</if>
 		<if test='child != ""'>
 			<if test='child == "noBaby"'>
-				and (NO_BABY='y'
+				and (sc.NO_BABY='y'
 			</if>
 			<if test='child == "pregnant"'>
-				and (PREGNANT='y'
+				and (sc.PREGNANT='y'
 			</if>
 			<if test='child == "birthAdopt"'>
-				and (BIRTH_ADOPT='y'
+				and (sc.BIRTH_ADOPT='y'
 			</if>
-			or (NO_BABY is NULL and PREGNANT is NULL and BIRTH_ADOPT is NULL))
+			or (sc.NO_BABY is NULL and sc.PREGNANT is NULL and sc.BIRTH_ADOPT is NULL))
 		</if>
 		<if test='job == ""'>
-			and FARM_WORKER is NULL and FISH_WORKER is NULL 
-			and LIVESTOCK_WORKER is NULL and FOREST_WORKER is NULL 
-			and ELEMENTARY is NULL and MI_STDNT is NULL and HI_STDNT is NULL 
-			and GR_STDNT is NULL and NOT_APLCB is NULL and WORKER is NULL 
-			and NON_WORKER is NULL
+			and ((sc.FARM_WORKER is NULL and sc.FISH_WORKER is NULL 
+			and sc.LIVESTOCK_WORKER is NULL and sc.FOREST_WORKER is NULL 
+			and sc.ELEMENTARY is NULL and sc.MI_STDNT is NULL and sc.HI_STDNT is NULL 
+			and sc.GR_STDNT is NULL and sc.NOT_APLCB is NULL and sc.WORKER is NULL 
+			and sc.NON_WORKER is NULL) or (sc.FARM_WORKER='y' and sc.FISH_WORKER='y' 
+			and sc.LIVESTOCK_WORKER='y' and sc.FOREST_WORKER='y' and sc.ELEMENTARY='y' 
+			and sc.MI_STDNT='y' and sc.HI_STDNT='y' and sc.GR_STDNT='y' 
+			and sc.NOT_APLCB='y' and sc.WORKER='y' and sc.NON_WORKER='y'))
 		</if>
 		<if test='job != ""'>
 			<if test='job == "farmWorker"'>
-				and (FARM_WORKER='y'
+				and (sc.FARM_WORKER='y'
 			</if>
 			<if test='job == "fishWorker"'>
-				and (FISH_WORKER='y'
+				and (sc.FISH_WORKER='y'
 			</if>
 			<if test='job == "livestockWorker"'>
-				and (LIVESTOCK_WORKER='y'
+				and (sc.LIVESTOCK_WORKER='y'
 			</if>
 			<if test='job == "forestWorker"'>
-				and (FOREST_WORKER='y'
+				and (sc.FOREST_WORKER='y'
 			</if>
 			<if test='job == "elementary"'>
-				and (ELEMENTARY='y'
+				and (sc.ELEMENTARY='y'
 			</if>
 			<if test='job == "miStdnt"'>
-				and (MI_STDNT='y'
+				and (sc.MI_STDNT='y'
 			</if>
 			<if test='job == "hiStdnt"'>
-				and (HI_STDNT='y'
+				and (sc.HI_STDNT='y'
 			</if>
 			<if test='job == "grStdnt"'>
-				and (GR_STDNT='y'
+				and (sc.GR_STDNT='y'
 			</if>
 			<if test='job == "notAplcb"'>
-				and (NOT_APLCB='y'
+				and (sc.NOT_APLCB='y'
 			</if>
 			<if test='job == "worker"'>
-				and (WORKER='y'
+				and (sc.WORKER='y'
 			</if>
 			<if test='job == "nonWorker"'>
-				and (NON_WORKER='y'
+				and (sc.NON_WORKER='y'
 			</if>
-				or (FARM_WORKER is NULL and FISH_WORKER is NULL 
-				and LIVESTOCK_WORKER is NULL and FOREST_WORKER is NULL 
-				and ELEMENTARY is NULL and MI_STDNT is NULL and HI_STDNT is NULL 
-				and GR_STDNT is NULL and NOT_APLCB is NULL and WORKER is NULL 
-				and NON_WORKER is NULL))
+				or (sc.FARM_WORKER is NULL and sc.FISH_WORKER is NULL 
+				and sc.LIVESTOCK_WORKER is NULL and sc.FOREST_WORKER is NULL 
+				and sc.ELEMENTARY is NULL and sc.MI_STDNT is NULL and sc.HI_STDNT is NULL 
+				and sc.GR_STDNT is NULL and sc.NOT_APLCB is NULL and sc.WORKER is NULL 
+				and sc.NON_WORKER is NULL))
 		</if>
 		<if test='fmlyType == ""'>
-			and MLTCL_FMLY is NULL and NORTH_DFT is NULL 
-				and SP_GC_FMLY is NULL and SNG_FMLY is NULL 
-				and NONE_APPLY is NULL and MLT_CHLD is NULL and HOMELESS is NULL 
-				and NEW_TRNSF is NULL and EX_FMLY is NULL
+			and ((sc.MLTCL_FMLY is NULL and sc.NORTH_DFT is NULL 
+			and sc.SP_GC_FMLY is NULL and sc.SNG_FMLY is NULL 
+			and sc.NONE_APPLY is NULL and sc.MLT_CHLD is NULL and sc.HOMELESS is NULL 
+			and sc.NEW_TRNSF is NULL and sc.EX_FMLY is NULL) or (sc.MLTCL_FMLY='y' and sc.NORTH_DFT='y' 
+			and sc.SP_GC_FMLY='y' and sc.SNG_FMLY='y' and sc.NONE_APPLY='y' 
+			and sc.MLT_CHLD='y' and sc.HOMELESS='y' and sc.NEW_TRNSF='y' 
+			and sc.EX_FMLY='y'))
 		</if>
 		<if test='fmlyType != ""'>
 			<if test='fmlyType == "mltclFmly"'>
-				and (MLTCL_FMLY='y' 
+				and (sc.MLTCL_FMLY='y' 
 			</if>
 			<if test='fmlyType == "northDft"'>
-				and (NORTH_DFT='y' 
+				and (sc.NORTH_DFT='y' 
 			</if>
 			<if test='fmlyType == "spGcFmly"'>
-				and (SP_GC_FMLY='y' 
+				and (sc.SP_GC_FMLY='y' 
 			</if>
 			<if test='fmlyType == "sngFmly"'>
-				and (SNG_FMLY='y' 
+				and (sc.SNG_FMLY='y' 
 			</if>
 			<if test='fmlyType == "noneApply"'>
-				and (NONE_APPLY='y' 
+				and (sc.NONE_APPLY='y' 
 			</if>
 			<if test='fmlyType == "mltChld"'>
-				and (MLT_CHLD='y' 
+				and (sc.MLT_CHLD='y' 
 			</if>
 			<if test='fmlyType == "homeless"'>
-				and (HOMELESS='y' 
+				and (sc.HOMELESS='y' 
 			</if>
 			<if test='fmlyType == "newTrnsf"'>
-				and (NEW_TRNSF='y' 
+				and (sc.NEW_TRNSF='y' 
 			</if>
 			<if test='fmlyType == "exFmly"'>
-				and (EX_FMLY='y' 
+				and (sc.EX_FMLY='y' 
 			</if>
-				or (MLTCL_FMLY is NULL and NORTH_DFT is NULL 
-				and SP_GC_FMLY is NULL and SNG_FMLY is NULL 
-				and NONE_APPLY is NULL and MLT_CHLD is NULL and HOMELESS is NULL 
-				and NEW_TRNSF is NULL and EX_FMLY is NULL))
+				or (sc.MLTCL_FMLY is NULL and sc.NORTH_DFT is NULL 
+				and sc.SP_GC_FMLY is NULL and sc.SNG_FMLY is NULL 
+				and sc.NONE_APPLY is NULL and sc.MLT_CHLD is NULL and sc.HOMELESS is NULL 
+				and sc.NEW_TRNSF is NULL and sc.EX_FMLY is NULL))
 		</if>
 		<if test='bsnsType == ""'>
-			and MLTCL_FMLY is NULL and NORTH_DFT is NULL 
-			and SP_GC_FMLY is NULL and SNG_FMLY is NULL 
-			and NONE_APPLY is NULL and MLT_CHLD is NULL and HOMELESS is NULL 
-			and NEW_TRNSF is NULL and EX_FMLY is NULL
+			and ((sc.SOON_BSNS is NULL and sc.IN_BSNS is NULL 
+			and sc.NON_BSNS is NULL and sc.FOOD_BSNS is NULL 
+			and sc.MNF_BSNS is NULL and sc.ETC_BSNS is NULL) or (sc.SOON_BSNS='y' and sc.IN_BSNS='y' 
+			and sc.NON_BSNS='y' and sc.FOOD_BSNS='y' and sc.MNF_BSNS='y' 
+			and sc.ETC_BSNS='y'))
 		</if>
 		<if test='bsnsType != ""'>
 			<if test='bsnsType == "soonBsns"'>
-				and (SOON_BSNS='y' 
+				and (sc.SOON_BSNS='y' 
 			</if>
 			<if test='bsnsType == "inBsns"'>
-				and (IN_BSNS='y' 
+				and (sc.IN_BSNS='y' 
 			</if>
 			<if test='bsnsType == "nonBsns"'>
-				and (NON_BSNS='y' 
+				and (sc.NON_BSNS='y' 
 			</if>
 			<if test='bsnsType == "foodBsns"'>
-				and (FOOD_BSNS='y' 
+				and (sc.FOOD_BSNS='y' 
 			</if>
 			<if test='bsnsType == "mnfBsns"'>
-				and (MNF_BSNS='y' 
+				and (sc.MNF_BSNS='y' 
 			</if>
 			<if test='bsnsType == "etcBsns"'>
-				and (ETC_BSNS='y' 
+				and (sc.ETC_BSNS='y' 
 			</if>
-				or (SOON_BSNS is NULL and IN_BSNS is NULL 
-				and NON_BSNS is NULL and FOOD_BSNS is NULL 
-				and MNF_BSNS is NULL and ETC_BSNS is NULL))
+				or (sc.SOON_BSNS is NULL and sc.IN_BSNS is NULL 
+				and sc.NON_BSNS is NULL and sc.FOOD_BSNS is NULL 
+				and sc.MNF_BSNS is NULL and sc.ETC_BSNS is NULL))
 		</if>
 		<if test='copType == ""'>
-			and SMALL_COP is NULL and SOCIAL_COP is NULL 
-			and FACILITY is NULL and MNF_COP is NULL 
-			and FFF_COP is NULL and ICT_COP is NULL
-			and ETC_COP is NULL
+			and ((sc.SMALL_COP is NULL and sc.SOCIAL_COP is NULL 
+			and sc.FACILITY is NULL and sc.MNF_COP is NULL 
+			and sc.FFF_COP is NULL and sc.ICT_COP is NULL
+			and sc.ETC_COP is NULL) or (sc.SMALL_COP='y' and sc.SOCIAL_COP='y' 
+			and sc.FACILITY='y' and sc.MNF_COP='y' and sc.FFF_COP='y' 
+			and sc.ICT_COP='y' and sc.ETC_COP='y'))
 		</if>
 		<if test='copType != ""'>
 			<if test='copType == "smallCop"'>
-				and (SMALL_COP='y'
+				and (sc.SMALL_COP='y'
 			</if>
 			<if test='copType == "socialCop"'>
-				and (SOCIAL_COP='y'
+				and (sc.SOCIAL_COP='y'
 			</if>
 			<if test='copType == "facility"'>
-				and (FACILITY='y'
+				and (sc.FACILITY='y'
 			</if>
 			<if test='copType == "mnfCop"'>
-				and (MNF_COP='y'
+				and (sc.MNF_COP='y'
 			</if>
 			<if test='copType == "fffCop"'>
-				and (FFF_COP='y'
+				and (sc.FFF_COP='y'
 			</if>
 			<if test='copType == "ictCop"'>
-				and (ICT_COP='y'
+				and (sc.ICT_COP='y'
 			</if>
 			<if test='copType == "etcCop"'>
-				and (ETC_COP='y'
+				and (sc.ETC_COP='y'
 			</if>
-				or (SMALL_COP is NULL and SOCIAL_COP is NULL 
-				and FACILITY is NULL and MNF_COP is NULL 
-				and FFF_COP is NULL and ICT_COP is NULL
-				and ETC_COP is NULL))
-		</if>
-		<if test='handicap == ""'>
-			and DISABLED_PERSON is NULL and NATIONAL_VETERANS is NULL 
-			and SICK_PERSON is NULL
+				or (sc.SMALL_COP is NULL and sc.SOCIAL_COP is NULL 
+				and sc.FACILITY is NULL and sc.MNF_COP is NULL 
+				and sc.FFF_COP is NULL and sc.ICT_COP is NULL
+				and sc.ETC_COP is NULL))
 		</if>
 		<if test='handicap != ""'>
 			<if test='handicap == "disabledPerson"'>
-				and (DISABLED_PERSON='y'
+				and (sc.DISABLED_PERSON='y'
 			</if>
 			<if test='handicap == "nationslVeterans"'>
-				and (NATIONAL_VETERANS='y'
+				and (sc.NATIONAL_VETERANS='y'
 			</if>
 			<if test='handicap == "sickPerson"'>
-				and (SICK_PERSON='y'
+				and (sc.SICK_PERSON='y'
 			</if>
-				or (DISABLED_PERSON is NULL and NATIONAL_VETERANS is NULL 
-				and SICK_PERSON is NULL))
+				or (sc.DISABLED_PERSON is NULL and sc.NATIONAL_VETERANS is NULL 
+				and sc.SICK_PERSON is NULL))
 		</if>
 	</select>
 
@@ -235,9 +240,6 @@
 	<select id="getServiceVOToServiceId" resultType="ServiceVO">
 		select * from service_list
 		where service_id = #{serviceId}
-		<if test='category != null'>
-				and DEPT_NAME = #{category}
-		</if>
 	</select>
 	
 	<update id="updateUserCondition" parameterType="UserConditionsVO">

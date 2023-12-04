@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.chajajo.domain.Criteria;
 import org.chajajo.domain.MemberVO;
 import org.chajajo.domain.PageDTO;
+import org.chajajo.domain.RecommendedServiceDTO;
 import org.chajajo.domain.ServiceVO;
 import org.chajajo.domain.UserConditionsVO;
 import org.chajajo.service.RecommendationService;
@@ -72,12 +73,20 @@ public class RecommendationController {
 			model.addAttribute("userConditions", service.getUserCondtions(userId));
 		}
 		
-		List<String> serviceIds = service.getServiceIdToUserCondtions(userConditionsVO);
-		int total = service.countRecommendedList(serviceIds);
+		List<RecommendedServiceDTO> recommendedServiceList = service.getServiceIdToUserCondtions(userConditionsVO);
 		
-		//List<ServiceVO>
-		model.addAttribute("list", service.getRecommendedList(serviceIds, cri, total, category));
+		if( category != null ) {
+			if (!category.isEmpty()) {
+				recommendedServiceList = service.getCategoristRecommendedList(recommendedServiceList, category);
+			}
+		}
 		
+		int total = service.countRecommendedList(recommendedServiceList);
+		
+		
+		List<ServiceVO> serviceVo = service.getRecommendedList(recommendedServiceList, cri, total);
+		model.addAttribute("list", serviceVo);
+		model.addAttribute("category", category);
 		
 		PageDTO pageMaker = new PageDTO(cri, total);
 		model.addAttribute("pageMaker", pageMaker);

@@ -11,7 +11,7 @@ public class UserConditionsVO {
 
 	private String userId;
 	private String gender="";
-	private int age = -1;
+	private int age = 0;
 	private String income="";
 	private String child="";
 	private String job="";

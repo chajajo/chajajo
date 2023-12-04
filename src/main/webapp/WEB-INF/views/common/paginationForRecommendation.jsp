@@ -12,6 +12,7 @@
 	<input type="hidden" name="bsnsType" value="${keyword.bsnsType}" />
 	<input type="hidden" name="copType" value="${keyword.copType}" />
 	<input type="hidden" name="handicap" value="${keyword.handicap}" />
+	<input type="hidden" name="category" value="${category}" /> 
 </form>
 
 <ul class="pagination justify-content-center">

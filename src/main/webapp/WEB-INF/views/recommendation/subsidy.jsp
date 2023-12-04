@@ -4,6 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ include file="../layouts/header.jsp"%>
 <link href="/resources/css/service/list.css" rel="stylesheet">
+<link href="/resources/css/recommendation/subsidy.css" rel="stylesheet">
 
 <!-- pagination script code -->
 <script>
@@ -17,7 +18,26 @@
 			actionForm.find('input[name="pageNum"]').val($(this).attr('href'));
 			actionForm.submit();
 		});
-		/*  
+		
+		let categoryForm = $('#categoryForm');
+
+		$('a.cate-link').on('click', function(e) {
+			e.preventDefault();
+			console.log('click');
+			categoryForm.find('input[name="category"]').val($(this).attr('href'));
+			categoryForm.submit();
+		});
+		
+		let category = '${category}';
+		/*
+		if ( category != null) {
+			if ( category ! = "보육·교육"){
+				$('.nav-item a').removeClass('active');
+	            $('.보육').addClass('active');
+			}
+		}
+		*/
+		 /*
 		let pageUrl = decodeURI(window.location.href);
 
 	    $(window).on('load', function(){
@@ -52,56 +72,72 @@
 	        } else if (pageUrl.indexOf('임신') > -1) {
 	            $('.nav-item a').removeClass('active');
 	            $('.임신').addClass('active');
-	        }
-	        */
+	        }*/
+	        
 	});
 </script>
  
  <%@ include file="./conditionsForm.jsp"%>
  
 <div class="container">
-<!--  
+<br/>
+
+<form id="categoryForm" action="" method="get">
+	<input type="hidden" name="age" value="${keyword.age}" />
+	<input type="hidden" name="gender" value="${keyword.gender}" />
+	<input type="hidden" name="income" value="${keyword.income}" />
+	<input type="hidden" name="child" value="${keyword.child}" />
+	<input type="hidden" name="job" value="${keyword.job}" />
+	<input type="hidden" name="fmlyType" value="${keyword.fmlyType}" />
+	<input type="hidden" name="bsnsType" value="${keyword.bsnsType}" />
+	<input type="hidden" name="copType" value="${keyword.copType}" />
+	<input type="hidden" name="handicap" value="${keyword.handicap}" />
+	<input type="hidden" name="category" value="${category}" />
+</form>
+
+
+<input type="text" name="total" value="총 ${pageMaker.total} 개" readonly/>
+
  <nav class="navbar navbar-expand-lg static-top" style="height: 50px; background-color: #cccccc">
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto" style="color: black">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="list">전체보기</a>
+                    <a class="cate-link active" aria-current="page" href="">전체보기</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link 보육" aria-current="page" href="list?keyword=보육·교육">보육·교육</a>
+                    <a class="cate-link 보육" aria-current="page" href="보육·교육">보육·교육</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link 주거" aria-current="page" href="list?keyword=주거·자립">주거·자립</a>
+                    <a class="cate-link 주거" aria-current="page" href="주거·자립">주거·자립</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link 농림" aria-current="page" href="list?keyword=농림축산어업">농림축산어업</a>
+                    <a class="cate-link 농림" aria-current="page" href="농림축산어업">농림축산어업</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link 행정" aria-current="page" href="list?keyword=행정·안전">행정·안전</a>
+                    <a class="cate-link 행정" aria-current="page" href="행정·안전">행정·안전</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link 문화" aria-current="page" href="list?keyword=문화·환경">문화·환경</a>
+                    <a class="cate-link 문화" aria-current="page" href="문화·환경">문화·환경</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link 보건" aria-current="page" href="list?keyword=보건·의료">보건·의료</a>
+                    <a class="cate-link 보건" aria-current="page" href="보건·의료">보건·의료</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link 고용" aria-current="page" href="list?keyword=고용·창업">고용·창업</a>
+                    <a class="cate-link 고용" aria-current="page" href="고용·창업">고용·창업</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link 생활" aria-current="page" href="list?keyword=생활안정">생활안정</a>
+                    <a class="cate-link 생활" aria-current="page" href="생활안정">생활안정</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link 보호" aria-current="page" href="list?keyword=보호·돌봄">보호·돌봄</a>
+                    <a class="cate-link 보호" aria-current="page" href="보호·돌봄">보호·돌봄</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link 임신" aria-current="page" href="list?keyword=임신·출산">임신·출산</a>
+                    <a class="cate-link 임신" aria-current="page" href="임신·출산">임신·출산</a>
                 </li>
             </ul>
         </div>
     </nav>
-    -->
     <br/>
     <div class="row">
         <c:forEach var="service" items="${list}">
