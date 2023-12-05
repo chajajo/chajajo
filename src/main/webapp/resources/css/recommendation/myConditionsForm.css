@@ -44,14 +44,14 @@ label:hover {
 }
 
 .condition-category {
+    width:100px;
 	display:inline-block;
-	width:100px;
 	text-align: right;
 }
 
 .userCondition-button {
 	display: flex;
-	margin: 30px 180px;
+	margin: 30px 200px;
 }
 
 .search_button_wrap {
@@ -81,5 +81,5 @@ label:hover {
 }
 
 .conditions_type {
-	padding: 5px 0px;
+	padding: 10px 0px;
 }
