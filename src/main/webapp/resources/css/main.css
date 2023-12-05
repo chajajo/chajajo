@@ -74,7 +74,7 @@ align-items:flex-end;
 	float: left;
 	width: auto;
 	border: none;
-	display: block;
+	display: flex;
 	outline: 0;
 	cursor: pointer;
 	font-weight: bold;
@@ -170,20 +170,21 @@ align-items:flex-end;
 }
 
 .chip {
-	font-family: SpoqaHanSansNeo, sans-serif !important;
-	font-style: normal !important;
-	font-weight: 400;
-	box-sizing: border-box;
-	margin: 0px 0px 20px 0px;
-	display: inline-block;
-	padding: 6px;
-	font-size: 13px;
-	color: #006ae2;
-	line-height: 15px;
-	border: 1px solid #99c3f3;
-	border-radius: 4px;
+    font-family: SpoqaHanSansNeo, sans-serif !important;
+    font-style: normal !important;
+    font-weight: 400;
+    box-sizing: border-box;
+    margin: 0px 0px 20px 0px;
+    display: inline-block;
+    padding: 6px;
+    font-size: 17px;
+    color: white;
+    line-height: 15px;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    font-weight: bold;
+    background: #99c3f3;
 }
-
 .main-box {
 	font-size: 1.3rem;
 	color: #333;
@@ -194,9 +195,14 @@ align-items:flex-end;
 	font-style: normal;
 	line-height: 1.5;
 	overflow: hidden;
-	padding: 24px 60px 24px 60px;
+	padding: 24px 30px 24px 30px;
 	height: 328px;
 	border-radius: 16px;
+	
+}
+
+.main-box-text {
+	text-align: center;
 }
 
 .main-box-title {
