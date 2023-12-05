@@ -61,7 +61,7 @@
 			$("#worker").prop("checked", true);
 		} else if ("${userConditions.job}"==="nonWorker") {
 			$("#nonWorker").prop("checked", true);
-		} else if ("${userConditions.job}"==="notAplcb") {
+		} else {
 			$("#notAplcb").prop("checked", true);
 		}
 		
@@ -81,7 +81,7 @@
 			$("#newTrnsf").prop("checked", true);
 		} else if ("${userConditions.fmlyType}"==="exFmly") {
 			$("#exFmly").prop("checked", true);
-		} else if ("${userConditions.fmlyType}"==="noneApply") {
+		} else {
 			$("#noneApply").prop("checked", true);
 		}
 		

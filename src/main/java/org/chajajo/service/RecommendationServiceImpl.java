@@ -28,7 +28,7 @@ public class RecommendationServiceImpl implements RecommendationService {
 	// userConditions 가져오기
 	@Override
 	public UserConditionsVO getUserCondtions(String userId) {
-		UserConditionsVO userCondtionsVo = null;
+		UserConditionsVO userCondtionsVo = new UserConditionsVO();
 		userCondtionsVo = mapper.getUserCondtions(userId);
 		return userCondtionsVo;
 	}

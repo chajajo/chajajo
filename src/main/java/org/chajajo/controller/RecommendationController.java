@@ -67,7 +67,6 @@ public class RecommendationController {
 		    SecurityContext securityContext = (SecurityContext)securityContextObject;
 		    Authentication authentication = securityContext.getAuthentication();
 		    
-		    
 		    String userId = authentication.getName();
 		  //UserConditionsVO
 			model.addAttribute("userConditions", service.getUserCondtions(userId));

@@ -95,7 +95,7 @@ public class MemberServiceImpl implements MemberService {
 	//userCondition 가져오기
 	@Override
 	public UserConditionsVO getUserCondtions(String userId) {
-		UserConditionsVO userCondtions = null;
+		UserConditionsVO userCondtions = new UserConditionsVO();
 		userCondtions = mapper.getUserConditions(userId);
 		return userCondtions;
 	}

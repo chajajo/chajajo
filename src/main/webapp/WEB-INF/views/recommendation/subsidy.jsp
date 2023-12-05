@@ -8,6 +8,7 @@
 
 <!-- pagination script code -->
 <script>
+
  
 	$(document).ready(function() {
 		let actionForm = $('#actionForm');
@@ -18,33 +19,46 @@
 			actionForm.find('input[name="pageNum"]').val($(this).attr('href'));
 			actionForm.submit();
 		});
+		/*
+		let categoryForm = $('#categoryForm');
+		function formSubmit() {
+			
+			categoryForm.find('input[name="category"]').val($(this).attr('data-value'));
+			console.log('1');
+			categoryForm.submit();
+			console.log('2');
+		}
+		*/
 		
 		let categoryForm = $('#categoryForm');
-
+		let category = '${category}';
+		
 		$('a.cate-link').on('click', function(e) {
 			e.preventDefault();
 			console.log('click');
 			categoryForm.find('input[name="category"]').val($(this).attr('href'));
+			
 			categoryForm.submit();
 		});
 		
-		let category = '${category}';
+		
+		
 		/*
 		if ( category != null) {
-			if ( category ! = "보육·교육"){
-				$('.nav-item a').removeClass('active');
-	            $('.보육').addClass('active');
-			}
+				if ( category ! = "보육·교육"){
+					$('.nav-item a').removeAttr('active');
+		            $('.보육').append('active');
+				}
 		}
 		*/
-		 /*
+		/*
 		let pageUrl = decodeURI(window.location.href);
 
-	    $(window).on('load', function(){
+	    $(window).on('click', function(){
 
 	        if (pageUrl.indexOf('보육') > -1) {
-	            $('.nav-item a').removeClass('active');
-	            $('.보육').addClass('active');
+	            $('.nav-item a').removeAttr('active');
+	            $('.보육').append('active');
 	        } else if (pageUrl.indexOf('주거') > -1) {
 	            $('.nav-item a').removeClass('active');
 	            $('.주거').addClass('active');
