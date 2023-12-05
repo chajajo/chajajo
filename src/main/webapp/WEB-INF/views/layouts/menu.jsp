@@ -38,7 +38,7 @@
 						<a href="/member/logout.do" class="logout-icon"> <i
 							class="fa-solid fa-right-from-bracket fa-lg"></i></a> <span
 							class="user-name"> ${member.userId}</span> <a
-							href="../mypage/userinfo" class="login-icon"> <i
+							href="/mypage/userinfo" class="login-icon"> <i
 							class="fa-solid fa-user fa-2xl"></i></a>
 
 					</div>
