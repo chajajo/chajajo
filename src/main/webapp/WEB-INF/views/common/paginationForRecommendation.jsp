@@ -1,5 +1,19 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<script>
 
+ 
+	$(document).ready(function() {
+		
+		
+		let actionForm = $('#actionForm');
+
+		$('a.page-link').on('click', function(e) {
+			e.preventDefault();
+			actionForm.find('input[name="pageNum"]').val($(this).attr('href'));
+			actionForm.submit();
+		});
+	});
+</script>
 <form id="actionForm" action="" method="get">
 	<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}" />
 	<input type="hidden" name="amount" value="${pageMaker.cri.amount}" />
