@@ -18,8 +18,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<insert id="insertSelectKey">
 		insert into qna_board(title, content, writer)
-		values (#{title},
-		#{content}, #{writer})
+		values (#{title}, #{content}, #{writer})
 
 		<selectKey resultType="Long" keyProperty="bno"
 			keyColumn="bno" order="AFTER">

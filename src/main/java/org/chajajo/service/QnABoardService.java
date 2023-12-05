@@ -25,6 +25,8 @@ public interface QnABoardService {
 	
 	public int getTotalMy(QnACriteria cri);
 
+	public QnABoardVO myget(Long bno);
+
 
 
 

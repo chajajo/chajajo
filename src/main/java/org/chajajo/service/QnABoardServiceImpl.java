@@ -29,6 +29,12 @@ public class QnABoardServiceImpl implements QnABoardService {
 		log.info("get......" + bno);
 		return mapper.read(bno);
 	}
+	
+	@Override
+	public QnABoardVO myget(Long bno) {
+		log.info("myget......" + bno);
+		return mapper.read(bno);
+	}
 
 	@Override
 	public boolean modify(QnABoardVO qna) {

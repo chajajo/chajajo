@@ -4,20 +4,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
-
-<link rel="stylesheet" href="/resources/css/summernote/summernote-lite.min.css">
-<script src="/resources/js/summernote/summernote-lite.min.js"></script>
-<script src="/resources/js/summernote/lang/summernote-ko-KR.min.js"></script>
-
-<script>
-$(document).ready(function() {
-	$('#content').summernote({
-		height: 300,    // 에디터 높이
-		lang: "ko-KR",	// 한글 설정
-	});
-});
-</script>
-
 <%@ include file="../mypage/mypage.jsp"%>
 
 <div class="mypage-box">
@@ -34,7 +20,7 @@ $(document).ready(function() {
 			</div>
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 				<div class="form-group has-geedback">
-					<label class="control-label" for="userId">아이디</label>
+					<label class="control-label" for="userId">작성자</label>
 					 <input class="form-control" type="text" name="writer" value="${member.userId}" readonly>
 				</div>
 			<div class="form-group">

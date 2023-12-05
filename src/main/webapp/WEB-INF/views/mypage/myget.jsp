@@ -3,22 +3,32 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js">
+</script>
+<script src="/resources/js/rest.js"></script>
+<script src="/resources/js/comment.js"></script>
+<script src="/resources/js/reply.js"></script>
 
 
 <%@ include file="../mypage/mypage.jsp"%>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-<script src="/resources/js/rest.js"></script>
-<script src="/resources/js/comment.js"></script>
-<script src="/resources/js/reply.js"></script>
+<div class="mypage-box">
 
 <script>
 	const COMMENT_URL = '/api/mypage/${param.bno}/comment/';
 	const REPLY_URL = '/api/mypage/${param.bno}/reply/';
 
 	$(document).ready(function() {
-
+/* 		$('.list').click(function(){
+			document.forms.listForm.submit();
+		});
+		
+		$('.modify').click(function(){
+			document.forms.modifyForm.submit();
+		});
+		 */
+		
 		$('.remove').click(function(){
 			if(!confirm('정말 삭제할까요?')) return;		
 			document.forms.removeForm.submit();
@@ -83,8 +93,6 @@
 	}); 		
 </script>
 
-<div class="mypage-box">
-
 
 <h1 class="page-header">
 	<i class="far fa-file-alt"></i> ${qna.title}
@@ -136,7 +144,7 @@
 
 
 <div class="mt-4">
-	<a href="${cri.getLink('list')}" class="btn btn-primary list">
+	<a href="${cri.getLink('mylist')}" class="btn btn-primary list">
 		<i class="fas fa-list"></i> 목록</a>
 	
 	<c:if test="${userId == qna.writer }">
@@ -147,7 +155,7 @@
 	</c:if>
 </div>
 
-<form id="listForm" action="/mypage/list" method="get" >
+<form id="listForm" action="/mypage/mylist" method="get" >
 	<input type="hidden" name="pageNum" value="${cri.pageNum}"/>
 	<input type="hidden" name="amount" value="${cri.amount}"/>
 </form>
