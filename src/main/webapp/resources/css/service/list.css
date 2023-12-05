@@ -1,12 +1,13 @@
-
 .card {
     border: none;
     transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
     overflow: hidden;
     border-radius: 20px;
     min-height: 255px;
+    max-height: 255px;
     box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
 }
+
 @media (max-width: 768px) {
     .card {
         min-height: 210px;
@@ -30,6 +31,7 @@
     background: linear-gradient(0deg, rgba(255, 186, 33, 0.5) 0%, #F3EEEA 100%);
 }
 
+
 .card .card-title {
     font-weight: 800;
 }
@@ -37,28 +39,470 @@
     color: rgb(0, 0, 0);
     text-transform: uppercase;
     letter-spacing: 2px;
+    font-weight:bolder;
 }
-.card .card-body {
-    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
-}
-.card:hover {
-    cursor: pointer;
-    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
-}
-.card:hover .card-body {
-    margin-top: 30px;
-    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+.text {
+    color: rgb(0,0,0);/*중간 내용 컬러 */
 }
 .card .card-img-overlay {
     transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
     background: #F3EEEA;
     background: linear-gradient(0deg, rgba(255, 186, 33, 0.3785889356) 0%, #F3EEEA 100%);
 }
-
+.card .card-body {
+    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+    color: rgb(0,0,0); 
+    padding-top: 20px;
+    padding-left: 20px; 
+    padding-bottom: 20px;
+    padding-right: 20px;  
+}
+.card:hover .card-body {
+    margin-top: 30px;
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+}
 .nav-item a.active {
     font-weight: bold;
+    background: #F3EEEA;
+    border-radius: 8px;
 }
-
 .nav-item a:hover {
     color: grey;
+}
+.nav-item {
+	font-size: 18px;
+}
+.card:hover {
+    cursor: pointer;
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+
+
+.card .card-title보육·교육 {
+    font-weight: 800;
+}
+.card .card-meta보육·교육 {
+    color: rgb(65,98,131); /* 타이틀 제목 컬러 */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight:bolder;
+}
+.text보육·교육 {
+    color: rgb(96,96,96);/*중간 내용 컬러 */
+}
+.card .card-img-overlay보육·교육 {
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+    background: linear-gradient(0deg, rgba(160,192,224, 0.3785889356) 0%, #A0C0E0 100%);
+	min-height: 255px;
+}
+.card .card-body보육·교육 {
+    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+    color: rgb(96,96,96); /* 하단 내용 컬러 */
+    padding-top: 20px;
+    padding-left: 20px; 
+    padding-bottom: 20px;
+    padding-right: 20px; 
+}
+.card:hover .card-body보육·교육 {
+    margin-top: 30px;
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+.nav-item보육 a.active {
+    font-weight: bold;
+    background: #A0C0E0;  /* 네비바 선택시 컬러 */
+    border-radius: 8px;
+}
+.nav-item보육 a:hover {
+    color: grey;
+}
+.nav-item보육 {
+	font-size: 18px;
+}
+
+
+
+.card .card-title주거·자립 {
+    font-weight: 800;
+}
+.card .card-meta주거·자립 {
+    color: rgb(16, 85, 66); /* 타이틀 제목 컬러 */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight:bolder;
+}
+.text주거·자립 {
+    color: rgb(96,96,96);/*중간 내용 컬러 */
+}
+.card .card-img-overlay주거·자립 {
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+    background: linear-gradient(0deg, rgba(176, 217, 177, 0.3785889356) 0%, #B0D9B1 100%);
+	min-height: 255px;
+}
+.card .card-body주거·자립 {
+    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+    color: rgb(96,96,96); /* 하단 내용 컬러 */
+    padding-top: 20px;
+    padding-left: 20px; 
+    padding-bottom: 20px;
+    padding-right: 20px; 
+}
+.card:hover .card-body주거·자립 {
+    margin-top: 30px;
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+.nav-item주거 a.active {
+    font-weight: bold;
+    background: #B0D9B1;  /* 네비바 선택시 컬러 */
+    border-radius: 8px;
+}
+.nav-item주거 a:hover {
+    color: grey;
+}
+.nav-item주거 {
+	font-size: 18px;
+}
+
+
+
+.card .card-title농림축산어업 {
+    font-weight: 800;
+}
+.card .card-meta농림축산어업 {
+    color: rgb(94,94,70); /* 타이틀 제목 컬러 */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight:bolder;
+}
+.text농림축산어업 {
+    color: rgb(96,96,96);/*중간 내용 컬러 */
+}
+.card .card-img-overlay농림축산어업 {
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+    background: linear-gradient(0deg, rgba(192,192,160, 0.3785889356) 0%, #C0C0A0 100%);
+	min-height: 255px;
+}
+.card .card-body농림축산어업 {
+    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+    color: rgb(96,96,96); /* 하단 내용 컬러 */
+    padding-top: 20px;
+    padding-left: 20px; 
+    padding-bottom: 20px;
+    padding-right: 20px; 
+}
+.card:hover .card-body농림축산어업 {
+    margin-top: 30px;
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+.nav-item농림 a.active {
+    font-weight: bold;
+    background: #C0C0A0;  /* 네비바 선택시 컬러 */
+    border-radius: 8px;
+}
+.nav-item농림 a:hover {
+    color: grey;
+}
+.nav-item농림 {
+	font-size: 18px;
+}
+
+
+
+.card .card-title행정·안전 {
+    font-weight: 800;
+}
+.card .card-meta행정·안전 {
+    color: rgb(96,96,96); /* 타이틀 제목 컬러 */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight:bolder;
+}
+.text행정·안전 {
+    color: rgb(96,96,96);/*중간 내용 컬러 */
+}
+.card .card-img-overlay행정·안전 {
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+    background: linear-gradient(0deg, rgba(224,224,224, 0.3785889356) 0%, #E0E0E0 100%);
+	min-height: 255px;
+}
+.card .card-body행정·안전 {
+    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+    color: rgb(96,96,96); /* 하단 내용 컬러 */
+    padding-top: 20px;
+    padding-left: 20px; 
+    padding-bottom: 20px;
+    padding-right: 20px; 
+}
+.card:hover .card-body행정·안전 {
+    margin-top: 30px;
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+.nav-item행정 a.active {
+    font-weight: bold;
+    background: #E0E0E0;  /* 네비바 선택시 컬러 */
+    border-radius: 8px;
+}
+.nav-item행정 a:hover {
+    color: grey;
+}
+.nav-item행정 {
+	font-size: 18px;
+}
+
+
+
+.card .card-title문화·환경 {
+    font-weight: 800;
+}
+.card .card-meta문화·환경 {
+    color: rgb(96,96,96); /* 타이틀 제목 컬러 */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight:bolder;
+}
+.text문화·환경 {
+    color: rgb(96,96,96);/*중간 내용 컬러 */
+}
+.card .card-img-overlay문화·환경 {
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+    background: linear-gradient(0deg, rgba(224,240,224, 0.3785889356) 0%, #E0F0E0 100%);
+	min-height: 255px;
+}
+.card .card-body문화·환경 {
+    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+    color: rgb(96,96,96); /* 하단 내용 컬러 */
+    padding-top: 20px;
+    padding-left: 20px; 
+    padding-bottom: 20px;
+    padding-right: 20px; 
+}
+.card:hover .card-body문화·환경 {
+    margin-top: 30px;
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+.nav-item문화 a.active {
+    font-weight: bold;
+    background: #E0F0E0;  /* 네비바 선택시 컬러 */
+    border-radius: 8px;
+}
+.nav-item문화 a:hover {
+    color: grey;
+}
+.nav-item문화 {
+	font-size: 18px;
+}
+
+
+
+.card .card-title보건·의료 {
+    font-weight: 800;
+}
+.card .card-meta보건·의료 {
+    color: rgb(168,125,125); /* 타이틀 제목 컬러 */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight:bolder;
+}
+.text보건·의료 {
+    color: rgb(96,96,96);/*중간 내용 컬러 */
+}
+.card .card-img-overlay보건·의료 {
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+    background: linear-gradient(0deg, rgba(240,224,224, 0.3785889356) 0%, #F0E0E0 100%);
+	min-height: 255px;
+}
+.card .card-body보건·의료 {
+    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+    color: rgb(96,96,96); /* 하단 내용 컬러 */
+    padding-top: 20px;
+    padding-left: 20px; 
+    padding-bottom: 20px;
+    padding-right: 20px; 
+}
+.card:hover .card-body보건·의료 {
+    margin-top: 30px;
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+.nav-item보건 a.active {
+    font-weight: bold;
+    background: #F0E0E0;  /* 네비바 선택시 컬러 */
+    border-radius: 8px;
+}
+.nav-item보건 a:hover {
+    color: grey;
+}
+.nav-item보건 {
+	font-size: 18px;
+}
+
+
+
+.card .card-title고용·창업 {
+    font-weight: 800;
+}
+.card .card-meta고용·창업 {
+    color: rgb(130,130,193); /* 타이틀 제목 컬러 */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight:bolder;
+}
+.text고용·창업 {
+    color: rgb(96,96,96);/*중간 내용 컬러 */
+}
+.card .card-img-overlay고용·창업 {
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+    background: linear-gradient(0deg, rgba(224,224,240, 0.3785889356) 0%, #E0E0F0 100%);
+	min-height: 255px;
+}
+.card .card-body고용·창업 {
+    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+    color: rgb(96,96,96); /* 하단 내용 컬러 */
+    padding-top: 20px;
+    padding-left: 20px; 
+    padding-bottom: 20px;
+    padding-right: 20px;  
+}
+.card:hover .card-body고용·창업 {
+    margin-top: 30px;
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+.nav-item고용 a.active {
+    font-weight: bold;
+    background: #E0E0F0;  /* 네비바 선택시 컬러 */
+    border-radius: 8px;
+}
+.nav-item고용 a:hover {
+    color: grey;
+}
+.nav-item고용 {
+	font-size: 18px;
+}
+
+
+
+.card .card-title생활안정 {
+    font-weight: 800;
+}
+.card .card-meta생활안정 {
+    color: rgb(206,174,88); /* 타이틀 제목 컬러 */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight:bolder;
+}
+.text생활안정 {
+    color: rgb(96,96,96);/*중간 내용 컬러 */
+}
+.card .card-img-overlay생활안정 {
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+    background: linear-gradient(0deg, rgba(240, 240, 224, 0.3785889356) 0%, #F0F0E0 80%);
+	min-height: 255px;
+}
+.card .card-body생활안정 {
+    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+    color: rgb(96,96,96); /* 하단 내용 컬러 */
+    padding-top: 20px;
+    padding-left: 20px; 
+    padding-bottom: 20px;
+    padding-right: 20px;  
+}
+.card:hover .card-body생활안정 {
+    margin-top: 30px;
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+.nav-item생활 a.active {
+    font-weight: bold;
+    background: #F0F0E0;  /* 네비바 선택시 컬러 */
+    border-radius: 8px;
+}
+.nav-item생활 a:hover {
+    color: grey;
+}
+.nav-item생활 {
+	font-size: 18px;
+}
+
+
+
+.card .card-title보호·돌봄 {
+    font-weight: 800;
+}
+.card .card-meta보호·돌봄 {
+    color: rgb(198,165,32); /* 타이틀 제목 컬러 */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight:bolder;
+}
+.text보호·돌봄 {
+    color: rgb(96,96,96);/*중간 내용 컬러 */
+}
+.card .card-img-overlay보호·돌봄 {
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+    background: linear-gradient(0deg, rgba(255, 245, 194, 0.3785889356) 0%, #FFF5C2 80%);
+	min-height: 255px;
+}
+.card .card-body보호·돌봄 {
+    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+    color: rgb(96,96,96); /* 하단 내용 컬러 */
+    padding-top: 20px;
+    padding-left: 20px; 
+    padding-bottom: 20px;
+    padding-right: 20px;  
+}
+.card:hover .card-body보호·돌봄 {
+    margin-top: 30px;
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+.nav-item보호 a.active {
+    font-weight: bold;
+    background: #FFF5C2;  /* 네비바 선택시 컬러 */
+    border-radius: 8px;
+}
+.nav-item보호 a:hover {
+    color: grey;
+}
+.nav-item보호 {
+	font-size: 18px;
+}
+
+
+
+.card .card-title임신·출산 {
+    font-weight: 800;
+}
+.card .card-meta임신·출산 {
+    color: rgb(164,119,119); /* 타이틀 제목 컬러 */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight:bolder;
+}
+.text임신·출산 {
+    color: rgb(96,96,96);/*중간 내용 컬러 */
+}
+.card .card-img-overlay임신·출산 {
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+    background: linear-gradient(0deg, rgba(251, 226, 229, 0.3785889356) 0%, #FBE2E5 80%);
+	min-height: 255px;
+}
+.card .card-body임신·출산 {
+    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+    color: rgb(96,96,96); /* 하단 내용 컬러 */
+    padding-top: 20px;
+    padding-left: 20px; 
+    padding-bottom: 20px;
+    padding-right: 20px;  
+}
+.card:hover .card-body임신·출산 {
+    margin-top: 30px;
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+.nav-item임신 a.active {
+    font-weight: bold;
+    background: #FBE2E5;  /* 네비바 선택시 컬러 */
+    border-radius: 8px;
+}
+.nav-item임신 a:hover {
+    color: grey;
+}
+.nav-item임신 {
+	font-size: 18px;
 }
