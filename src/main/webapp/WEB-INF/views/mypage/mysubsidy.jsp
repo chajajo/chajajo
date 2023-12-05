@@ -131,6 +131,11 @@
 		
 		
 		$(".userConditions_button").click(function() {
+			if (!$('#age').val()) {
+				$('#age').focus();
+				alert("나이는 필수 입력 사항입니다.");
+				return false;
+			}
 			
 			$("#conditions_form").attr("action", "/recommendation/userConditions");
 			$("#conditions_form").submit();
