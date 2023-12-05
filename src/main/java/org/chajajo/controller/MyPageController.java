@@ -182,12 +182,12 @@ public class MyPageController {
 	
 	
 	// 나의문의 페이지 이동
-	@GetMapping("/mycontact")
-	public void mycontactGET(Principal principal, @ModelAttribute("cri") QnACriteria cri, Model model) {
-		log.info("list" + cri);
+	@GetMapping("/mylist")
+	public void mylistGET(Principal principal, @ModelAttribute("cri") QnACriteria cri, Model model) {
+		log.info("mylist" + cri);
 			String userId = principal.getName();
 			cri.setUserId(userId);
-			model.addAttribute("list", qnaservice.getListMy(cri));
+			model.addAttribute("mylist", qnaservice.getListMy(cri));
 			
 			int total = qnaservice.getTotalMy(cri);
 			log.info("total: " + total);
@@ -195,9 +195,15 @@ public class MyPageController {
 			model.addAttribute("pageMaker", new QnAPageDTO(cri, total));//
 	}
 	
-	
-	
-	
+	//나의 문의글 조회 수정
+	@GetMapping({ "/myget"})
+	public void myget(@RequestParam("bno") Long bno, 
+			@ModelAttribute("cri") QnACriteria cri,
+			Model model) {
+		log.info("/myget");
+		model.addAttribute("qna", qnaservice.myget(bno));
+	}
+
 
 	// 회원 탈퇴 페이지 이동
 	@RequestMapping(value = "/userout", method = RequestMethod.GET)

@@ -26,7 +26,22 @@
 
 <!-- Latest compiled JavaScript -->
 <script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>	
+<script src="/resources/js/summernote/summernote-lite.min.js"></script>
+<script src="/resources/js/summernote/lang/summernote-ko-KR.min.js"></script>
+
+<script>
+$(document).ready(function() {
+	$('#content').summernote({
+		height: 300,    // 에디터 높이
+		focus : true,
+		lang: "ko-KR",	// 한글 설정
+	});
+});
+$('#content').summernote('fontName', 'Arial');
+</script>
+
+<link rel="stylesheet" href="/resources/css/summernote/summernote-lite.min.css">
 <link href="/resources/css/main.css" rel="stylesheet" />
 <link href="/resources/css/member/mypage.css" rel="stylesheet" />
 <link href="/resources/css/pagination.css" rel="stylesheet" />

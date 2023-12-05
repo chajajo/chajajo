@@ -7,6 +7,29 @@
 
 <div class="mypage-box">
 
+<!-- pagination script code -->
+<!-- <script>
+	$(document).ready(function() {
+		let actionForm = $('#actionForm');
+		$('a.page-link').on('click', function(e) {
+			e.preventDefault();
+			console.log('click');
+			actionForm.find('input[name="pageNum"]')
+				.val($(this).attr('href'));
+			actionForm.submit();
+		});
+		
+		$('.move').on('click', function(e) {
+			e.preventDefault();
+			actionForm.append('<input type="hidden" name="bno"/>');
+			actionForm.find('input[name="bno"]')
+			.val($(this).attr('href'));
+			actionForm.attr('action', '/mypage/get');
+			actionForm.submit();
+			});
+	});
+</script> -->
+
 <h1 class="page-header">
 	<i class="fa-solid fa-circle-question"></i> 나의 문의
 </h1>
@@ -21,12 +44,12 @@
 	</thead>
 
 	<tbody>
-		<c:forEach var ="qna" items="${list}">
+		<c:forEach var ="qna" items="${mylist}">
 			<tr>
 				<td style="width: 60px">${qna.bno}</td>
 				<td>
 				<%-- 	<a href="get?bno=${qna.bno}">${qna.title}</a> --%>
-					<a class="move" href="${cri.getLinkWithBno('get', qna.bno)}">
+					<a class="move" href="${cri.getLinkWithBno('myget', qna.bno)}">
 						${qna.title}</a>
 				</td>
 				<td style="width: 100px">${qna.writer}</td>

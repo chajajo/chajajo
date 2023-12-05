@@ -29,7 +29,7 @@
 			<br>
 			<li><a href="../mypage/list">문의하기</a></li>
 			<ol>
-				<li><a href="../mypage/mycontact">나의문의</a></li>
+				<li><a href="../mypage/mylist">나의문의</a></li>
 			</ol>
 		</ul>
 	</div>
