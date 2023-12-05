@@ -24,7 +24,6 @@
 			<li><a href="../mypage/mysubsidy">나만의 보조금</a></li>
 			<ol>
 				<li><a href="../mypage/favoritelist">즐겨찾기 목록</a></li>
-				<li><a href="../mypage/alertservice">알림 서비스</a></li>
 			</ol>
 			<br>
 			<li><a href="../mypage/list">문의하기</a></li>

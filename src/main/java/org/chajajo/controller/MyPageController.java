@@ -119,12 +119,6 @@ public class MyPageController {
 		    model.addAttribute("stars", favoriteServices);
 		}
 
-	// 알림 서비스 페이지 이동
-	@RequestMapping(value = "alertservice", method = RequestMethod.GET)
-	public void alertserviceGET() {
-		log.info(" 알림 서비스 페이지 진입 성공");
-	}
-
 	
 	/* QnABoardController기능 추가 시작 */
 	// 문의하기 페이지 이동
