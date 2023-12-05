@@ -10,7 +10,6 @@
         <h4>${service.serviceName}</h4>
          <%@ include file="../service/favorites.jsp"%>
     </div>
-</div>
 
 <br/>
 <details open>
@@ -64,5 +63,6 @@
         ${service.contact}
     </div>
 </details>
+</div>
 
 <%@ include file="../layouts/footer.jsp"%>
