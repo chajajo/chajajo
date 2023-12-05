@@ -50,6 +50,15 @@
 	padding-left: 15px;
 }
 
+.img-chajajo{
+width:90px;
+height:80px;
+}
+
+.navbar{
+align-items:flex-end;
+}
+
 .tnb-nav-btn {
 	line-height: 1.5;
 	font-size: 17px;

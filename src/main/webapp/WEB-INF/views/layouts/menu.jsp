@@ -6,7 +6,8 @@
 
 <div class="menu">
 	<nav class="navbar navbar-expand-lg navbar-light">
-		<a class="tnb-nav-btn-home navbar-brand" href="/">chajajo</a>
+		 <a class="tnb-nav-btn-home navbar-brand" href="/">
+		 <img class="img-chajajo" src="../../../resources/images/chajajologo.png" /></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarScroll" aria-controls="navbarScroll"
 			aria-expanded="false" aria-label="Toggle navigation">
