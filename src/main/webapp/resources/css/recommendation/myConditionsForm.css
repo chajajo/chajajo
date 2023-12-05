@@ -44,8 +44,8 @@ label:hover {
 }
 
 .condition-category {
+    width:100px;
 	display:inline-block;
-	width:100px;
 	text-align: right;
 }
 
@@ -81,5 +81,5 @@ label:hover {
 }
 
 .conditions_type {
-	padding: 5px 0px;
+	padding: 10px 0px;
 }

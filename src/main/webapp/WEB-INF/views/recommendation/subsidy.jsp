@@ -110,7 +110,7 @@
 </form>
 
 
-<input type="text" name="total" value="총 ${pageMaker.total} 개" readonly/>
+<input type="text" class="total-text" name="total" value="총 ${pageMaker.total} 개" readonly/>
 
  <nav class="navbar navbar-expand-lg static-top" style="height: 50px; background-color: #cccccc">
 

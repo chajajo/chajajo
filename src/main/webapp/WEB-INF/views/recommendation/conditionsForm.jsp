@@ -267,17 +267,17 @@
 
 <form id="conditions_form" method="get">
 <div class="conditions">
-	<div>
+	<div class="conditions_type">
 		<label for="age">나이</label>
-		<input type="number" id="age" name="age" value="0" required>
-	</div>
-	<div>
+		<input type="number" class="age-text" id="age" name="age" value="0" required>
+		<span class="condition-category">성별 :</span> 
 		<input type="radio" id ="male" name="gender" value="male"> 
-		<label for="male">남  </label>
+		<label for="male">남</label>
 		<input type="radio" id ="female" name="gender" value="female"> 
 		<label for="female">여</label>
 	</div>
-	<div>
+	<div class="conditions_type">
+		소득분위 :
 		<input type="radio" id="income_0_50" name="income" value="income_0_50"> 
 		<label for="income_0_50">중위소득 0~50%  </label>
 		<input type="radio" id="income_51_75" name="income"value="income_51_75"> 
@@ -289,7 +289,8 @@
 		<input type="radio" id="incomeOver_200" name="income"value="incomeOver_200"> 
 		<label for="incomeOver_200">중위소득 200% 이상  </label>
 	</div>
-	<div>
+	<div class="conditions_type">
+		출산 :
 		<input type="radio" id="noBaby" name="child" value="noBaby"> 
 		<label for="noBaby">예비부모/난임</label>
 		<input type="radio" id="pregnant" name="child" value="pregnant"> 
@@ -299,7 +300,8 @@
 		<input type="radio" id="noapply" name="child" value=""> 
 		<label for="noapply">해당사항없음</label>
 	</div>
-	<div>
+	<div class="conditions_type">
+		직업 :
 		<input type="radio" id="farmWorker" name="job" value="farmWorker">
 		<label for="farmWorker">농업인</label>
 		<input type="radio" id="fishWorker" name="job" value="fishWorker">
@@ -323,7 +325,8 @@
 		<input type="radio" id="notAplcb" name="job" value="notAplcb">
 		<label for="notAplcb">해당사항없음</label>
 	</div>
-	<div>
+	<div class="conditions_type">
+		가족관계 :
 		<input type="radio" id="mltclFmly"  name="fmlyType" value="mltclFmly">
 		<label for="mltclFmly">다문화가족</label>
 		<input type="radio" id="northDft" name="fmlyType" value="northDft"> 
@@ -343,7 +346,8 @@
 		<input type="radio" id="noneApply" name="fmlyType" value="noneApply"> 
 		<label for="noneApply">해당사항없음</label>
 	</div>
-	<div>
+	<div class="conditions_type">
+		소상공인 :
 		<input type="radio" id="soonBsns"  name="bsnsType" value="soonBsns">
 		<label for="soonBsns">예비창업자</label>
 		<input type="radio" id="inBsns"  name="bsnsType" value="inBsns">
@@ -359,7 +363,8 @@
 		<input type="radio" id="nobsns" name="bsnsType" value=""> 
 		<label for="nobsns">해당사항없음</label>
 	</div>
-	<div>
+	<div class="conditions_type">
+		기업 :
 		<input type="radio" id="smallCop"  name="copType" value="smallCop">
 		<label for="smallCop">중소기업</label>
 		<input type="radio" id="socialCop"  name="copType" value="socialCop">
@@ -377,7 +382,8 @@
 		<input type="radio" id="nocop" name="copType" value=""> 
 		<label for="nocop">해당사항없음</label>
 	</div>
-	<div>
+	<div class="conditions_type">
+		특수 상황 :
 		<input type="radio" id="disabledPerson" name="handicap" value="disabledPerson">
 		<label for="disabledPerson">장애인</label>
 		<input type="radio" id="nationslVeterans" name="handicap" value="nationslVeterans">
@@ -387,13 +393,16 @@
 		<input type="radio" id="nohandicap" name="handicap" value="">
 		<label for="nohandicap">해당사항없음</label>
 	</div>
-	<sec:authorize access="isAuthenticated()">
-		<div class="userConditions_button_wrap">
-			<input type="button" class="userConditions_button" value="내 정보 가져오기">
+		<div class="userCondition-button">
+			<div class="search_button_wrap">
+				<input type="submit" class="search_button" value="맞춤 보조금 찾기">
+			</div>
+			<sec:authorize access="isAuthenticated()">
+				<div class="userConditions_button_wrap">
+					<input type="button" class="userConditions_button" value="내 정보 가져오기">
+				</div>
+			</sec:authorize>
+			
 		</div>
-	</sec:authorize>
-	<div class="search_button_wrap">
-		<input type="submit" class="search_button" value="맞춤 보조금 찾기">
 	</div>
-</div>
 </form>

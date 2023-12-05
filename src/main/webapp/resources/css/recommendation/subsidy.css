@@ -3,3 +3,8 @@
 	margin: auto;
 	padding : 10px 10px;
 }
+
+.total-text {
+	outline: none;
+	border: none;
+}
