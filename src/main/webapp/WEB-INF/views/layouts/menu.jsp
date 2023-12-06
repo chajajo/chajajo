@@ -16,7 +16,7 @@
 		<div class="collapse navbar-collapse" id="navbarScroll">
 			<ul class="navbar-nav navbar-nav-scroll" style="max-height: 100px;">
 				<li class="tnb-nav-btn nav-item active"><a class="nav-link"
-					href="/service/list">전체보기 </a></li>
+					href="/service/list">전체보기asdfasdfwe </a></li>
 				<li class="tnb-nav-btn nav-item active"><a class="nav-link"
 					href="/recommendation/subsidy">나만의 보조금 찾기 </a></li>
 			</ul>
