@@ -58,7 +58,7 @@
 </script>
 
 <div class="container">
-    <nav class="navbar navbar-expand-lg static-top" style="height: 50px; background-color: #cccccc; border-radius: 4px;">
+    <nav class="navbar navbar-expand-lg static-top" style="height: 50px; background-color: #eff1f5; border-radius: 4px;">
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto" style="color: black">

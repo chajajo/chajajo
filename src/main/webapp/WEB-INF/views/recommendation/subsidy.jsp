@@ -56,10 +56,10 @@
 	        */
 	});
 </script>
- 
+<div class="container">
  <%@ include file="./conditionsForm.jsp"%>
  
-<div class="container">
+
 <!--  
  <nav class="navbar navbar-expand-lg static-top" style="height: 50px; background-color: #cccccc">
 
@@ -107,11 +107,11 @@
         <c:forEach var="service" items="${list}">
             <div class="col-sm-12 col-md-6 col-lg-3 mb-4">
                 <div class="card text-dark card-has-bg click-col">
-                    <div class="card-img-overlay d-flex flex-column" onClick="location.href='/service/get/?no=${service.serviceId}'">
-                        <div class="card-body">
-                            <h5 class="card-meta mb-2">${service.serviceName}</h5>
-                            <p class="card-title mt-0 ">
-                                <a class="text-dark">${service.serviceSummary}</a>
+                    <div class="card-img-overlay-my d-flex flex-column" onClick="location.href='/service/get/?no=${service.serviceId}'">
+                        <div class="card-body-my">
+                            <h5 class="card-meta-my mb-2">${service.serviceName}</h5>
+                            <p class="card-title-my mt-0 ">
+                                <a class="text-my">${service.serviceSummary}</a>
                             </p>
                             <p>지원 기간:<br/>${service.applyDate}</p>
                         </div>
