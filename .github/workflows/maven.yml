@@ -6,7 +6,6 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-
 name: Java CI with Maven
 
 on:
