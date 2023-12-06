@@ -117,3 +117,48 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 .search_button :hover{
 }
+
+
+
+
+ .accordion {
+            background-color: #777;
+            color: white;
+            cursor: pointer;
+            padding-left: 18px;
+            padding-right: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 16px;
+            border: none;
+  			border-radius: 10px;
+  			margin-top: 5px;
+  			margin-bottom: 5px;
+  			height: 35px;
+
+
+        }
+        .activeac,
+        .accordion:hover {
+            background-color: #555;
+        }
+        .accordioncontent {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: #f1f1f1;
+        }
+        .accordion:after {
+            content: '\002B'; /* 플러스 사인 */
+            color: white;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+        .activeac:after {
+            content: "\2212"; /* 마이너스 사인 */
+        }
+

@@ -269,6 +269,7 @@
 	 --%>
 
 <div class="conditions-my">
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 	<div>
 		<label class="condition-text-my" for="age">나이·성별</label><br>
 		<input class="condition-agebox" type="number" id="age" name="age" value="0" required> 세
