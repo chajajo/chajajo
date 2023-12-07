@@ -23,12 +23,12 @@
 
 ## ⚙️ 개발 환경
 - `Java`  `JDK 11`  `tomcat 9.0`
-- **IDE** : STS / IntelliJ
-- **Framework** : Spring
-- **Database** : Dbeaver (MySQL)
-- **API** : 공공데이터포털 (보조금24 API)
-- **ORM** : Mybatis
-- **Server** : NCP (배포) 
+- **IDE** : `STS` `IntelliJ`
+- **Framework** : `Spring`
+- **Database** : `DBeaver` `MySQL`
+- **API** : `보조금24 API`
+- **ORM** : `Mybatis`
+- **Server** : `Naver Cloud Flatform` `Auto Scaling` `Load Balancer`
 
 ### 기술 스택
 <img alt="Html" src ="https://img.shields.io/badge/HTML5-E34F26.svg?&style=for-the-badge&logo=HTML5&logoColor=white"/> <img alt="Css" src ="https://img.shields.io/badge/CSS3-1572B6.svg?&style=for-the-badge&logo=CSS3&logoColor=white"/> <img alt="JavaScript" src ="https://img.shields.io/badge/JavaScriipt-F7DF1E.svg?&style=for-the-badge&logo=JavaScript&logoColor=black"/> <img alt="Bootstrap" src ="https://img.shields.io/badge/Bootstrap-7952B3.svg?&style=for-the-badge&logo=Bootstrap&logoColor=white"/> <img alt="Java" src ="https://img.shields.io/badge/Java-3766AB.svg?&style=for-the-badge&logo=Java&logoColor=white"/> <img alt="Sprind" src ="https://img.shields.io/badge/Spring-6DB33F.svg?&style=for-the-badge&logo=Spring&logoColor=white"/> <img alt="MySQL" src ="https://img.shields.io/badge/MySQL-4479A1.svg?&style=for-the-badge&logo=MySQL&logoColor=white"/> 
