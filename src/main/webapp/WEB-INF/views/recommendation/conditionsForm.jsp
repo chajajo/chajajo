@@ -144,121 +144,173 @@
 		$(".userConditions_button").on('click', function(e) {
 
 			$('#age').val("${userConditions.age}");
+			const name = document.getElementById('age').value;
+      	 	document.getElementById("result나이").innerText = name;
 
 			if ("${userConditions.gender}" === "male") {
 				$("#male").prop("checked", true);
+				document.getElementById('result성별').innerText = "남";
 			} else if ("${userConditions.gender}" === "female") {
 				$("#female").prop("checked", true);
+				document.getElementById('result성별').innerText = "여";
 			}
 
 			if ("${userConditions.income}" === "income_0_50") {
 				$("#income_0_50").prop("checked", true);
+				document.getElementById('result소득분위').innerText = ":\u00a0\u00a0 중위소득 0~50%";
 			} else if ("${userConditions.income}" === "income_51_75") {
 				$("#income_51_75").prop("checked", true);
+				document.getElementById('result소득분위').innerText = ":\u00a0\u00a0 중위소득 51~75%";
 			} else if ("${userConditions.income}" === "income_76_100") {
 				$("#income_76_100").prop("checked", true);
+				document.getElementById('result소득분위').innerText = ":\u00a0\u00a0 중위소득 76~100%";
 			} else if ("${userConditions.income}" === "income_101_200") {
 				$("#income_101_200").prop("checked", true);
+				document.getElementById('result소득분위').innerText = ":\u00a0\u00a0 중위소득 101~200%";
 			} else if ("${userConditions.income}" === "incomeOver_200") {
 				$("#incomeOver_200").prop("checked", true);
+				document.getElementById('result소득분위').innerText = ":\u00a0\u00a0 중위소득 200% 이상";
 			}
 
 			if ("${userConditions.child}" === "noBaby") {
 				$("#noBaby").prop("checked", true);
+				document.getElementById('result가족계획').innerText = ":\u00a0\u00a0 예비부모/난임";
 			} else if ("${userConditions.child}" === "pregnant") {
 				$("#pregnant").prop("checked", true);
+				document.getElementById('result가족계획').innerText = ":\u00a0\u00a0 임산부";
 			} else if ("${userConditions.child}" === "birthAdopt") {
 				$("#birthAdopt").prop("checked", true);
+				document.getElementById('result가족계획').innerText = ":\u00a0\u00a0 출산/입양";
 			} else {
 				$("#noapply").prop("checked", true);
+				document.getElementById('result가족계획').innerText = ":\u00a0\u00a0 해당사항 없음";
 			}
 
 			if ("${userConditions.job}" === "farmWorker") {
 				$("#farmWorker").prop("checked", true);
+				document.getElementById('result직업').innerText = ":\u00a0\u00a0 농업인";
 			} else if ("${userConditions.job}" === "fishWorker") {
 				$("#fishWorker").prop("checked", true);
+				document.getElementById('result직업').innerText = ":\u00a0\u00a0 어업인";
 			} else if ("${userConditions.job}" === "livestockWorker") {
 				$("#livestockWorker").prop("checked", true);
+				document.getElementById('result직업').innerText = ":\u00a0\u00a0 축산업인";
 			} else if ("${userConditions.job}" === "forestWorker") {
 				$("#forestWorker").prop("checked", true);
+				document.getElementById('result직업').innerText = ":\u00a0\u00a0 임업인";
 			} else if ("${userConditions.job}" === "elementary") {
 				$("#elementary").prop("checked", true);
+				document.getElementById('result직업').innerText = ":\u00a0\u00a0 초등학생";
 			} else if ("${userConditions.job}" === "miStdnt") {
 				$("#miStdnt").prop("checked", true);
+				document.getElementById('result직업').innerText = ":\u00a0\u00a0 중학생";
 			} else if ("${userConditions.job}" === "hiStdnt") {
 				$("#hiStdnt").prop("checked", true);
+				document.getElementById('result직업').innerText = ":\u00a0\u00a0 고등학생";
 			} else if ("${userConditions.job}" === "grStdnt") {
 				$("#grStdnt").prop("checked", true);
+				document.getElementById('result직업').innerText = ":\u00a0\u00a0 대학생/대학원생";
 			} else if ("${userConditions.job}" === "worker") {
 				$("#worker").prop("checked", true);
+				document.getElementById('result직업').innerText = ":\u00a0\u00a0 근로자/직장인";
 			} else if ("${userConditions.job}" === "nonWorker") {
 				$("#nonWorker").prop("checked", true);
+				document.getElementById('result직업').innerText = ":\u00a0\u00a0 구직자/실업자";
 			} else if ("${userConditions.job}" === "notAplcb") {
 				$("#notAplcb").prop("checked", true);
+				document.getElementById('result직업').innerText = ":\u00a0\u00a0 해당사항 없음";
 			}
 
 			if ("${userConditions.fmlyType}" === "mltclFmly") {
 				$("#mltclFmly").prop("checked", true);
+				document.getElementById('result가구특성').innerText = ":\u00a0\u00a0 다문화가족";
 			} else if ("${userConditions.fmlyType}" === "northDft") {
 				$("#northDft").prop("checked", true);
+				document.getElementById('result가구특성').innerText = ":\u00a0\u00a0 북한이탈주민";
 			} else if ("${userConditions.fmlyType}" === "spGcFmly") {
 				$("#spGcFmly").prop("checked", true);
+				document.getElementById('result가구특성').innerText = ":\u00a0\u00a0 한부모가정/조손가정";
 			} else if ("${userConditions.fmlyType}" === "sngFmly") {
 				$("#sngFmly").prop("checked", true);
+				document.getElementById('result가구특성').innerText = ":\u00a0\u00a0 1인가구";
 			} else if ("${userConditions.fmlyType}" === "mltChld") {
 				$("#mltChld").prop("checked", true);
+				document.getElementById('result가구특성').innerText = ":\u00a0\u00a0 다자녀가구";
 			} else if ("${userConditions.fmlyType}" === "homeless") {
 				$("#homeless").prop("checked", true);
+				document.getElementById('result가구특성').innerText = ":\u00a0\u00a0 무주택세대";
 			} else if ("${userConditions.fmlyType}" === "newTrnsf") {
 				$("#newTrnsf").prop("checked", true);
+				document.getElementById('result가구특성').innerText = ":\u00a0\u00a0 신규전입";
 			} else if ("${userConditions.fmlyType}" === "exFmly") {
 				$("#exFmly").prop("checked", true);
+				document.getElementById('result가구특성').innerText = ":\u00a0\u00a0 확대가족";
 			} else if ("${userConditions.fmlyType}" === "noneApply") {
 				$("#noneApply").prop("checked", true);
+				document.getElementById('result가구특성').innerText = ":\u00a0\u00a0 해당사항없음";
 			}
 
 			if ("${userConditions.bsnsType}" === "soonBsns") {
 				$("#soonBsns").prop("checked", true);
+				document.getElementById('result소상공인').innerText = ":\u00a0\u00a0 예비창업자";
 			} else if ("${userConditions.bsnsType}" === "inBsns") {
 				$("#inBsns").prop("checked", true);
+				document.getElementById('result소상공인').innerText = ":\u00a0\u00a0 영업중";
 			} else if ("${userConditions.bsnsType}" === "nonBsns") {
 				$("#nonBsns").prop("checked", true);
+				document.getElementById('result소상공인').innerText = ":\u00a0\u00a0 생계곤란/폐업예정자";
 			} else if ("${userConditions.bsnsType}" === "foodBsns") {
 				$("#foodBsns").prop("checked", true);
+				document.getElementById('result소상공인').innerText = ":\u00a0\u00a0 음식적업";
 			} else if ("${userConditions.bsnsType}" === "mnfBsns") {
 				$("#mnfBsns").prop("checked", true);
+				document.getElementById('result소상공인').innerText = ":\u00a0\u00a0 제조업";
 			} else if ("${userConditions.bsnsType}" === "etcBsns") {
 				$("#etcBsns").prop("checked", true);
+				document.getElementById('result소상공인').innerText = ":\u00a0\u00a0 기타업종";
 			} else {
 				$("#nobsns").prop("checked", true);
+				document.getElementById('result소상공인').innerText = ":\u00a0\u00a0 해당사항없음";
 			}
 
 			if ("${userConditions.copType}" === "smallCop") {
 				$("#smallCop").prop("checked", true);
+				document.getElementById('result기업').innerText = ":\u00a0\u00a0 중소기업";
 			} else if ("${userConditions.copType}" === "socialCop") {
 				$("#socialCop").prop("checked", true);
+				document.getElementById('result기업').innerText = ":\u00a0\u00a0 사회복지시설";
 			} else if ("${userConditions.copType}" === "facility") {
 				$("#facility").prop("checked", true);
+				document.getElementById('result기업').innerText = ":\u00a0\u00a0 기관/단체";
 			} else if ("${userConditions.copType}" === "mnfCop") {
 				$("#mnfCop").prop("checked", true);
+				document.getElementById('result기업').innerText = ":\u00a0\u00a0 제조업";
 			} else if ("${userConditions.copType}" === "fffCop") {
 				$("#fffCop").prop("checked", true);
+				document.getElementById('result기업').innerText = ":\u00a0\u00a0 농업,임업 및 어업";
 			} else if ("${userConditions.copType}" === "ictCop") {
 				$("#ictCop").prop("checked", true);
+				document.getElementById('result기업').innerText = ":\u00a0\u00a0 정보통신업";
 			} else if ("${userConditions.copType}" === "etcCop") {
 				$("#etcCop").prop("checked", true);
+				document.getElementById('result기업').innerText = ":\u00a0\u00a0 기타업종";
 			} else {
 				$("#nocop").prop("checked", true);
+				document.getElementById('result기업').innerText = ":\u00a0\u00a0 해당사항없음";
 			}
 
 			if ("${userConditions.handicap}" === "disabledPerson") {
 				$("#disabledPerson").prop("checked", true);
+				document.getElementById('result개인상황').innerText = ":\u00a0\u00a0 장애인";
 			} else if ("${userConditions.handicap}" === "nationslVeterans") {
 				$("#nationslVeterans").prop("checked", true);
+				document.getElementById('result개인상황').innerText = ":\u00a0\u00a0 국가보훈대상자";
 			} else if ("${userConditions.handicap}" === "sickPerson") {
 				$("#sickPerson").prop("checked", true);
+				document.getElementById('result개인상황').innerText = ":\u00a0\u00a0 질병/질환자";
 			} else {
 				$("#nohandicap").prop("checked", true);
+				document.getElementById('result개인상황').innerText = ":\u00a0\u00a0 해당사항없음";
 			}
 
 		});

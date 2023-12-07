@@ -143,7 +143,7 @@
 <div class="mypage-box">
 나만의 보조금
 
-<form id="conditions_form" method="post">
+
 <%-- <div class="conditions-my">
 	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 	<div>
@@ -267,7 +267,7 @@
 		<label for="nohandicap">해당사항없음</label>
 	</div> 
 	 --%>
-
+<form id="conditions_form" method="post">
 <div class="conditions-my">
 	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 	<div>

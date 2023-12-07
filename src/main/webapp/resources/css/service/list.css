@@ -63,7 +63,7 @@
 }
 .nav-item a.active {
     font-weight: bold;
-    background: #F3EEEA;
+    background: #ece4df;
     border-radius: 8px;
 }
 .nav-item a:hover {
