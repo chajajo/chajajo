@@ -23,6 +23,7 @@
     background-size: 120%;
     background-repeat: no-repeat;
     background-position: center center;
+    background: beige;
 }
 
 .card.card-has-bg:hover .card-img-overlay {
@@ -56,6 +57,7 @@
     padding-left: 20px; 
     padding-bottom: 20px;
     padding-right: 20px;  
+    
 }
 .card:hover .card-body {
     margin-top: 30px;

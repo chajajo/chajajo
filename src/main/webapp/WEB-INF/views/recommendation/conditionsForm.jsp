@@ -655,17 +655,15 @@
 	
 <!--  아코디언 추가용 끝점 -->
 
-
 		<div class="userCondition-button">
-			<div class="search_button_wrap">
-				<input type="submit" class="search_button" value="맞춤 보조금 찾기">
-			</div>
 			<sec:authorize access="isAuthenticated()">
 				<div class="userConditions_button_wrap">
 					<input type="button" class="userConditions_button" value="내 정보 가져오기">
 				</div>
 			</sec:authorize>
-			
+			<div class="search_button_wrap">
+				<input type="submit" class="search_button" value="맞춤 보조금 찾기">
+			</div>			
 		</div>
 	</div>
 </form>
