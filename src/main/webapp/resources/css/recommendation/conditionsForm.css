@@ -1,77 +1,78 @@
 @charset "UTF-8";
 
 label {
-  font-size: 15px;
-  line-height: 1rem;
-  padding: 0.2em 0.2em;
+    font-size: 15px;
+    line-height: 1rem;
+    padding: 0.2em 0.2em;
 }
 
 label:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
- [type="radio"] {
-  vertical-align: middle;
-  appearance: none;
-  border: max(2px, 0.1em) solid gray;
-  border-radius: 50%;
-  width: 1.25em;
-  height: 1.25em;
-} 
+[type="radio"] {
+    vertical-align: middle;
+    appearance: none;
+    border: max(2px, 0.1em) solid gray;
+    border-radius: 50%;
+    width: 1.25em;
+    height: 1.25em;
+}
 
 [type="radio"]:checked {
-  border: 0.4em solid tomato;
+    border: 0.4em solid tomato;
 }
 
 [type="radio"]:hover {
-  box-shadow: 0 0 0 max(4px, 0.2em) #0080ff;
-  cursor: pointer;
+    box-shadow: 0 0 0 max(4px, 0.2em) #0080ff;
+    cursor: pointer;
 }
 
 [type="radio"]:hover + span {
-  cursor: pointer;
+    cursor: pointer;
 }
 
-.conditions{
-	background-size: 120%;
-	background: #eff1f5;
-	border: none;
+.conditions {
+    background-size: 120%;
+    background: #eff1f5;
+    border: none;
     border-radius: 20px;
     padding-top: 15px;
-    padding-left: 15px; 
+    padding-left: 15px;
     padding-bottom: 15px;
-    padding-right: 15px; 
+    padding-right: 15px;
 }
 
-.conditions-my{
-	background-size: 120%;
-	background: #eff1f5;
-	border: none;
+.conditions-my {
+    background-size: 120%;
+    background: #eff1f5;
+    border: none;
     border-radius: 20px;
     padding-top: 15px;
-    padding-left: 15px; 
+    padding-left: 15px;
     padding-bottom: 15px;
-    padding-right: 15px; 
+    padding-right: 15px;
 }
 
-.condition-text{
-	font-weight: bold;
-	
-}
-.condition-text-my{
-	font-weight: bold;
-	font-size: 20px;
-	
+.condition-text {
+    font-weight: bold;
+
 }
 
-.condition-agebox{
-	width : 60px; 
-	height : 27px;
-	text-align: center;
+.condition-text-my {
+    font-weight: bold;
+    font-size: 20px;
+
 }
 
-.condition-gender{
-	margin-left: 10px;
+.condition-agebox {
+    width: 60px;
+    height: 27px;
+    text-align: center;
+}
+
+.condition-gender {
+    margin-left: 10px;
 }
 
 input[type="number"]::-webkit-outer-spin-button,
@@ -82,128 +83,88 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 
-
 .userConditions_button_wrap {
-	margin-top: 10px;
+    margin-top: 10px;
 }
+
 .userConditions_button {
-	width: 120px;
+    width: 120px;
     height: 30px;
     background-color: #6AAFE6;
     font-size: 15px;
     font-weight: 200;
     color: white;
     border-radius: 5px;
-	border: none;
+    border: none;
 }
-.userConditions_button :hover{
+
+.userConditions_button :hover {
 }
 
 
 .search_button_wrap {
-	margin-top: 10px;
-	text-align: center;
+    margin-top: 10px;
+    text-align: center;
 }
+
 .search_button {
-	width: 220px;
+    width: 220px;
     height: 50px;
     background-color: #6AAFE6;
     font-size: 25px;
     font-weight: 200;
     color: white;
     border-radius: 10px;
-	border: none;
-}
-.search_button :hover{
+    border: none;
 }
 
+.search_button :hover {
+}
 
 
+.accordion {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding-left: 18px;
+    padding-right: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 35px;
 
- .accordion {
-            background-color: #777;
-            color: white;
-            cursor: pointer;
-            padding-left: 18px;
-            padding-right: 18px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 16px;
-            border: none;
-  			border-radius: 10px;
-  			margin-top: 5px;
-  			margin-bottom: 5px;
-  			height: 35px;
-
-
-        }
-        .activeac,
-        .accordion:hover {
-            background-color: #555;
-        }
-        .accordioncontent {
-            padding: 0 18px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.2s ease-out;
-            background-color: #f1f1f1;
-        }
-        .accordion:after {
-            content: '\002B'; /* 플러스 사인 */
-            color: white;
-            font-weight: bold;
-            float: right;
-            margin-left: 5px;
-        }
-        .activeac:after {
-            content: "\2212"; /* 마이너스 사인 */
-        }
 
 }
 
-.age-text {
-	width:50px;
+.activeac,
+.accordion:hover {
+    background-color: #555;
 }
 
-.condition-category {
-	display:inline-block;
-	width:100px;
-	text-align: right;
+.accordioncontent {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
 }
 
-.userCondition-button {
-	display: flex;
-	margin: 30px 180px;
+.accordion:after {
+    content: '\002B'; /* 플러스 사인 */
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
 }
 
-.search_button_wrap {
-	margin: 10px 30px;
+.activeac:after {
+    content: "\2212"; /* 마이너스 사인 */
 }
 
-.userConditions_button_wrap {
-	margin: 10px 30px;
-}
 
-.search_button {
-	border: none;
-	padding: 20px 100px;
-}
-
-.search_button:hover {
-	box-shadow: 0 0 0 max(4px, 0.2em) tomato;
-}
-
-.userConditions_button {
-	border: none;
-	padding: 20px 100px;
-}
-
-.userConditions_button:hover {
-	box-shadow: 0 0 0 max(4px, 0.2em) tomato;
-}
-
-.conditions_type {
-	padding: 5px 0px;
-}
