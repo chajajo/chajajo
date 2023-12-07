@@ -39,6 +39,10 @@
 <br>
 
 ## ✨ 주요 기능
+**데이터 최신화 [Wiki](https://github.com/chajajo/chajajo/wiki/%EC%A3%BC%EC%9A%94-%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C-(Data))**
+- 매일 데이터 업데이트
+- 1주 간격으로 전체 데이터 최신화
+
 **메인 페이지 [Wiki](https://github.com/chajajo/chajajo/wiki/%EC%A3%BC%EC%9A%94-%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C-(MainPage))** 
 - 인기 보조금 조회수 Top3
 - 인기 보조금 분야 조회수 Top3
