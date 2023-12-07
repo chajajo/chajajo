@@ -234,6 +234,7 @@
 				or (sc.DISABLED_PERSON is NULL and sc.NATIONAL_VETERANS is NULL 
 				and sc.SICK_PERSON is NULL))
 		</if>
+		order by sl.views desc
 	</select>
 
 
