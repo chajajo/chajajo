@@ -20,6 +20,7 @@
 			service_summary like concat('%', #{keyword}, '%') or
 			service_field like concat('%', #{keyword}, '%')
 		</if>
+		order by views desc
 		limit #{offset},
 		#{amount}
 	</select>
