@@ -55,4 +55,4 @@ $('#content').summernote('fontName', 'Arial');
 
 	</header>
 
-	<div class="container" role="main">
+	<div class="container" role="main"style="padding-right: 0px;padding-left: 0px;">

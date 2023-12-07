@@ -36,13 +36,13 @@
     font-weight: 800;
 }
 .card .card-meta {
-    color: rgb(0, 0, 0);
+    color: rgb(96, 96, 96);
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight:bolder;
 }
 .text {
-    color: rgb(0,0,0);/*중간 내용 컬러 */
+    color: rgb(96,96,96);/*중간 내용 컬러 */
 }
 .card .card-img-overlay {
     transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
@@ -51,7 +51,7 @@
 }
 .card .card-body {
     transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
-    color: rgb(0,0,0); 
+    color: rgb(96,96,96); 
     padding-top: 20px;
     padding-left: 20px; 
     padding-bottom: 20px;
@@ -63,7 +63,7 @@
 }
 .nav-item a.active {
     font-weight: bold;
-    background: #F3EEEA;
+    background: #ece4df;
     border-radius: 8px;
 }
 .nav-item a:hover {
@@ -505,4 +505,36 @@
 }
 .nav-item임신 {
 	font-size: 18px;
+}
+
+
+
+.card .card-title-my {
+    font-weight: 800;
+}
+.card .card-meta-my {
+    color: rgb(96,96,96); /* 타이틀 제목 컬러 */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight:bolder;
+}
+.text-my  {
+    color: rgb(96,96,96);/*중간 내용 컬러 */
+}
+.card .card-img-overlay-my {
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+    background: linear-gradient(0deg, rgba(253, 252, 229, 0.3785889356) 0%, #FDFCE5 80%);
+	min-height: 255px;
+}
+.card .card-body-my {
+    transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+    color: rgb(96,96,96); /* 하단 내용 컬러 */
+    padding-top: 40px;
+    padding-left: 40px; 
+    padding-bottom: 40px;
+    padding-right: 40px;  
+}
+.card:hover .card-body-my {
+    margin-top: 30px;
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
 }
