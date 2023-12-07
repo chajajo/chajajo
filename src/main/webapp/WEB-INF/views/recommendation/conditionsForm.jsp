@@ -493,7 +493,7 @@
                 value = ":\u00a0\u00a0 국가보훈대상자";
             } else if (value === "sickPerson"){
                 value = ":\u00a0\u00a0 질병/질환자";
-            } else if (value === "nohandicap"){
+            } else if (value === ""){
                 value = ":\u00a0\u00a0 해당사항 없음";
             } 
             document.getElementById('result개인상황').innerText = value;
@@ -644,11 +644,11 @@
 		<div>
 			<input type="radio" id="disabledPerson" name="handicap" value="disabledPerson" onclick='getHandicap(event)'>
 			<label for="disabledPerson">장애인</label>
-			<input type="radio" id="nationslVeterans" name="handicap" value="nationslVeterans">
+			<input type="radio" id="nationslVeterans" name="handicap" value="nationslVeterans" onclick='getHandicap(event)'>
 			<label for="nationslVeterans">국가보훈대상자</label>
-			<input type="radio" id="sickPerson" name="handicap" value="sickPerson">
+			<input type="radio" id="sickPerson" name="handicap" value="sickPerson" onclick='getHandicap(event)'>
 			<label for="sickPerson">질병/질환자</label>
-			<input type="radio" id="nohandicap" name="handicap" value="">
+			<input type="radio" id="nohandicap" name="handicap" value="" onclick='getHandicap(event)'>
 			<label for="nohandicap">해당사항없음</label>
 		</div>
 	</div>
