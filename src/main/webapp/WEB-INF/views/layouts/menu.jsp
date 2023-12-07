@@ -6,7 +6,8 @@
 
 <div class="menu">
 	<nav class="navbar navbar-expand-lg navbar-light">
-		<a class="tnb-nav-btn-home navbar-brand" href="/">chajajo</a>
+		 <a class="tnb-nav-btn-home navbar-brand" href="/">
+		 <img class="img-chajajo" src="../../../resources/images/chajajologo.png" /></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarScroll" aria-controls="navbarScroll"
 			aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +16,7 @@
 		<div class="collapse navbar-collapse" id="navbarScroll">
 			<ul class="navbar-nav navbar-nav-scroll" style="max-height: 100px;">
 				<li class="tnb-nav-btn nav-item active"><a class="nav-link"
-					href="/service/list">전체보기 </a></li>
+					href="/service/list">전체보기</a></li>
 				<li class="tnb-nav-btn nav-item active"><a class="nav-link"
 					href="/recommendation/subsidy">나만의 보조금 찾기 </a></li>
 			</ul>
@@ -37,7 +38,7 @@
 						<a href="/member/logout.do" class="logout-icon"> <i
 							class="fa-solid fa-right-from-bracket fa-lg"></i></a> <span
 							class="user-name"> ${member.userId}</span> <a
-							href="../mypage/userinfo" class="login-icon"> <i
+							href="/mypage/userinfo" class="login-icon"> <i
 							class="fa-solid fa-user fa-2xl"></i></a>
 
 					</div>

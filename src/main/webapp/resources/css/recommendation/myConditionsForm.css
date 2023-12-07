@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+label {
+  font-size: 15px;
+  line-height: 1rem;
+  padding: 0.2em 0.2em;
+}
+
+label:hover {
+  cursor: pointer;
+}
+
+ [type="radio"] {
+  vertical-align: middle;
+  appearance: none;
+  border: max(2px, 0.1em) solid gray;
+  border-radius: 50%;
+  width: 1.25em;
+  height: 1.25em;
+} 
+
+[type="radio"]:checked {
+  border: 0.4em solid tomato;
+}
+
+[type="radio"]:hover {
+  box-shadow: 0 0 0 max(4px, 0.2em) tomato;
+  cursor: pointer;
+}
+
+[type="radio"]:hover + span {
+  cursor: pointer;
+}
+
+.conditions{
+	background-size: 120%;
+	background: #D5D5D5;
+	border: none;
+    border-radius: 20px;
+}
+
+.age-text {
+	width:50px;
+}
+
+.condition-category {
+    width:100px;
+	display:inline-block;
+	text-align: right;
+}
+
+.userCondition-button {
+	display: flex;
+	margin: 30px 200px;
+}
+
+.search_button_wrap {
+	margin: 10px 30px;
+}
+
+.userConditions_button_wrap {
+	margin: 10px 30px;
+}
+
+.search_button {
+	border: none;
+	padding: 20px 100px;
+}
+
+.search_button:hover {
+	box-shadow: 0 0 0 max(4px, 0.2em) tomato;
+}
+
+.userConditions_button {
+	border: none;
+	padding: 20px 100px;
+}
+
+.userConditions_button:hover {
+	box-shadow: 0 0 0 max(4px, 0.2em) tomato;
+}
+
+.conditions_type {
+	padding: 10px 0px;
+}
